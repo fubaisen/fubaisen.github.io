@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>11_异常 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="异常目标
+异常的概念
+捕获异常
+异常的传递
+抛出异常
+
+01. 异常的概念
+程序在运行时，如果 Python 解释器 遇到 到一个错误，会停止程序的执行，并且提示一些错误信息，这就是 异常
+程序停止,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="11_异常 - fubaisen"/>
+    <meta name="twitter:description" content="异常目标
+异常的概念
+捕获异常
+异常的传递
+抛出异常
+
+01. 异常的概念
+程序在运行时，如果 Python 解释器 遇到 到一个错误，会停止程序的执行，并且提示一些错误信息，这就是 异常
+程序停止,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="11_异常 - fubaisen"/>
+    <meta property="og:description" content="异常目标
+异常的概念
+捕获异常
+异常的传递
+抛出异常
+
+01. 异常的概念
+程序在运行时，如果 Python 解释器 遇到 到一个错误，会停止程序的执行，并且提示一些错误信息，这就是 异常
+程序停止,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">11_异常</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">11_异常</h1>
+        <div class="stuff">
+            <span>三月 27, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python%E5%AD%A6%E4%B9%A0/" rel="tag">python学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>异常的概念</li>
+<li>捕获异常</li>
+<li>异常的传递</li>
+<li>抛出异常</li>
+</ul>
+<h2 id="01-异常的概念"><a href="#01-异常的概念" class="headerlink" title="01. 异常的概念"></a>01. 异常的概念</h2><ul>
+<li>程序在运行时，如果 <code>Python 解释器</code> <strong>遇到</strong> 到一个错误，<strong>会停止程序的执行，并且提示一些错误信息</strong>，这就是 <strong>异常</strong></li>
+<li><strong>程序停止执行并且提示错误信息</strong> 这个动作，我们通常称之为：<strong>抛出(raise)异常</strong></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/PW3YBJ4yztnOXqQ.png" alt="001_异常示意图"></p>
+<blockquote>
+<p>程序开发时，很难将 <strong>所有的特殊情况</strong> 都处理的面面俱到，通过 <strong>异常捕获</strong> 可以针对突发事件做集中的处理，从而保证程序的 <strong>稳定性和健壮性</strong></p>
+</blockquote>
+<h2 id="02-捕获异常"><a href="#02-捕获异常" class="headerlink" title="02. 捕获异常"></a>02. 捕获异常</h2><h3 id="2-1-简单的捕获异常语法"><a href="#2-1-简单的捕获异常语法" class="headerlink" title="2.1 简单的捕获异常语法"></a>2.1 简单的捕获异常语法</h3><ul>
+<li>在程序开发中，如果 <strong>对某些代码的执行不能确定是否正确</strong>，可以增加 <code>try(尝试)</code> 来 <strong>捕获异常</strong></li>
+<li>捕获异常最简单的语法格式：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    尝试执行的代码</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    出现错误的处理</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>try</code> <strong>尝试</strong>，下方编写要尝试代码，不确定是否能够正常执行的代码</li>
+<li><code>except</code> <strong>如果不是</strong>，下方编写尝试失败的代码</li>
+</ul>
+<h4 id="简单异常捕获演练-——-要求用户输入整数"><a href="#简单异常捕获演练-——-要求用户输入整数" class="headerlink" title="简单异常捕获演练 —— 要求用户输入整数"></a>简单异常捕获演练 —— 要求用户输入整数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 提示用户输入一个数字</span></span><br><span class="line">    num = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入数字：&quot;</span>))</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请输入正确的数字&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-错误类型捕获"><a href="#2-2-错误类型捕获" class="headerlink" title="2.2 错误类型捕获"></a>2.2 错误类型捕获</h3><ul>
+<li>在程序执行时，可能会遇到 <strong>不同类型的异常</strong>，并且需要 <strong>针对不同类型的异常，做出不同的响应</strong>，这个时候，就需要捕获错误类型了</li>
+<li>语法如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 尝试执行的代码</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span> 错误类型<span class="number">1</span>:</span><br><span class="line">    <span class="comment"># 针对错误类型1，对应的代码处理</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span> (错误类型<span class="number">2</span>, 错误类型<span class="number">3</span>):</span><br><span class="line">    <span class="comment"># 针对错误类型2 和 3，对应的代码处理</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未知错误 %s&quot;</span> % result)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>当 <code>Python</code> 解释器 <strong>抛出异常</strong> 时，<strong>最后一行错误信息的第一个单词，就是错误类型</strong></li>
+</ul>
+<h4 id="异常类型捕获演练-——-要求用户输入整数"><a href="#异常类型捕获演练-——-要求用户输入整数" class="headerlink" title="异常类型捕获演练 —— 要求用户输入整数"></a>异常类型捕获演练 —— 要求用户输入整数</h4><p><strong>需求</strong></p>
+<ol>
+<li>提示用户输入一个整数</li>
+<li>使用 <code>8</code> 除以用户输入的整数并且输出</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    num = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入整数：&quot;</span>))</span><br><span class="line">    result = <span class="number">8</span> / num</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请输入正确的整数&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;除 0 错误&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="捕获未知错误"><a href="#捕获未知错误" class="headerlink" title="捕获未知错误"></a>捕获未知错误</h4><ul>
+<li>在开发时，<strong>要预判到所有可能出现的错误</strong>，还是有一定难度的</li>
+<li>如果希望程序 <strong>无论出现任何错误</strong>，都不会因为 <code>Python</code> 解释器 <strong>抛出异常而被终止</strong>，可以再增加一个 <code>except</code></li>
+</ul>
+<p>语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未知错误 %s&quot;</span> % result)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-异常捕获完整语法"><a href="#2-3-异常捕获完整语法" class="headerlink" title="2.3 异常捕获完整语法"></a>2.3 异常捕获完整语法</h3><ul>
+<li>在实际开发中，为了能够处理复杂的异常情况，完整的异常语法如下：</li>
+</ul>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li>有关完整语法的应用场景，在后续学习中，<strong>结合实际的案例</strong>会更好理解</li>
+<li>现在先对这个语法结构有个印象即可</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 尝试执行的代码</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span> 错误类型<span class="number">1</span>:</span><br><span class="line">    <span class="comment"># 针对错误类型1，对应的代码处理</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span> 错误类型<span class="number">2</span>:</span><br><span class="line">    <span class="comment"># 针对错误类型2，对应的代码处理</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span> (错误类型<span class="number">3</span>, 错误类型<span class="number">4</span>):</span><br><span class="line">    <span class="comment"># 针对错误类型3 和 4，对应的代码处理</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="comment"># 打印错误信息</span></span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># 没有异常才会执行的代码</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="comment"># 无论是否有异常，都会执行的代码</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;无论是否有异常，都会执行的代码&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>else</code> 只有在没有异常时才会执行的代码</li>
+<li><code>finally</code> 无论是否有异常，都会执行的代码</li>
+<li>之前一个演练的 <strong>完整捕获异常</strong> 的代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    num = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入整数：&quot;</span>))</span><br><span class="line">    result = <span class="number">8</span> / num</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请输入正确的整数&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;除 0 错误&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未知错误 %s&quot;</span> % result)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;正常执行&quot;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;执行完成，但是不保证正确&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="03-异常的传递"><a href="#03-异常的传递" class="headerlink" title="03. 异常的传递"></a>03. 异常的传递</h2><ul>
+<li><strong>异常的传递</strong> —— 当 <strong>函数&#x2F;方法</strong> 执行 <strong>出现异常</strong>，会 <strong>将异常传递</strong> 给 函数&#x2F;方法 的 <strong>调用一方</strong></li>
+<li>如果 <strong>传递到主程序</strong>，仍然 <strong>没有异常处理</strong>，程序才会被终止</li>
+</ul>
+<blockquote>
+<p>提示</p>
+</blockquote>
+<ul>
+<li>在开发中，可以在主函数中增加 <strong>异常捕获</strong></li>
+<li>而在主函数中调用的其他函数，只要出现异常，都会传递到主函数的 <strong>异常捕获</strong> 中</li>
+<li>这样就不需要在代码中，增加大量的 <strong>异常捕获</strong>，能够保证代码的整洁</li>
+</ul>
+<p><strong>需求</strong></p>
+<ol>
+<li>定义函数 <code>demo1()</code> <strong>提示用户输入一个整数并且返回</strong></li>
+<li>定义函数 <code>demo2()</code> 调用 <code>demo1()</code></li>
+<li>在主程序中调用 <code>demo2()</code></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">demo1</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个整数：&quot;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo2</span>():</span><br><span class="line">    <span class="keyword">return</span> demo1()</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(demo2())</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;请输入正确的整数&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;未知错误 %s&quot;</span> % result)</span><br></pre></td></tr></table></figure>
+
+<h2 id="04-抛出-raise-异常"><a href="#04-抛出-raise-异常" class="headerlink" title="04. 抛出 raise 异常"></a>04. 抛出 <code>raise</code> 异常</h2><h3 id="4-1-应用场景"><a href="#4-1-应用场景" class="headerlink" title="4.1 应用场景"></a>4.1 应用场景</h3><ul>
+<li>在开发中，除了 <strong>代码执行出错</strong> <code>Python</code> 解释器会 <strong>抛出</strong> 异常之外</li>
+<li>还可以根据 <strong>应用程序</strong> <strong>特有的业务需求</strong> <strong>主动抛出异常</strong></li>
+</ul>
+<p><strong>示例</strong></p>
+<ul>
+<li>提示用户 <strong>输入密码</strong>，如果 <strong>长度少于 8</strong>，抛出 <strong>异常</strong></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/tIoyBqJPZX6Cku5.png" alt="024_自定义异常"></p>
+<p><strong>注意</strong></p>
+<ul>
+<li>当前函数 <strong>只负责</strong> 提示用户输入密码，如果 <strong>密码长度不正确，需要其他的函数进行额外处理</strong></li>
+<li>因此可以 <strong>抛出异常</strong>，由其他需要处理的函数 <strong>捕获异常</strong></li>
+</ul>
+<h3 id="4-2-抛出异常"><a href="#4-2-抛出异常" class="headerlink" title="4.2 抛出异常"></a>4.2 抛出异常</h3><ul>
+<li><code>Python</code> 中提供了一个 <code>Exception</code> <strong>异常类</strong></li>
+<li>在开发时，如果满足特定业务需求时，希望抛出异常，可以：<ol>
+<li><strong>创建</strong> 一个 <code>Exception</code> 的 <strong>对象</strong></li>
+<li>使用 <code>raise</code> <strong>关键字</strong> 抛出 <strong>异常对象</strong></li>
+</ol>
+</li>
+</ul>
+<p><strong>需求</strong></p>
+<ul>
+<li>定义 <code>input_password</code> 函数，提示用户输入密码</li>
+<li>如果用户输入长度 &lt; 8，抛出异常</li>
+<li>如果用户输入长度 &gt;&#x3D;8，返回输入的密码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">input_password</span>():</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1. 提示用户输入密码</span></span><br><span class="line">    pwd = <span class="built_in">input</span>(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2. 判断密码长度，如果长度 &gt;= 8，返回用户输入的密码</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(pwd) &gt;= <span class="number">8</span>:</span><br><span class="line">        <span class="keyword">return</span> pwd</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3. 密码长度不够，需要抛出异常</span></span><br><span class="line">    <span class="comment"># 1&gt; 创建异常对象 - 使用异常的错误信息字符串作为参数</span></span><br><span class="line">    ex = Exception(<span class="string">&quot;密码长度不够&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2&gt; 抛出异常对象</span></span><br><span class="line">    <span class="keyword">raise</span> ex</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    user_pwd = input_password()</span><br><span class="line">    <span class="built_in">print</span>(user_pwd)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;发现错误：%s&quot;</span> % result)</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EraseMode代替方法 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1程序动画在MATLAB中，可以采用重绘图形对象的方法来创建程序动画。改变对象的方法可以触发MATLAB对该对象进行重绘。
+    创建程序动画的典型步骤是：
+
+    1、绘制一个图形对象；
+
+ ,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="EraseMode代替方法 - fubaisen"/>
+    <meta name="twitter:description" content="1程序动画在MATLAB中，可以采用重绘图形对象的方法来创建程序动画。改变对象的方法可以触发MATLAB对该对象进行重绘。
+    创建程序动画的典型步骤是：
+
+    1、绘制一个图形对象；
+
+ ,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="EraseMode代替方法 - fubaisen"/>
+    <meta property="og:description" content="1程序动画在MATLAB中，可以采用重绘图形对象的方法来创建程序动画。改变对象的方法可以触发MATLAB对该对象进行重绘。
+    创建程序动画的典型步骤是：
+
+    1、绘制一个图形对象；
+
+ ,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">EraseMode代替方法</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">EraseMode代替方法</h1>
+        <div class="stuff">
+            <span>三月 31, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><h4 id="程序动画"><a href="#程序动画" class="headerlink" title="程序动画"></a>程序动画</h4><p>在MATLAB中，可以采用重绘图形对象的方法来创建程序动画。改变对象的方法可以触发MATLAB对该对象进行重绘。</p>
+<pre><code>    创建程序动画的典型步骤是：
+
+    1、绘制一个图形对象；
+
+    2、通过在一个程序循环中改变该对象的x，y和z坐标值来实现该对象的移动，从而形成动画。
+
+    在创建MATLAB的程序动画时，图形擦除也是非常重要的。
+
+    图形动态绘画中三种重要的擦除模式：（通过没置“EraseMode”属性来完成）
+
+    1、None：在移动图形对象时，MATLAB不进行擦除；
+
+    2、Background：在图形对象移走以后，MATLAB在原来的位置用背景色进行重绘。在这种模式下，MATLAB将原来的对象完全擦除，包括该对象下面的所有图形，如栅格线等；
+
+    3、Xor：与Background模式相比，这种模式只擦除对象本身。大多数的MATLAB程序动画都采用这种擦除模式。
+</code></pre>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><h6 id="使用EraseMode来向figure中不断添加图像内容（incremental-drawing）已经是过时的方法了。具体到你这个例子，你有三个替代方案："><a href="#使用EraseMode来向figure中不断添加图像内容（incremental-drawing）已经是过时的方法了。具体到你这个例子，你有三个替代方案：" class="headerlink" title="使用EraseMode来向figure中不断添加图像内容（incremental drawing）已经是过时的方法了。具体到你这个例子，你有三个替代方案："></a>使用EraseMode来向figure中不断添加图像内容（incremental drawing）已经是过时的方法了。具体到你这个例子，你有三个替代方案：</h6><ul>
+<li>1.在循环中用set不是仅改变 h 中的那一个点的位置，而是每次都向 h 中多添加一个点。</li>
+<li>2.在axes上画一个image对象，每次循环设置image中某一点像素的值</li>
+<li>3.如提示，使用r2014b中新加的animatedline。原理基本同方法1.</li>
+</ul>
+<p>方法1的缺点是在h中点数很多的情况下，越到后面绘制速度会越慢。如果你只是希望得到一个动画过程，那么我推荐使用方法2.</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><h6 id="目前新版本的Matlab已经不支持EraseMode属性了，坐标图的动画显示实现要依赖animatedline对象，配合drawnow函数使用。"><a href="#目前新版本的Matlab已经不支持EraseMode属性了，坐标图的动画显示实现要依赖animatedline对象，配合drawnow函数使用。" class="headerlink" title="目前新版本的Matlab已经不支持EraseMode属性了，坐标图的动画显示实现要依赖animatedline对象，配合drawnow函数使用。"></a>目前新版本的Matlab已经不支持EraseMode属性了，坐标图的动画显示实现要依赖animatedline对象，配合drawnow函数使用。</h6><p> animatedline：创建动画行，使用的语法格式及说明如下：</p>
+<pre><code>    h = animatedline：创建一个没有数据的动画行，并将其添加到当前轴。在循环中添加点以创建线条动画。
+
+    h = animatedline(x, y)：创建由初始数据点x和y定义的动画线。
+
+    h = animatedline(x, y, z)：创建由初始数据点x、y和z定义的动画线。
+
+    h = animatedline(___, Name, Value)：使用一个或多个Name, Value对参数指定动画行属性。例如，&#39;Color&#39;, &#39;r&#39;将线条颜色设置为红色。需要在输入成对的参数组合之后使用此选项。
+
+    h = animatedline(ax, ___)：在轴指定的轴ax上创建动画线，而不是在当前轴gca中。如果不指定轴对象，则animatedline使用当前轴。
+
+    如果有另一个函数想从当前图形中获得数据，用animateline的getpoints方法：[xdata, ydata] = getpoints(h);
+</code></pre>
+<p>animatedline动画线属性<br>        animatedline动画可以指定可选的逗号分隔的Name,Value参数对。 Name是参数名称，Value是相应的值。Name必须出现在单引号（’ ‘）中。你可以按照任何顺序指定多个名称和值对参数Name1,Value1, …, NameN, ValueN。</p>
+<p><img src="C:\Users\lichaikui\AppData\Roaming\Typora\typora-user-images\image-20220412124856423.png" alt="image-20220412124856423"></p>
+<p><img src="C:\Users\lichaikui\AppData\Roaming\Typora\typora-user-images\image-20220412124916611.png" alt="image-20220412124916611"></p>
+<p>颜色属性常用取值</p>
+<p><img src="C:\Users\lichaikui\AppData\Roaming\Typora\typora-user-images\image-20220412124933156.png" alt="image-20220412124933156"></p>
+<p>标记符号取值</p>
+<p><img src="C:\Users\lichaikui\AppData\Roaming\Typora\typora-user-images\image-20220412124952564.png" alt="image-20220412124952564"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

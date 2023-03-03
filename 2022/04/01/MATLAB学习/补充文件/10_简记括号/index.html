@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>简记括号 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="在matlab中，常常会遇到(),[]，和&amp;#123;&amp;#125;,这个3种符号怎么区分，怎么用，这里我来总结一下，以供参考。
+
+[]
+
+首先。[]叫中括号，它用来存储矩阵和向量（vector在C+,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="简记括号 - fubaisen"/>
+    <meta name="twitter:description" content="在matlab中，常常会遇到(),[]，和&amp;#123;&amp;#125;,这个3种符号怎么区分，怎么用，这里我来总结一下，以供参考。
+
+[]
+
+首先。[]叫中括号，它用来存储矩阵和向量（vector在C+,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="简记括号 - fubaisen"/>
+    <meta property="og:description" content="在matlab中，常常会遇到(),[]，和&amp;#123;&amp;#125;,这个3种符号怎么区分，怎么用，这里我来总结一下，以供参考。
+
+[]
+
+首先。[]叫中括号，它用来存储矩阵和向量（vector在C+,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">简记括号</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">简记括号</h1>
+        <div class="stuff">
+            <span>四月 01, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>在matlab中，常常会遇到<code>(),[]，和&#123;&#125;,</code>这个3种符号怎么区分，怎么用，这里我来总结一下，以供参考。</p>
+<ul>
+<li>[]</li>
+</ul>
+<p>首先。[]叫中括号，它用来存储<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%9F%A9%E9%98%B5&spm=1001.2101.3001.7020">矩阵</a>和向量（vector在C++中也叫容器）<br>举个例子，a&#x3D;[1,2,3],是一个向量，这个向量有3个元素，也可以用a&#x3D;[1 2 3]<br>eg:<br><img src="https://img-blog.csdn.net/20161020153726395" alt="这里写图片描述"><br>对于a&#x3D;[1 2 3;2 3 4 ;3 4 5],就是一个3*3矩阵<br><img src="https://img-blog.csdn.net/20161020153856902" alt="这里写图片描述"></p>
+<ul>
+<li>{ }</li>
+</ul>
+<p>大括号，用于cell型的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E7%BB%84&spm=1001.2101.3001.7020">数组</a>（就是前面讲的单元数组）的分配或引用。<br>比如 a{3,3}&#x3D;‘china’就是建立了一个3<em>3的单元数组，a(3,3)就是‘china’<br>比如c&#x3D;{‘china’,’中国’，[1 2 3 4]}运行结果如下<br><img src="https://img-blog.csdn.net/20161020154818297" alt="这里写图片描述"><br>比如：A(2,1) &#x3D; {[1 2 3; 4 5 6]}，就是一个2行一列的单元数组，第二行第一列的元素就是[1 2 3;4 5 6]的2</em>1矩阵</p>
+<ul>
+<li>( )</li>
+</ul>
+<p>小括号，用于引用数组的元素。<br>如 X(3)就是X的第三个元素。 X([1 2 3])就是X的头三个元素。<br>这里用[]建立一个非cell数组。a&#x3D;[1 2 2],则a(1,2)就是访问的a数组的第一行第2列元素，为2.</p>
+<p>最后看一下单元数组和普通数组的关系。<br>比如我建立了一个单元数组:<br>a&#x3D;cell(2,3)<br>a(1,2)&#x3D;’china’;%这种写法是错的<br>a{1,2}&#x3D;’china’%这种写法才对<br>因为大括号才代表单元数组赋值，小括号只能是普通数组中的元素<br>如下<br>a{1,3}&#x3D;[1 2 3;2 3 4];<br>b&#x3D;a{1,3}(1,3)%这样才能取出上面2*3矩阵中的元素<br>运行如下<br><img src="https://img-blog.csdn.net/20161020160725402" alt="这里写图片描述"><br><img src="https://img-blog.csdn.net/20161020160756688" alt="这里写图片描述"><br>大家多尝试一下，就会明白这些括号的意思。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

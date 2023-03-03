@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>05_封装案例II - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="面向对象封装案例 II目标
+士兵突击案例
+身份运算符
+
+封装
+
+封装 是面向对象编程的一大特点
+面向对象编程的 第一步 —— 将 属性 和 方法 封装 到一个抽象的 类 中
+外界 使用 类 创建 对,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="05_封装案例II - fubaisen"/>
+    <meta name="twitter:description" content="面向对象封装案例 II目标
+士兵突击案例
+身份运算符
+
+封装
+
+封装 是面向对象编程的一大特点
+面向对象编程的 第一步 —— 将 属性 和 方法 封装 到一个抽象的 类 中
+外界 使用 类 创建 对,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="05_封装案例II - fubaisen"/>
+    <meta property="og:description" content="面向对象封装案例 II目标
+士兵突击案例
+身份运算符
+
+封装
+
+封装 是面向对象编程的一大特点
+面向对象编程的 第一步 —— 将 属性 和 方法 封装 到一个抽象的 类 中
+外界 使用 类 创建 对,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">05_封装案例II</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">05_封装案例II</h1>
+        <div class="stuff">
+            <span>三月 21, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python%E5%AD%A6%E4%B9%A0/" rel="tag">python学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="面向对象封装案例-II"><a href="#面向对象封装案例-II" class="headerlink" title="面向对象封装案例 II"></a>面向对象封装案例 II</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>士兵突击案例</li>
+<li>身份运算符</li>
+</ul>
+<p><strong>封装</strong></p>
+<ol>
+<li><strong>封装</strong> 是面向对象编程的一大特点</li>
+<li>面向对象编程的 <strong>第一步</strong> —— 将 <strong>属性</strong> 和 <strong>方法</strong> <strong>封装</strong> 到一个抽象的 <strong>类</strong> 中</li>
+<li><strong>外界</strong> 使用 <strong>类</strong> 创建 <strong>对象</strong>，然后 <strong>让对象调用方法</strong></li>
+<li><strong>对象方法的细节</strong> 都被 <strong>封装</strong> 在 <strong>类的内部</strong></li>
+</ol>
+<blockquote>
+<p>一个对象的 <strong>属性</strong> 可以是 <strong>另外一个类创建的对象</strong></p>
+</blockquote>
+<h2 id="01-士兵突击"><a href="#01-士兵突击" class="headerlink" title="01. 士兵突击"></a>01. 士兵突击</h2><p><strong>需求</strong></p>
+<ol>
+<li><strong>士兵</strong> <strong>许三多</strong> 有一把 <strong>AK47</strong></li>
+<li><strong>士兵</strong> 可以 <strong>开火</strong></li>
+<li><strong>枪</strong> 能够 <strong>发射</strong> 子弹</li>
+<li><strong>枪</strong> 装填 <strong>装填子弹</strong> —— <strong>增加子弹数量</strong></li>
+</ol>
+<p><img src="https://s2.loli.net/2022/03/20/6dQRAE2buIS4xWh.png" alt="009_士兵突击"></p>
+<h3 id="1-1-开发枪类"><a href="#1-1-开发枪类" class="headerlink" title="1.1 开发枪类"></a>1.1 开发枪类</h3><p><strong><code>shoot</code> 方法需求</strong></p>
+<ul>
+<li>1&gt; 判断是否有子弹，没有子弹无法射击</li>
+<li>2&gt; 使用 <code>print</code> 提示射击，并且输出子弹数量</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Gun</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, model</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 枪的型号</span></span><br><span class="line">        self.model = model</span><br><span class="line">        <span class="comment"># 子弹数量</span></span><br><span class="line">        self.bullet_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add_bullet</span>(<span class="params">self, count</span>):</span><br><span class="line"></span><br><span class="line">        self.bullet_count += count</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">shoot</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 判断是否还有子弹</span></span><br><span class="line">        <span class="keyword">if</span> self.bullet_count &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;没有子弹了...&quot;</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 发射一颗子弹</span></span><br><span class="line">        self.bullet_count -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;%s 发射子弹[%d]...&quot;</span> % (self.model, self.bullet_count))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建枪对象</span></span><br><span class="line">ak47 = Gun(<span class="string">&quot;ak47&quot;</span>)</span><br><span class="line">ak47.add_bullet(<span class="number">50</span>)</span><br><span class="line">ak47.shoot()</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-开发士兵类"><a href="#1-2-开发士兵类" class="headerlink" title="1.2 开发士兵类"></a>1.2 开发士兵类</h3><blockquote>
+<p>假设：每一个新兵 都 <strong>没有枪</strong></p>
+</blockquote>
+<p><strong>定义没有初始值的属性</strong></p>
+<p>在定义属性时，如果 <strong>不知道设置什么初始值</strong>，可以设置为 <code>None</code></p>
+<ul>
+<li><code>None</code> <strong>关键字</strong> 表示 <strong>什么都没有</strong></li>
+<li>表示一个 <strong>空对象</strong>，<strong>没有方法和属性，是一个特殊的常量</strong></li>
+<li>可以将 <code>None</code> 赋值给任何一个变量</li>
+</ul>
+<p><strong><code>fire</code> 方法需求</strong></p>
+<ul>
+<li>1&gt; 判断是否有枪，没有枪没法冲锋</li>
+<li>2&gt; 喊一声口号</li>
+<li>3&gt; 装填子弹</li>
+<li>4&gt; 射击</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Soldier</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 姓名</span></span><br><span class="line">        self.name = name</span><br><span class="line">        <span class="comment"># 枪，士兵初始没有枪 None 关键字表示什么都没有</span></span><br><span class="line">        self.gun = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fire</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 1. 判断士兵是否有枪</span></span><br><span class="line">        <span class="keyword">if</span> self.gun <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;[%s] 还没有枪...&quot;</span> % self.name)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 2. 高喊口号</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;冲啊...[%s]&quot;</span> % self.name)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 3. 让枪装填子弹</span></span><br><span class="line">        self.gun.add_bullet(<span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 4. 让枪发射子弹</span></span><br><span class="line">        self.gun.shoot()</span><br></pre></td></tr></table></figure>
+
+<p><strong>小结</strong></p>
+<ol>
+<li>创建了一个 <strong>士兵类</strong>，使用到 <code>__init__</code> 内置方法</li>
+<li>在定义属性时，如果 <strong>不知道设置什么初始值</strong>，可以设置为 <code>None</code></li>
+<li>在 <strong>封装的</strong> 方法内部，还可以让 <strong>自己的</strong> <strong>使用其他类创建的对象属性</strong> 调用已经 <strong>封装好的方法</strong></li>
+</ol>
+<h2 id="02-身份运算符"><a href="#02-身份运算符" class="headerlink" title="02. 身份运算符"></a>02. 身份运算符</h2><p>身份运算符用于 <strong>比较</strong> 两个对象的 <strong>内存地址</strong> 是否一致 —— <strong>是否是对同一个对象的引用</strong></p>
+<ul>
+<li>在 <code>Python</code> 中针对 <code>None</code> 比较时，建议使用 <code>is</code> 判断</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">is</td>
+<td align="left">is 是判断两个标识符是不是引用同一个对象</td>
+<td align="left">x is y，类似 id(x) &#x3D;&#x3D; id(y)</td>
+</tr>
+<tr>
+<td align="left">is not</td>
+<td align="left">is not 是判断两个标识符是不是引用不同对象</td>
+<td align="left">x is not y，类似 id(a) !&#x3D; id(b)</td>
+</tr>
+</tbody></table>
+<h3 id="is-与-x3D-x3D-区别："><a href="#is-与-x3D-x3D-区别：" class="headerlink" title="is 与 &#x3D;&#x3D; 区别："></a>is 与 &#x3D;&#x3D; 区别：</h3><p><code>is</code> 用于判断 <strong>两个变量 引用对象是否为同一个</strong><br><code>==</code> 用于判断 <strong>引用变量的值</strong> 是否相等</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b <span class="keyword">is</span> a </span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b == a</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

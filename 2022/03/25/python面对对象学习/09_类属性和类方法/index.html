@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>09_类属性和类方法 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="类属性和类方法目标
+类的结构
+类属性和实例属性
+类方法和静态方法
+
+01. 类的结构1.1 术语 —— 实例
+使用面相对象开发，第 1 步 是设计 类
+使用类名()创建对象，创建对象的动作有两步：
+,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="09_类属性和类方法 - fubaisen"/>
+    <meta name="twitter:description" content="类属性和类方法目标
+类的结构
+类属性和实例属性
+类方法和静态方法
+
+01. 类的结构1.1 术语 —— 实例
+使用面相对象开发，第 1 步 是设计 类
+使用类名()创建对象，创建对象的动作有两步：
+,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="09_类属性和类方法 - fubaisen"/>
+    <meta property="og:description" content="类属性和类方法目标
+类的结构
+类属性和实例属性
+类方法和静态方法
+
+01. 类的结构1.1 术语 —— 实例
+使用面相对象开发，第 1 步 是设计 类
+使用类名()创建对象，创建对象的动作有两步：
+,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">09_类属性和类方法</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">09_类属性和类方法</h1>
+        <div class="stuff">
+            <span>三月 25, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python%E5%AD%A6%E4%B9%A0/" rel="tag">python学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="类属性和类方法"><a href="#类属性和类方法" class="headerlink" title="类属性和类方法"></a>类属性和类方法</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>类的结构</li>
+<li>类属性和实例属性</li>
+<li>类方法和静态方法</li>
+</ul>
+<h2 id="01-类的结构"><a href="#01-类的结构" class="headerlink" title="01. 类的结构"></a>01. 类的结构</h2><h3 id="1-1-术语-——-实例"><a href="#1-1-术语-——-实例" class="headerlink" title="1.1 术语 —— 实例"></a>1.1 术语 —— 实例</h3><ol>
+<li>使用面相对象开发，<strong>第 1 步</strong> 是设计 <strong>类</strong></li>
+<li>使用类名()创建对象，创建对象的动作有两步：<ul>
+<li>\1) 在内存中为对象 <strong>分配空间</strong></li>
+<li>\2) 调用初始化方法 <code>__init__</code> 为 <strong>对象初始化</strong></li>
+</ul>
+</li>
+<li>对象创建后，<strong>内存</strong> 中就有了一个对象的 <strong>实实在在</strong> 的存在 —— <strong>实例</strong></li>
+</ol>
+<p><img src="https://s2.loli.net/2022/03/20/olTW9A28ad1LJPR.png" alt="017_类的结构示意图I"></p>
+<p>因此，通常也会把：</p>
+<ol>
+<li>创建出来的 <strong>对象</strong> 叫做 <strong>类</strong> 的 <strong>实例</strong></li>
+<li>创建对象的 <strong>动作</strong> 叫做 <strong>实例化</strong></li>
+<li><strong>对象的属性</strong> 叫做 <strong>实例属性</strong></li>
+<li><strong>对象调用的方法</strong> 叫做 <strong>实例方法</strong></li>
+</ol>
+<p>在程序执行时：</p>
+<ol>
+<li><p>对象各自拥有自己的 <strong>实例属性</strong></p>
+</li>
+<li><p>调用对象方法，可以通过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>访问自己的属性</li>
+<li>调用自己的方法</li>
+</ul>
+</li>
+</ol>
+<p><strong>结论</strong></p>
+<ul>
+<li><p><strong>每一个对象</strong> 都有自己 <strong>独立的内存空间</strong>，<strong>保存各自不同的属性</strong></p>
+<ul>
+<li><strong><code>对象的实例方法</code></strong>	 保存在 <strong><code>类所在的内存空间</code></strong></li>
+</ul>
+</li>
+<li><p><strong>多个对象的方法</strong>，<strong>在内存中只有一份</strong>，在调用方法时，<strong>需要把对象的引用</strong> 传递到方法内部</p>
+</li>
+</ul>
+<h3 id="1-2-类是一个特殊的对象"><a href="#1-2-类是一个特殊的对象" class="headerlink" title="1.2 类是一个特殊的对象"></a>1.2 类是一个特殊的对象</h3><blockquote>
+<p><code>Python</code> 中 <strong>一切皆对象</strong>：</p>
+<ul>
+<li><code>class AAA:</code> 定义的类属于 <strong>类对象</strong></li>
+<li><code>obj1 = AAA()</code> 属于 <strong>实例对象</strong></li>
+</ul>
+</blockquote>
+<ul>
+<li>在程序运行时，<strong>类</strong> 同样 <strong>会被加载到内存</strong></li>
+<li>在 <code>Python</code> 中，<strong>类</strong> 是一个特殊的对象 —— <strong>类对象</strong></li>
+<li>在程序运行时，<strong>类对象</strong> 在内存中 <strong>只有一份</strong>，使用 <strong>一个类</strong> 可以创建出 <strong>很多个对象实例</strong></li>
+<li>除了封装实例的属性和方法外，类对象还可以拥有自己的属性和方法<ol>
+<li><strong>类属性</strong></li>
+<li><strong>类方法</strong></li>
+</ol>
+</li>
+<li>通过 <strong>类名.</strong> 的方式可以 <strong>访问类的属性</strong> 或者 <strong>调用类的方法</strong></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/DscwYZ3gAihWQv1.png" alt="017_类的结构示意图II"></p>
+<p><img src="https://s2.loli.net/2022/03/25/Doy49KfrBbhadG3.png" alt="image-20220325174231471"></p>
+<h2 id="02-类属性和实例属性"><a href="#02-类属性和实例属性" class="headerlink" title="02. 类属性和实例属性"></a>02. 类属性和实例属性</h2><h3 id="2-1-概念和使用"><a href="#2-1-概念和使用" class="headerlink" title="2.1 概念和使用"></a>2.1 概念和使用</h3><ul>
+<li><p><strong>类属性</strong> 就是给 <strong>类对象</strong> 中定义的 <strong>属性</strong></p>
+</li>
+<li><p>通常用来记录 <strong>与这个类相关</strong> 的特征</p>
+</li>
+<li><p><strong>类属性</strong> <strong>不会用于</strong>记录 <strong>具体对象的特征</strong></p>
+<p><img src="https://s2.loli.net/2022/03/25/tRL14xP95sKBYD3.png" alt="image-20220325175741437"></p>
+</li>
+</ul>
+<p><strong>示例需求</strong></p>
+<ul>
+<li>定义一个 <strong>工具类</strong></li>
+<li>每件工具都有自己的 <code>name</code></li>
+<li><strong>需求</strong> —— 知道使用这个类，创建了多少个工具对象？</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/eLpRGjtZnloaYE2.png" alt="018_类属性案例I"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Tool</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用赋值语句，定义类属性，记录创建工具对象的总数</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 针对类属性做一个计数+1</span></span><br><span class="line">        Tool.count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建工具对象</span></span><br><span class="line">tool1 = Tool(<span class="string">&quot;斧头&quot;</span>)</span><br><span class="line">tool2 = Tool(<span class="string">&quot;榔头&quot;</span>)</span><br><span class="line">tool3 = Tool(<span class="string">&quot;铁锹&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 知道使用 Tool 类到底创建了多少个对象?</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;现在创建了 %d 个工具&quot;</span> % Tool.count)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-属性的获取机制（科普）"><a href="#2-2-属性的获取机制（科普）" class="headerlink" title="2.2 属性的获取机制（科普）"></a>2.2 属性的获取机制（科普）</h3><ul>
+<li>在 <code>Python</code> 中 <strong>属性的获取</strong> 存在一个 <strong>向上查找机制</strong></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/We6joUHIJ5PmST8.png" alt="019_通过对象访问类属性"></p>
+<ul>
+<li>因此，要访问类属性有两种方式：<ol>
+<li><p><strong>类名.类属性</strong></p>
+</li>
+<li><p><strong>对象.类属性</strong> （不推荐）</p>
+<p><img src="https://s2.loli.net/2022/03/26/gUBRwyt1suLP9h4.png" alt="image-20220326004457404"></p>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul>
+<li><p>如果使用 <code>对象.类属性 = 值</code> 赋值语句，只会 <strong>给对象添加一个属性</strong>，而不会影响到 <strong>类属性的值</strong></p>
+<p><img src="https://s2.loli.net/2022/03/26/7e3IAWQPUfH8ilV.png" alt="image-20220326004912886"></p>
+</li>
+</ul>
+<h2 id="03-类方法和静态方法"><a href="#03-类方法和静态方法" class="headerlink" title="03. 类方法和静态方法"></a>03. 类方法和静态方法</h2><h3 id="3-1-类方法"><a href="#3-1-类方法" class="headerlink" title="3.1 类方法"></a>3.1 类方法</h3><ul>
+<li>类属性就是针对类对象定义的属性<ul>
+<li>使用 <strong>赋值语句</strong> 在 <code>class</code> 关键字下方可以定义 <strong>类属性</strong></li>
+<li><strong>类属性</strong> 用于记录 <strong>与这个类相关</strong> 的特征</li>
+</ul>
+</li>
+<li>类方法就是针对类对象定义的方法<ul>
+<li>在 <strong>类方法</strong> 内部可以直接访问 <strong>类属性</strong> 或者调用其他的 <strong>类方法</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>语法如下</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">类方法名</span>(<span class="params">cls</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>类方法需要用 <strong>修饰器</strong> <code>@classmethod</code> 来标识，<strong>告诉解释器这是一个类方法</strong></li>
+<li>类方法的第一个参数应该是<strong>cls</strong><ul>
+<li>由 <strong>哪一个类</strong> 调用的方法，方法内的 <code>cls</code> 就是 <strong>哪一个类的引用</strong></li>
+<li>这个参数和 <strong>实例方法</strong> 的第一个参数是 <code>self</code> 类似</li>
+<li><strong>提示</strong> 使用其他名称也可以，不过习惯使用 <code>cls</code></li>
+</ul>
+</li>
+<li>通过 <strong>类名.</strong> 调用 <strong>类方法</strong>，<strong>调用方法时</strong>，不需要传递 <code>cls</code> 参数</li>
+<li>在方法内部<ul>
+<li>可以通过 <code>cls.</code> <strong>访问类的属性</strong></li>
+<li>也可以通过 <code>cls.</code> <strong>调用其他的类方法</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>示例需求</strong></p>
+<ul>
+<li>定义一个 <strong>工具类</strong></li>
+<li>每件工具都有自己的 <code>name</code></li>
+<li><strong>需求</strong> —— 在 <strong>类</strong> 封装一个 <code>show_tool_count</code> 的类方法，输出使用当前这个类，创建的对象个数</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/x6IeoibJTfacK8d.png" alt="020_类方法案例"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show_tool_count</span>(<span class="params">cls</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示工具对象的总数&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;工具对象的总数 %d&quot;</span> % cls.count)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在类方法内部，可以直接使用 <code>cls</code> 访问 <strong>类属性</strong> 或者 <strong>调用类方法</strong></p>
+</blockquote>
+<h3 id="3-2-静态方法"><a href="#3-2-静态方法" class="headerlink" title="3.2 静态方法"></a>3.2 静态方法</h3><ul>
+<li>在开发时，如果需要在 <strong>类</strong> 中封装一个方法，这个方法：<ul>
+<li>既 <strong>不需要</strong> 访问 <strong>实例属性</strong> 或者调用 <strong>实例方法</strong></li>
+<li>也 <strong>不需要</strong> 访问 <strong>类属性</strong> 或者调用 <strong>类方法</strong></li>
+</ul>
+</li>
+<li>这个时候，可以把这个方法封装成一个 <strong>静态方法</strong></li>
+</ul>
+<p><strong>语法如下</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">静态方法名</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>静态方法</strong> 需要用 <strong>修饰器</strong> <code>@staticmethod</code> 来标识，<strong>告诉解释器这是一个静态方法</strong></li>
+<li>通过 <strong>类名.</strong> 调用 <strong>静态方法</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 狗对象计数</span></span><br><span class="line">    dog_count = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 不需要访问实例属性也不需要访问类属性的方法</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;狗在跑...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 查看游戏的帮助信息</span></span><br><span class="line">Game.show_help()             <span class="comment"># 2）.（不需要依赖“对象”）不访问实例属性/类属性，则可以把方法定为一个 【静态方法】</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 查看历史最高分</span></span><br><span class="line">Game.show_top_score()        <span class="comment"># 1）.不需要依赖“对象” 就可以调用方法  【类方法】</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 创建游戏对象</span></span><br><span class="line">xiao = Game(<span class="string">&quot;小明&quot;</span>)</span><br><span class="line"></span><br><span class="line">xiao.start_game()            <span class="comment"># 3）.“依赖对象”的  【实例方法】</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-方法综合案例"><a href="#3-3-方法综合案例" class="headerlink" title="3.3 方法综合案例"></a>3.3 方法综合案例</h3><p><strong>需求</strong></p>
+<ol>
+<li>设计一个 <code>Game</code> 类</li>
+<li>属性：<ul>
+<li>定义一个 <strong>类属性</strong> <code>top_score</code> 记录游戏的 <strong>历史最高分</strong></li>
+<li>定义一个 <strong>实例属性</strong> <code>player_name</code> 记录 <strong>当前游戏的玩家姓名</strong></li>
+</ul>
+</li>
+<li>方法：<ul>
+<li><strong>静态方法</strong> <code>show_help</code> 显示游戏帮助信息</li>
+<li><strong>类方法</strong> <code>show_top_score</code> 显示历史最高分</li>
+<li><strong>实例方法</strong> <code>start_game</code> 开始当前玩家的游戏</li>
+</ul>
+</li>
+<li>主程序步骤<ul>
+<li>\1) 查看帮助信息</li>
+<li>\2) 查看历史最高分</li>
+<li>\3) 创建游戏对象，开始游戏</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/03/20/t1onSfr6R5aMx4j.png" alt="021_方法综合案例"></p>
+<h4 id="案例小结"><a href="#案例小结" class="headerlink" title="案例小结"></a>案例小结</h4><ol>
+<li><p>实例方法—— 方法内部需要访问实例属性</p>
+<ul>
+<li><strong>实例方法</strong> 内部可以使用 <strong>类名.</strong> 访问类属性</li>
+</ul>
+</li>
+<li><p><strong>类方法</strong> —— 方法内部 <strong>只</strong> 需要访问 <strong>类属性</strong></p>
+</li>
+<li><p><strong>静态方法</strong> —— 方法内部，不需要访问 <strong>实例属性</strong> 和 <strong>类属性</strong></p>
+</li>
+</ol>
+<p><strong>提问</strong></p>
+<p>如果方法内部 即需要访问 <strong>实例属性</strong>，又需要访问 <strong>类属性</strong>，应该定义成什么方法？</p>
+<p><strong>答案</strong></p>
+<ul>
+<li>应该定义 <strong>实例方法</strong></li>
+<li>因为，<strong>类只有一个</strong>，在 <strong>实例方法</strong> 内部可以使用 <strong>类名.</strong> 访问类属性</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Game</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 游戏最高分，类属性</span></span><br><span class="line">    top_score = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show_help</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;帮助信息：让僵尸走进房间&quot;</span>)</span><br><span class="line">        </span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show_top_score</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;游戏最高分是 %d&quot;</span> % cls.top_score)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, player_name</span>):</span><br><span class="line">        self.player_name = player_name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">start_game</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[%s] 开始游戏...&quot;</span> % self.player_name)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 使用类名.修改历史最高分</span></span><br><span class="line">        Game.top_score = <span class="number">999</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 查看游戏帮助</span></span><br><span class="line">Game.show_help()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 查看游戏最高分</span></span><br><span class="line">Game.show_top_score()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 创建游戏对象，开始游戏</span></span><br><span class="line">game = Game(<span class="string">&quot;小明&quot;</span>)</span><br><span class="line"></span><br><span class="line">game.start_game()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 游戏结束，查看游戏最高分</span></span><br><span class="line">Game.show_top_score()</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

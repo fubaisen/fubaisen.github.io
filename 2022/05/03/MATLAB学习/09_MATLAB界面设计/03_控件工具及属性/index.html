@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>03_控件工具及属性 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="控件工具及属性1、控制对象类型及描述控制对象是事件相应的图形界面对象。当某一事件发生时，应用程序会做出响应并执行某些预定的功能子程序（Callback）。
+MATLAB中的控件大致可分为两种
+
+动作,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="03_控件工具及属性 - fubaisen"/>
+    <meta name="twitter:description" content="控件工具及属性1、控制对象类型及描述控制对象是事件相应的图形界面对象。当某一事件发生时，应用程序会做出响应并执行某些预定的功能子程序（Callback）。
+MATLAB中的控件大致可分为两种
+
+动作,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="03_控件工具及属性 - fubaisen"/>
+    <meta property="og:description" content="控件工具及属性1、控制对象类型及描述控制对象是事件相应的图形界面对象。当某一事件发生时，应用程序会做出响应并执行某些预定的功能子程序（Callback）。
+MATLAB中的控件大致可分为两种
+
+动作,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">03_控件工具及属性</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">03_控件工具及属性</h1>
+        <div class="stuff">
+            <span>五月 03, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="控件工具及属性"><a href="#控件工具及属性" class="headerlink" title="控件工具及属性"></a>控件工具及属性</h1><h2 id="1、控制对象类型及描述"><a href="#1、控制对象类型及描述" class="headerlink" title="1、控制对象类型及描述"></a>1、控制对象类型及描述</h2><p>控制对象是事件相应的图形界面对象。当某一事件发生时，应用程序会做出响应并执行某些预定的功能子程序（Callback）。</p>
+<p>MATLAB中的控件大致可分为两种</p>
+<ul>
+<li>动作控件，鼠标单击这些控件时会产生响应的响应</li>
+<li>静态控件，不产生响应的控件，加文本框等</li>
+</ul>
+<p>每种空间都有可以设置的参数，用于表现控件的外形、功能、效果属性。属性由属性名和属性值组成，他们必须是成对出现的</p>
+<h2 id="2、控件对象控制属性"><a href="#2、控件对象控制属性" class="headerlink" title="2、控件对象控制属性"></a>2、控件对象控制属性</h2><p>用户可以在创建控件对象时，需设定其属性值，未指定时将使用系统默认值，界面设计主要有两大类对象属性：<code>第一类是控件对象都具有的公共属性</code>  <code>第二类是控件对象作为图形对象所具有的属性</code></p>
+<h4 id="✍操作控件对象的公共属性"><a href="#✍操作控件对象的公共属性" class="headerlink" title="✍操作控件对象的公共属性"></a>✍操作控件对象的公共属性</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Children</td>
+<td>取值为空矩阵，因控件对象没有自己的子对象</td>
+</tr>
+<tr>
+<td>Parent</td>
+<td>取值为某个图形窗口对象的句柄，该句柄表明了空间对象所在的图形窗口</td>
+</tr>
+<tr>
+<td>Tag</td>
+<td>取值为字符串，定义了控件的标识值，在任何程序中都可以通过这个标识值控制该控件对象</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>取值为uicontrol,，表明图形对象的类型</td>
+</tr>
+<tr>
+<td>TooltipString</td>
+<td>提示信息显示，当鼠标指针位于此控件对象相关的重要数据和信息</td>
+</tr>
+<tr>
+<td>UserData</td>
+<td>取值为空矩阵，用于保存与该控件相关的重要数据和信息</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>控件对象的尺寸和位置</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>取值为 on 或 off ，表示是否可见</td>
+</tr>
+</tbody></table>
+<h4 id="✍控制对象-的基本控制属性"><a href="#✍控制对象-的基本控制属性" class="headerlink" title="✍控制对象  的基本控制属性"></a>✍控制对象  的基本控制属性</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BackgroundColor</td>
+<td>取值为颜色的预定义字符或RGB数值，默认值为浅灰色</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>取值为 on (默认值)、inactive 、off</td>
+</tr>
+<tr>
+<td>Extend</td>
+<td>取值为四元素矢量[0,0,width,height],记录控件对象标题字符的位置和尺寸</td>
+</tr>
+<tr>
+<td>ForegroundColor</td>
+<td>取值为颜色的预定义字符或RGB数值。该属性定义控件对象标题字符的颜色，默认值为黑色</td>
+</tr>
+<tr>
+<td>Max 和 Min</td>
+<td>取值都为数值，默认值分别为1和10</td>
+</tr>
+<tr>
+<td>String</td>
+<td>取值为字符串矩阵或块数组，定义控件对象标题或选择内容</td>
+</tr>
+<tr>
+<td>Style</td>
+<td>取值可以是 pushbuttin(默认值)、radiobutton、checkbox、edit、text、slider、frame、popupmenu或listbox</td>
+</tr>
+<tr>
+<td>Units</td>
+<td>取值可以是pixels(默认值)、normalized(相对单位)、inches(英寸)、centimeters(厘米)或pound(磅)</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>取值可以使矢量，也可以是数值，其含义及解释是依赖于控件对象的类型</td>
+</tr>
+</tbody></table>
+<h4 id="✍控件对象-的修饰控制属性"><a href="#✍控件对象-的修饰控制属性" class="headerlink" title="✍控件对象  的修饰控制属性"></a>✍控件对象  的修饰控制属性</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FootAngle</td>
+<td>取值为normal(正体，默认值)、italic(斜体)、obliqe</td>
+</tr>
+<tr>
+<td>FontName</td>
+<td>取值为控件标题等字体的字库名</td>
+</tr>
+<tr>
+<td>FonSize</td>
+<td>取值为数值</td>
+</tr>
+<tr>
+<td>FontUnits</td>
+<td>取值为points(默认值)、normalized、inches、centimeters或pixels</td>
+</tr>
+<tr>
+<td>FontWeight</td>
+<td>取值为normal(默认值)、light、demi或bold，定义字符串的粗细</td>
+</tr>
+<tr>
+<td>HorizontalAligment</td>
+<td>取值为left、center(默认值)或right，定义控件对象标题等对齐方式</td>
+</tr>
+</tbody></table>
+<h4 id="✍控件对象的辅助属性"><a href="#✍控件对象的辅助属性" class="headerlink" title="✍控件对象的辅助属性"></a>✍控件对象的辅助属性</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ListTop</td>
+<td>取值为数量值，在列表框中显示最顶层字符串的索引</td>
+</tr>
+<tr>
+<td>SliderStep</td>
+<td>取值为两元素矢量[minstep,maxstep]，用于slider控制对象</td>
+</tr>
+<tr>
+<td>Selected</td>
+<td>取值为on或off (默认值)</td>
+</tr>
+<tr>
+<td>SletionHoghlight</td>
+<td>取值为取值为on或off (默认值)</td>
+</tr>
+</tbody></table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>04_多项式处理 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="四、多项式处理MATLAB可以把多项式表达成一个行向量，该向量中的元素是按多项式降幂排列的
+例如 可用行向量表示
+1、多项式的四则远算（1）多项式的加减
+次数相同：直接对系数向量进行加减运算
+次数不,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="04_多项式处理 - fubaisen"/>
+    <meta name="twitter:description" content="四、多项式处理MATLAB可以把多项式表达成一个行向量，该向量中的元素是按多项式降幂排列的
+例如 可用行向量表示
+1、多项式的四则远算（1）多项式的加减
+次数相同：直接对系数向量进行加减运算
+次数不,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="04_多项式处理 - fubaisen"/>
+    <meta property="og:description" content="四、多项式处理MATLAB可以把多项式表达成一个行向量，该向量中的元素是按多项式降幂排列的
+例如 可用行向量表示
+1、多项式的四则远算（1）多项式的加减
+次数相同：直接对系数向量进行加减运算
+次数不,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">04_多项式处理</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">04_多项式处理</h1>
+        <div class="stuff">
+            <span>三月 31, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="四、多项式处理"><a href="#四、多项式处理" class="headerlink" title="四、多项式处理"></a>四、多项式处理</h1><p>MATLAB可以把多项式表达成一个行向量，该向量中的元素是按多项式降幂排列的</p>
+<p>例如 <img src="https://s2.loli.net/2022/03/29/bfc4aMJIA6LSkjU.png" alt="5ef8818cb7d15f0fdd9f6941447311c.png" style="zoom:50%;" />可用行向量<img src="https://s2.loli.net/2022/03/29/hVMZxftlyre8IAG.png" alt="27951f93bbfa50aec0414baeae5d0a7.png" style="zoom:50%;" />表示</p>
+<h2 id="1、多项式的四则远算"><a href="#1、多项式的四则远算" class="headerlink" title="1、多项式的四则远算"></a>1、多项式的四则远算</h2><h4 id="（1）多项式的加减"><a href="#（1）多项式的加减" class="headerlink" title="（1）多项式的加减"></a>（1）多项式的加减</h4><ul>
+<li>次数相同：直接对系数向量进行加减运算</li>
+<li>次数不同：把低次幂多项式中的系数不足的高次项用0不足<ul>
+<li><img src="https://s2.loli.net/2022/03/29/gZ1T36mpncERQzJ.jpg" alt="e0a525dcacad6cf9f86354e90a900c4"></li>
+<li>加减运算直接加入加减运算符即可</li>
+</ul>
+</li>
+</ul>
+<h3 id="（2）多项式相除"><a href="#（2）多项式相除" class="headerlink" title="（2）多项式相除"></a>（2）多项式相除</h3><p>多项式相除是两个代表多项式的行向量的卷积，两个以上多项式相乘，<code>conv</code>指令使用嵌套，如 <code>conv(conv(a,b),c)</code></p>
+<p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k=conv(p,q)    </span><br><span class="line">[q,r]=deconv(a,b)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、多项式求根"><a href="#2、多项式求根" class="headerlink" title="2、多项式求根"></a>2、多项式求根</h2><h4 id="（1）求多项式的根-多项式的特征值"><a href="#（1）求多项式的根-多项式的特征值" class="headerlink" title="（1）求多项式的根(多项式的特征值)"></a>（1）求多项式的根(多项式的特征值)</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=roots(p)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用roots命令可以求出多项式的根，即命令可以用于求高次方程的解，根用列向量表示</p>
+</li>
+</ul>
+<h4 id="（2）求特征多项式的根"><a href="#（2）求特征多项式的根" class="headerlink" title="（2）求特征多项式的根"></a>（2）求特征多项式的根</h4><ul>
+<li><p>若已知多项式的根，即可以使用poly命令求出相应多项式系数</p>
+</li>
+<li><p>语法格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p=ploy(r)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>特征多项式一定是n+1维的而且特征对象时第一个元素一定是1</p>
+</blockquote>
+</li>
+</ul>
+<p>例：求方程 <img src="https://s2.loli.net/2022/04/07/Cfy4BZparvnciYU.jpg" style="zoom:33%;" />的根，并根据根构造多项式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p=[1 -12 0 25 116];</span><br><span class="line">r=roots(p);</span><br><span class="line">p=poly(r);</span><br></pre></td></tr></table></figure>
+
+<h4 id="（3）多项式求导"><a href="#（3）多项式求导" class="headerlink" title="（3）多项式求导"></a>（3）多项式求导</h4><ul>
+<li><p>语法格式</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">k=polyder(p);          <span class="comment">% 返回多项式p的一阶导数系数</span></span><br><span class="line">k=polyder(p,q);        <span class="comment">% 返回多项式p与q成绩的一阶导数系数</span></span><br><span class="line">[k,d]=polyder(p,q);    <span class="comment">% 返回p/q的导数，k是分子,d是分母</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="4、多项式求解"><a href="#4、多项式求解" class="headerlink" title="4、多项式求解"></a>4、多项式求解</h2><h4 id="（1）计算多项式数值解"><a href="#（1）计算多项式数值解" class="headerlink" title="（1）计算多项式数值解"></a>（1）计算多项式数值解</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">polyval(p,x)            <span class="comment">% 返回多项式p在n点的值</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="（2）多项式拟合"><a href="#（2）多项式拟合" class="headerlink" title="（2）多项式拟合"></a>（2）多项式拟合</h4><ul>
+<li><p>​	语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y=polyfit(x,y,n)        <span class="comment">% 拟合唯一确定n阶多项式的系数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中   <strong>n</strong>   表示多项式的最高阶数;</p>
+</li>
+<li><p>x  ,  y  为将要拟合的数据</p>
+</li>
+</ul>
+<p>  它是用数组的方式输入，输入参数 y 为拟合多项式 <img src="https://s2.loli.net/2022/03/30/Fyts7N5mEzXKoqJ.jpg" alt="e39dd900cfcd8a061d7daeedfe91ec0" style="zoom: 33%;" />共n+1个系数</p>
+<ul>
+<li>polyfit 函数只适合于形如 <img src="https://s2.loli.net/2022/03/30/VzCbUQ1plLIAG7F.jpg" style="zoom:33%;" />的完全的医院多项式的数据拟合</li>
+</ul>
+<p>例：<img src="https://s2.loli.net/2022/03/30/8YskEKT612pLoOr.jpg" alt="2b1d7055c15c4bdc7dca64e8caf2968"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p=[<span class="number">3</span> <span class="number">8</span> <span class="number">18</span> <span class="number">16</span> <span class="number">15</span>];</span><br><span class="line">p=polyval(p,<span class="number">2</span>);</span><br><span class="line">x=<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">1</span>;</span><br><span class="line">y=[<span class="number">-0.447</span> <span class="number">1.978</span> <span class="number">4.28</span> <span class="number">6.16</span> <span class="number">7.08</span> <span class="number">7.34</span> <span class="number">7.66</span> <span class="number">9.56</span> <span class="number">9.48</span> <span class="number">9.30</span> <span class="number">11.2</span>];</span><br><span class="line">y1=polyfit(x,y,<span class="number">2</span>);</span><br><span class="line">z=polyval(y1,x);</span><br><span class="line"><span class="built_in">plot</span>(x,y,<span class="string">&#x27;r*&#x27;</span>,x,z,<span class="string">&#x27;b-&#x27;</span>)      <span class="comment">% 绘图</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>plot(x,y,&#39;r*&#39;,x,z,&#39;b-&#39;)</code> 效果</p>
+<p><img src="https://s2.loli.net/2022/03/30/HioQNEbByR6CVp1.png" alt="image-20220330154117654"></p>
+</blockquote>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

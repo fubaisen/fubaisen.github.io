@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>01_数据的输入和输出 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一、数据的输入和输出1、数据输入
+从键盘输入数据，可以使用 input函数，该函数每赋值一次只能赋一个值
+
+——语法格式：
+1A=input(&amp;#x27;请输入数据提示信息&amp;#x27;);  
+
+输,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="01_数据的输入和输出 - fubaisen"/>
+    <meta name="twitter:description" content="一、数据的输入和输出1、数据输入
+从键盘输入数据，可以使用 input函数，该函数每赋值一次只能赋一个值
+
+——语法格式：
+1A=input(&amp;#x27;请输入数据提示信息&amp;#x27;);  
+
+输,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="01_数据的输入和输出 - fubaisen"/>
+    <meta property="og:description" content="一、数据的输入和输出1、数据输入
+从键盘输入数据，可以使用 input函数，该函数每赋值一次只能赋一个值
+
+——语法格式：
+1A=input(&amp;#x27;请输入数据提示信息&amp;#x27;);  
+
+输,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">01_数据的输入和输出</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">01_数据的输入和输出</h1>
+        <div class="stuff">
+            <span>三月 31, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="一、数据的输入和输出"><a href="#一、数据的输入和输出" class="headerlink" title="一、数据的输入和输出"></a>一、数据的输入和输出</h1><h2 id="1、数据输入"><a href="#1、数据输入" class="headerlink" title="1、数据输入"></a>1、数据输入</h2><ul>
+<li><p>从键盘输入数据，可以使用 <strong>input</strong>函数，该函数每赋值一次只能赋一个值</p>
+</li>
+<li><p><strong>——</strong>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A=input(<span class="string">&#x27;请输入数据提示信息&#x27;</span>);  </span><br></pre></td></tr></table></figure>
+
+<p>输入值可以是整型或双精度型数据</p>
+<p>对输入的双精度数值自动保留4位小数（自动四舍五入）</p>
+<p><strong>——</strong>语法格式：(输入字符串，先显示提示信息内容，再将输入得知以字符串型保存在变量A中)</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A=input(<span class="string">&#x27;请输入数据提示信息&#x27;</span>，选项)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number=input(<span class="string">&#x27;请输入一个竖中指Number=?&#x27;</span>)</span><br><span class="line">String=input(<span class="string">&#x27;请输入一个字符串String=？&#x27;</span>,<span class="string">&#x27;s&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2、数据输出"><a href="#2、数据输出" class="headerlink" title="2、数据输出"></a>2、数据输出</h2><h4 id="（1）无格式输出"><a href="#（1）无格式输出" class="headerlink" title="（1）无格式输出"></a>（1）无格式输出</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">disp</span>(x)   <span class="comment">% 输出变量X值，X可以是矩阵或字符串</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>disp需要一个数组参数</p>
+<ul>
+<li>如果这个值是字符型，则在命令口直接输出字符串</li>
+<li>如果这个数组是数值型，则需要用 <code>num2str</code>(将一个数值转换为字符串)或 <code>int2str</code>(将一个整数转为字符串)</li>
+<li>函数进行转换后，显示在命令行窗口中</li>
+</ul>
+</li>
+<li><p>disp一次只能输出一个变量。若输出矩阵时将不显示矩阵的名字，而且其格式更紧密，不留任何没有意义的空行</p>
+</li>
+</ul>
+<h4 id="（2）有格式输出"><a href="#（2）有格式输出" class="headerlink" title="（2）有格式输出"></a>（2）有格式输出</h4><p>整数以整型格式显示，直接输入的数值默认以双精型格式显示，MATLAB默认精确到小数点后4位，如果一个数太大或太小，那么将以科学计数法的形式显示</p>
+<p>例如：</p>
+<p>将<code>a=1/3</code> 表示为 <code>a=0.3333</code>  , 将 <code>b=12345.1123445</code>表示为 <code>b=1.2345e+04</code></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fprintf(fid,format,A)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明：</p>
+<ul>
+<li><p>fid为文件句柄，指定要写入数据的文件</p>
+<ul>
+<li><blockquote>
+<p><strong><code>fileID</code> – 文件标识符<br><code> 1</code> （默认） | <code>2</code> | 标量</strong></p>
+</blockquote>
+<p>文件标识符，指定为下列值之一：</p>
+<ul>
+<li>从fopen获取的文件标识符。</li>
+<li><code>1</code> 表示标准输出（屏幕）。</li>
+<li><code>2</code> 表示标准错误。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>**<code>format</code>**用来指定数据输出是采用的格式，以 <code>%</code>开头</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>常用的输出格式</p>
+<table>
+<thead>
+<tr>
+<th>表示</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d</td>
+<td>整数</td>
+</tr>
+<tr>
+<td>%g</td>
+<td>浮点数，系统自动选取位</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>以小数形式表示实数</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>字符型</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>以科学计数法形式表示实数</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>输出字符串</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>八进制</td>
+</tr>
+<tr>
+<td>%X、%x</td>
+<td>十六进制</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>format中还可以使用字符串</p>
+<table>
+<thead>
+<tr>
+<th>表示</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\ b</td>
+<td>退后一格</td>
+</tr>
+<tr>
+<td>\ r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\ t</td>
+<td>水平制表</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\ n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\ \</td>
+<td>双斜杠</td>
+</tr>
+<tr>
+<td>‘ ‘</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>百分号</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>例如：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f=<span class="built_in">pi</span>;</span><br><span class="line">fprintf(<span class="string">&#x27;The pi = %8.5f\n&#x27;</span>,<span class="built_in">pi</span>)  <span class="comment">% 其中%为数据格式符，f表示十进制浮点，8.5表示数字的长度为8位，小数点后5位</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The <span class="built_in">pi</span>=<span class="number">3.14159</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求一元二次方程<img src="https://s2.loli.net/2022/03/30/k2eiKZArDjoY8QI.jpg" style="zoom:33%;" />的根</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A=input(<span class="string">&#x27;请输入一元二次方程的系数:a,b,c=? &#x27;</span>);</span><br><span class="line">delta=A(<span class="number">2</span>)^<span class="number">2</span><span class="number">-4</span>*A(<span class="number">1</span>)*A(<span class="number">3</span>);</span><br><span class="line">x1=(-A(<span class="number">2</span>)-<span class="built_in">sqrt</span>(delta))/<span class="number">2</span>*A(<span class="number">1</span>);</span><br><span class="line">x2=(-A(<span class="number">2</span>)+<span class="built_in">sqrt</span>(delta))/<span class="number">2</span>*A(<span class="number">1</span>);</span><br><span class="line">fprintf(<span class="string">&#x27;%.2f  ,  %.2f\n&#x27;</span>,x1,x2);</span><br><span class="line"><span class="built_in">disp</span>([<span class="string">&#x27;方程的解想x1=&#x27;</span>,num2str(x1),<span class="string">&#x27;,方程的解x2=&#x27;</span>,num2str(x2)]);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明 </p>
+<ul>
+<li>使用<code>fprintf</code>比较灵活方便，可以输出任何格式。且可输出多个数值项，但需要定义数据的字符串宽度和数据格式</li>
+<li><code>fprintf</code>只能输出复数的实部，在有复数产生的计算中可能出现错误的结果</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="3、fprintf和disp的区别"><a href="#3、fprintf和disp的区别" class="headerlink" title="3、fprintf和disp的区别"></a>3、fprintf和disp的区别</h2><h3 id="（1）输出的目标不一样"><a href="#（1）输出的目标不一样" class="headerlink" title="（1）输出的目标不一样"></a>（1）输出的目标不一样</h3><ul>
+<li><p><code>disp</code>用来直接显示在命令行里，非常轻量</p>
+</li>
+<li><p><code>fprintf</code>是   <strong>f(ile)printf(ormat)</strong>   ，可以用来直接进行文件的写入，如果不指定文件的<code>fid</code>那么直接输出到命令行。</p>
+</li>
+</ul>
+<h3 id="（2）用法不同"><a href="#（2）用法不同" class="headerlink" title="（2）用法不同"></a>（2）用法不同</h3><ul>
+<li><p><code>disp</code>即<code>display</code>，可用来显示字符串、计算结果等</p>
+<p>例子：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x= [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">disp</span>([<span class="string">&#x27;The values of x are: &#x27;</span>, num2str(x)]);</span><br></pre></td></tr></table></figure>
+
+<p>结果显示为：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The values of x are: <span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p><code>fprintf</code>函数可以将数据按指定格式写入到文本文件中，也可以显示字符串、计算结果</p>
+<p>其调用格式为：</p>
+<p><code>count = fprintf(fid, format, val1, val2, ...)</code></p>
+<blockquote>
+<ul>
+<li><p>fid是我们要写入数据文件的文件标识</p>
+</li>
+<li><p>format是控制数据显示的字符串</p>
+</li>
+<li><p>如果  fid 丢失，数据将写入到命令窗口 (标准输出设备)</p>
+</li>
+<li><p>格式（format）字符串指定队列<strong>长度、小数精度、域宽、输出格式的其他方面</strong>。</p>
+<p><code>它包括文字数字字符（%）和字符序列（用于指定输出数据显示的精确格式） 例如 %d</code></p>
+</li>
+</ul>
+</blockquote>
+<p><img src="https://iknow-pic.cdn.bcebos.com/574e9258d109b3de47e56c8dc2bf6c81810a4cf9?x-bce-process=image/resize,m_lfit,w_600,h_800,limit_1/quality,q_85/format,f_jpg" alt="img"></p>
+</li>
+</ul>
+<h3 id="（3）使用对象"><a href="#（3）使用对象" class="headerlink" title="（3）使用对象"></a>（3）使用对象</h3><p>想把字<code>符串pi=和变量pi的值显示在一行上</code>，试用disp(′pi&#x3D;′,pi),回答这是非法的。这时应该<code>用sprintf函数，它可把数据按要求的格式转换为字符串</code>，再把它与需要显示的字符串组装成一个长字符串，使显示格式非常灵活，人机界面更为友好</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">st=sprintf(<span class="string">&#x27;圆周率pi= %8.5f&#x27;</span>,<span class="built_in">pi</span>)  <span class="comment">% f表示十进制浮点，8.5表示数字的长度为8位，小数点后5位</span></span><br><span class="line">st=sprintf(<span class="string">&#x27;随便= %8.5f&#x27;</span>,<span class="number">5.61</span>)</span><br><span class="line"><span class="built_in">disp</span>(st)</span><br><span class="line"></span><br><span class="line"><span class="comment">% 结果为</span></span><br><span class="line"></span><br><span class="line">圆周率<span class="built_in">pi</span>=<span class="number">3.14159</span></span><br></pre></td></tr></table></figure>
+
+<p>其中%为数据格式符，，从%到f之间的字符都是不显示的，它只指出显示数据  pi  &#x2F;  5.61  的格式，跟C的printf很相似</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

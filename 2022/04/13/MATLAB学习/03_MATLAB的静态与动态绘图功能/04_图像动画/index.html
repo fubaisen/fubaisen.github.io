@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>04_图像动画 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="四、图像动画1、图像文件操作（1）imread  和 imwrite 函数imread 和 imwrite 函数分别用于将图像文件读入 MATLAB 工作空间，以及将图像数据和色图数据一起写入一定格,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="04_图像动画 - fubaisen"/>
+    <meta name="twitter:description" content="四、图像动画1、图像文件操作（1）imread  和 imwrite 函数imread 和 imwrite 函数分别用于将图像文件读入 MATLAB 工作空间，以及将图像数据和色图数据一起写入一定格,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="04_图像动画 - fubaisen"/>
+    <meta property="og:description" content="四、图像动画1、图像文件操作（1）imread  和 imwrite 函数imread 和 imwrite 函数分别用于将图像文件读入 MATLAB 工作空间，以及将图像数据和色图数据一起写入一定格,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">04_图像动画</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">04_图像动画</h1>
+        <div class="stuff">
+            <span>四月 13, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="四、图像动画"><a href="#四、图像动画" class="headerlink" title="四、图像动画"></a>四、图像动画</h1><h2 id="1、图像文件操作"><a href="#1、图像文件操作" class="headerlink" title="1、图像文件操作"></a>1、图像文件操作</h2><h4 id="（1）imread-和-imwrite-函数"><a href="#（1）imread-和-imwrite-函数" class="headerlink" title="（1）imread  和 imwrite 函数"></a>（1）<code>imread</code>  和 <code>imwrite</code> 函数</h4><p><strong>imread 和 imwrite 函数分别用于将图像文件读入 MATLAB 工作空间，以及将图像数据和色图数据一起写入一定格式的图像文件。MATLAB支持多种图像文件格式，包括 <code>.bmp  .jpg  .jepg  .tif</code></strong></p>
+<h4 id="（2）image-和-imagesc-函数"><a href="#（2）image-和-imagesc-函数" class="headerlink" title="（2）image 和 imagesc 函数"></a>（2）<code>image</code> 和 <code>imagesc</code> 函数</h4><p><strong>image 和 imagesc 函数用于图像显示。为了保证图像效果，一般还应使用 colormap 函数设置图像色图</strong></p>
+<ul>
+<li><p>例：在图形窗口显示图像文件 bb.jpg</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[x,cmap]=imread(<span class="string">&#x27;D:\Users\lichaikui\Pictures\联想安卓照片\bb.jpg&#x27;</span>);  <span class="comment">% 读取图像的数据阵和色图阵</span></span><br><span class="line">image(x);title(<span class="string">&#x27;在图形窗口显示图像文件 bb.jpg&#x27;</span>)            <span class="comment">% 放图</span></span><br><span class="line">colormap(cmap);      <span class="comment">% 保持颜色</span></span><br><span class="line">axis image off       <span class="comment">% 保持高度比并取消坐标轴</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2、播放电影动画"><a href="#2、播放电影动画" class="headerlink" title="2、播放电影动画"></a>2、播放电影动画</h2><p><strong>从不同的视角拍下一系列对象的图像，并保存到变量中，然后按照一定的顺序像电影一样播放</strong></p>
+<ul>
+<li><p>例：设图片文件是五幅圣诞老人图片，编写程序播放动画</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">close;theta=<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">r1 =<span class="number">3</span>;clear;clc;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">4</span></span><br><span class="line">    c=strcat(<span class="string">&#x27;D:\Users\lichaikui\Pictures\2\old&#x27;</span>,num2str(<span class="built_in">i</span>),<span class="string">&#x27;.jpg&#x27;</span>);  <span class="comment">% strcat 水平串联字符串</span></span><br><span class="line">    [n,cmap]=imread(c);                             <span class="comment">% imread 从图形文件读取图片</span></span><br><span class="line">    image(n);colormap(cmap);                        <span class="comment">% image  从数组显示图像</span></span><br><span class="line">    axis off;                                       <span class="comment">% 隐藏图片坐标轴</span></span><br><span class="line">    m(:,<span class="built_in">i</span>)=getframe;                                <span class="comment">% getframe 捕获坐标区或图窗作为影片帧</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">movie(m,<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="3、电影动画文件保存"><a href="#3、电影动画文件保存" class="headerlink" title="3、电影动画文件保存"></a>3、电影动画文件保存</h2><ul>
+<li>保样电影动画是指将动画一帧一帧地保存下来，它可以脱离MTLAB环境运行</li>
+<li><code>videoWrite</code>与<code>open</code>、<code>writeVideo</code>和<code>close</code>函数配合，可从图像(figure)中创建视频和图片文件,也可以创建MPEG-4文件,在Window平台或其他平台上播故。</li>
+<li>Video-Write 函数支持大于2GB的视频文件。</li>
+<li>写人视频的前提是不断获取图像帧，而这一步骤则是每次更新<code>figure</code>上的图像来完成。即在绘图循环中，所有图像重绘结束后，使用<code>getframe</code>方法获取当前<code>figure</code>上的图像并写人打开的视频文件，VideoWrite函数可设置加上.avi 、.mj2、.mp4、m4v的拓展名，函数默认保存为.avi文件</li>
+</ul>
+<h4 id="（1）open-打开视频写人对象"><a href="#（1）open-打开视频写人对象" class="headerlink" title="（1）open:打开视频写人对象"></a>（1）open:打开视频写人对象</h4><ul>
+<li><p>调用格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open(myObj)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="（2）clos-关闭视频写入对象，与open-对应"><a href="#（2）clos-关闭视频写入对象，与open-对应" class="headerlink" title="（2）clos:关闭视频写入对象，与open 对应"></a>（2）clos:关闭视频写入对象，与open 对应</h4><ul>
+<li><p>调用格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">close(myOnj)</span><br></pre></td></tr></table></figure>
+
+<p>这两个函数分别在写入视频对象前和写入完成后使用</p>
+</li>
+</ul>
+<h4 id="（3）getProfiles-获取在该系统平台下，VideoWriter-可以支持写入的视频类型"><a href="#（3）getProfiles-获取在该系统平台下，VideoWriter-可以支持写入的视频类型" class="headerlink" title="（3）getProfiles:获取在该系统平台下，VideoWriter 可以支持写入的视频类型"></a>（3）getProfiles:获取在该系统平台下，VideoWriter 可以支持写入的视频类型</h4><ul>
+<li><p>调用格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">profiles=VidepWriter.getProfiles()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="（4）writerVideo-写入视频帧"><a href="#（4）writerVideo-写入视频帧" class="headerlink" title="（4）writerVideo:写入视频帧"></a>（4）writerVideo:写入视频帧</h4><ul>
+<li><p>调用格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">weriteVideo(myObj,frame)  <span class="comment">% 将以智能图像framre 写入视频对象中，frame可以通过getframe获得</span></span><br><span class="line">writeVideo(myObj,mov)     <span class="comment">% 将MATLAB对象写入视频中，mov是一个帧结构序列，每一个结构包括  mov.cadta 和 mov.colormap</span></span><br><span class="line">writeVideo(myObj,img)	  <span class="comment">% 将一个图像写入视频对象中</span></span><br><span class="line">writeVideo(myObj,images)  <span class="comment">% 将一序列图像写入视频对象中</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例：保存上一个例子为视频文件</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">myObj=VideoWriter(<span class="string">&#x27;newfile.avi&#x27;</span>);</span><br><span class="line">open(myObj);</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.1</span>:<span class="built_in">pi</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">4</span></span><br><span class="line">    c=strcat(<span class="string">&#x27;D:\Users\lichaikui\Pictures\2\old&#x27;</span>,num2str(<span class="built_in">i</span>),<span class="string">&#x27;.jpg&#x27;</span>);  <span class="comment">% strcat 水平串联字符串</span></span><br><span class="line">    frame=imread(c);                             <span class="comment">% imread 从图形文件读取图片</span></span><br><span class="line">    newFrame = imresize(frame,[<span class="number">203</span> <span class="number">416</span>]);        <span class="comment">% 改变不同帧图片分辨路大小防止报错</span></span><br><span class="line">    writeVideo(myObj,newFrame)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

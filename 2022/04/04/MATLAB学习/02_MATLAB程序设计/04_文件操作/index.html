@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>04_文件操作 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="四、文件操作MATLAB文件有两种格式；二进制文件（b）和文本文件（t）。打开文件默认是二进制格式，如果要以文本格式打开，则必须在打开方式中能加上字符串“t”
+文件操作是以一种重要的输入输出方式，M,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="04_文件操作 - fubaisen"/>
+    <meta name="twitter:description" content="四、文件操作MATLAB文件有两种格式；二进制文件（b）和文本文件（t）。打开文件默认是二进制格式，如果要以文本格式打开，则必须在打开方式中能加上字符串“t”
+文件操作是以一种重要的输入输出方式，M,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="04_文件操作 - fubaisen"/>
+    <meta property="og:description" content="四、文件操作MATLAB文件有两种格式；二进制文件（b）和文本文件（t）。打开文件默认是二进制格式，如果要以文本格式打开，则必须在打开方式中能加上字符串“t”
+文件操作是以一种重要的输入输出方式，M,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">04_文件操作</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">04_文件操作</h1>
+        <div class="stuff">
+            <span>四月 04, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="四、文件操作"><a href="#四、文件操作" class="headerlink" title="四、文件操作"></a>四、文件操作</h1><p>MATLAB文件有两种格式；二进制文件（b）和文本文件（t）。打开文件默认是二进制格式，如果要以文本格式打开，则必须在打开方式中能加上字符串“t”</p>
+<p>文件操作是以一种重要的输入输出方式，MAtLAB提供了一系列输入输出函数，专门用于文件操作。MATLAB文件操作主要有3个步骤：首先打开文件，然后对文件进行读写操作，最后关闭文件</p>
+<h2 id="1、文件的打开"><a href="#1、文件的打开" class="headerlink" title="1、文件的打开"></a>1、文件的打开</h2><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fid = fopen(文件名，打开方式)  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>打开文件或获得有关文件的信息</li>
+<li>fid 为文件句柄，其他函数可以用它对该文件进行操作<ul>
+<li>如果句柄值大于0，则表示文件打开成功</li>
+<li>若打开失败，fid的返回值为-1</li>
+</ul>
+</li>
+<li>文件名用字符串形式表示（可带路径名）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="2、二进制文件的读写"><a href="#2、二进制文件的读写" class="headerlink" title="2、二进制文件的读写"></a>2、二进制文件的读写</h2><p>文件的读写操作分为  “<strong>只读</strong>”    “<strong>只写</strong>”    “<strong>可读可写</strong>”   “<strong>可读可写可添加</strong>”   等，其操作符号可见表</p>
+<table>
+<thead>
+<tr>
+<th>表 示</th>
+<th>说 明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读，【文件必须存在】(默认的打开方式)</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只写，若文件已存在则原内容将被覆盖;【若文件不存在则新建一个】</td>
+</tr>
+<tr>
+<td>a</td>
+<td>在文件末尾添加，【若文件不存在则新建一个】</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>可读可写，【文件必须存在 】</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>可读可写，若文件已存在则原内容将被覆盖;【若文件不存在则新建一个 】</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>可读可写可添加，【若文件不存在则新建一个】</td>
+</tr>
+</tbody></table>
+<p>读写文件必须先要打开文件，有两个标准代码文件，不需要打开就可以直接使用，分别为：fid&#x3D;1（标准输出文件） 和  fid&#x3D;2 （标准错误文件。若不指定打开方式，则表示只读</p>
+<h4 id="（1）二进制文件的读操作"><a href="#（1）二进制文件的读操作" class="headerlink" title="（1）二进制文件的读操作"></a>（1）二进制文件的读操作</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[A,count]=fread(fid,<span class="built_in">size</span>,precision) </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li><a href="%5B(1%E6%9D%A1%E6%B6%88%E6%81%AF">fread</a> MATLAB fread_yangqoor的博客-CSDN博客](<a target="_blank" rel="noopener" href="https://blog.csdn.net/yangqoor/article/details/84940030))%E8%AF%BB%E5%8F%96%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE">https://blog.csdn.net/yangqoor/article/details/84940030))读取二进制文件中的数据</a></li>
+<li>A用来存放读取数据</li>
+<li>count为返回读取数据的个数，是可选项（<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45837461/article/details/105894042">count计算字符串中模式出现的次数</a>）</li>
+<li>fid为文件句柄;</li>
+<li>size为可选项，默认为读取整个文件,输出数据是列向量，文件中每一个元素对应一个值<ul>
+<li>取值选择是 <ul>
+<li>“     Inf	  “ :读取整个文件</li>
+<li>“       N      “ :读取N个数据到一个列向量;</li>
+<li>“   [m,n]   “ :读取m×n个数据到一个 m×n矩阵 中并按列存放 （n可以取Inf，但m不可以）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>precision代表读取的数据类型</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：设已有二进制数据文件 output.dat,从文件中读入二进制数据</p>
+<p>程序命令:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fid = fopen(<span class="string">&#x27;bs_08_01.dat&#x27;</span>,<span class="string">&#x27;r&#x27;</span>);	</span><br><span class="line">A = fread(fid,<span class="number">100</span>,<span class="string">&#x27;double&#x27;</span>);                <span class="comment">% 从文件中读取二进制数据</span></span><br><span class="line">status = fclose(fid);</span><br><span class="line">fid = fopen(<span class="string">&quot;bs_08_01.dat&quot;</span>,<span class="string">&#x27;r&#x27;</span>);</span><br><span class="line">[A,count] = fread(fid,[<span class="number">100</span>,<span class="number">100</span>],<span class="string">&#x27;double&#x27;</span>);</span><br><span class="line">status = fclose(fid);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="（2）二进制文件的写操作"><a href="#（2）二进制文件的写操作" class="headerlink" title="（2）二进制文件的写操作"></a>（2）二进制文件的写操作</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">count = fwrite(fid,A,precision)  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>fwrite将数据写入二进制文件</li>
+<li>A按指定的数据类型将矩阵A中的元素写入到文件中</li>
+<li>count为返回所写入的数据元素个数，可选项</li>
+<li>fid为文件句柄</li>
+<li>A用来存放写入文件的数据</li>
+<li>precision 代表数据类型<ul>
+<li>常用的数据类型有  <ul>
+<li>char、uchar、int、long、flot、double等，</li>
+<li>默认数据类型为 uchar,即无符号字符</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：将4×4帕斯卡进去数据写入文件 </p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">clc;A = <span class="built_in">pascal</span>(<span class="number">4</span>);                     <span class="comment">% pascal帕斯卡矩阵</span></span><br><span class="line">fid = fopen(<span class="string">&#x27;bs_08_02_1.1.dat&#x27;</span>,<span class="string">&#x27;w&#x27;</span>);        <span class="comment">% fopen打开文件或获得有关文件的信息</span></span><br><span class="line">fwrite(fid,A,<span class="string">&#x27;int8&#x27;</span>)                   <span class="comment">% 用8位整形数把二进制数据写入文件 ； fwrite将数据写入二进制文是的</span></span><br><span class="line">fclose(fid);                           <span class="comment">% 关闭一个或所有打开文件</span></span><br><span class="line">fid=fopen(<span class="string">&#x27;bs_08_02_1.1.dat&#x27;</span>,<span class="string">&#x27;r&#x27;</span>);</span><br><span class="line">[B,count] = fread(fid,[<span class="number">4</span>,<span class="built_in">inf</span>],<span class="string">&#x27;int8&#x27;</span>); <span class="comment">% 打开二进文件中的数据</span></span><br><span class="line">fclose(fid);</span><br><span class="line">B</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="3、文件的关闭"><a href="#3、文件的关闭" class="headerlink" title="3、文件的关闭"></a>3、文件的关闭</h2><p>当不需要对文件进行操作之后，要使用fclose函数对这个文件进行关闭。以免数据丢失</p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">status = fclose(fid) </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>fid为所需要关闭文件的句柄我；</li>
+<li>satatus为关闭文件的返回代码，若关闭成功则为0 ，否则为 -1</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：文件的读写操作，将5×5魔方阵存入二进制中，并读取输出。</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fid = fopen(<span class="string">&#x27;bs_08_03_1.1.dat&#x27;</span>,<span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">a= <span class="built_in">magic</span>(<span class="number">5</span>);                  <span class="comment">% magic 魔方（幻）方矩阵</span></span><br><span class="line">fwrite(fid,a,<span class="string">&#x27;long&#x27;</span>);         <span class="comment">% 用长整形数把二进制数据写入文件</span></span><br><span class="line">fclose(fid);</span><br><span class="line">fid = fopen(<span class="string">&#x27;bs_08_03_1.1.dat&#x27;</span>,<span class="string">&#x27;r&#x27;</span>);</span><br><span class="line">[A,count] = fread(fid,[<span class="number">5</span>,<span class="built_in">inf</span>],<span class="string">&#x27;long&#x27;</span>);  <span class="comment">% 其中[5,inf] 为size的[m×n]方法 按列向量排列的m行所有（inf）列的矩阵</span></span><br><span class="line">fclose(fid);</span><br><span class="line">A</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="4、文本文件的读写"><a href="#4、文本文件的读写" class="headerlink" title="4、文本文件的读写"></a>4、文本文件的读写</h2><h4 id="（1）文本文件的读操作"><a href="#（1）文本文件的读操作" class="headerlink" title="（1）文本文件的读操作"></a>（1）文本文件的读操作</h4><ul>
+<li><p>语法格式</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[A,count]=fscanf(fid,format,<span class="built_in">size</span>) </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>fscanf读取文本文件中的数据 ;</li>
+<li>A用来存放读取的数据</li>
+<li>count表示返回读取数据的个数（count函数：计算字符串中模式出现的次数）</li>
+<li>fid为文件句柄</li>
+<li>format用来控制读取的数据格式（format函数：设置命令输出显示格式）<ul>
+<li>由  % 加上格式符组成，常见格式符由：<ul>
+<li>d 整型</li>
+<li>f 浮点型</li>
+<li>s 字符串型</li>
+<li>c  字符型             等</li>
+</ul>
+</li>
+<li>在  %  与格式符之间还可以附加格式说明符，如数据宽度说明等</li>
+</ul>
+</li>
+<li>size为可选项，表示矩阵A中数据的排列形式，他可以取下列值：<ul>
+<li>n    读取n个元素到一个列向量</li>
+<li>inf 读取整个文件</li>
+<li>[m×n] 读取数据到m×n矩阵中，数据按列存放</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：使用fprintf 读取文本文件文件 ，计算x &#x3D;[0,1]时  f(x)&#x3D;exp的值，并将结果写入到文件  bs_08.txt 中，最后显示到命令行窗口中</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span>:<span class="number">0.1</span>:<span class="number">1</span>;  y = [x;<span class="built_in">exp</span>(x)];   <span class="comment">% y 有两行数据</span></span><br><span class="line">fid = fopen(<span class="string">&#x27;bs_08.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">fprintf(fid,<span class="string">&#x27;%6.2f %12.8f\n&#x27;</span>,y);</span><br><span class="line">fclose(fid);fid=fopen(<span class="string">&#x27;bs_08.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>);</span><br><span class="line">[a,count]=fscanf(fid,<span class="string">&#x27;%f %f&#x27;</span>,[<span class="number">2</span> <span class="built_in">inf</span>]);</span><br><span class="line">fprintf(<span class="number">1</span>,<span class="string">&#x27;%f %f\n&#x27;</span>,a);fclose(fid);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="（2）文本文件的写操作"><a href="#（2）文本文件的写操作" class="headerlink" title="（2）文本文件的写操作"></a>（2）文本文件的写操作</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fprintf(fid,format,A)  <span class="comment">% 将数据按照指定格式写入到文本文件中</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以使用 : <code>dlmwrite(&#39;filename&#39;,M)</code>将<code>矩阵M</code>写入文本文件<code>filename</code>中</p>
+<blockquote>
+<ul>
+<li><p>fid 为文本句柄指定要写入数据的文件；</p>
+</li>
+<li><p>format用来控制所写数据格式的格式符与  fscanf函数相同 （format函数：设置命令输出显示格式  fscanf函数：读取文本文件的数据）</p>
+<ul>
+<li><p>由  % 加上格式符组成，常见格式符由：</p>
+<ul>
+<li>d 整型</li>
+<li>f 浮点型</li>
+<li>s 字符串型</li>
+<li>c  字符型             等</li>
+</ul>
+</li>
+<li><p>在  %  与格式符之间还可以附加格式说明符，如数据宽度说明等</p>
+</li>
+<li></li>
+</ul>
+</li>
+<li><p>A是用来存放数据的矩阵</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2,3;4,5,6;7,8,9];</span><br><span class="line">dlmwrite(&#x27;bs_08.txt&#x27;,a);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="5、文件定位和文件状态"><a href="#5、文件定位和文件状态" class="headerlink" title="5、文件定位和文件状态"></a>5、文件定位和文件状态</h2><h4 id="（1）检测文件是否已经结束"><a href="#（1）检测文件是否已经结束" class="headerlink" title="（1）检测文件是否已经结束"></a>（1）检测文件是否已经结束</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">status = feof(fid);           <span class="comment">% feof检测文件末尾</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>函数<code>feof(fid)</code> 用法：<ul>
+<li>文件指针 fid 到达文件末尾时返回“真”值；否则返回“假”；</li>
+<li>~feof 是在 feof 前加了“非”</li>
+<li>是逻辑表达式：<ul>
+<li>文件指针到达文件末尾时 该表达式值为“假”；</li>
+<li>否则为“真”；</li>
+</ul>
+</li>
+<li>while ~feof 表示 若 未读到文件末尾 则 继续 循环</li>
+</ul>
+</li>
+<li>fid 为文件句柄</li>
+<li>status 为状态逻辑值，若结束 status 返回值为 0 ，否则返回值为 -1</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="（2）查询文件的输入、输出错误信息"><a href="#（2）查询文件的输入、输出错误信息" class="headerlink" title="（2）查询文件的输入、输出错误信息"></a>（2）查询文件的输入、输出错误信息</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ioerror = ferror(fid)   <span class="comment">% ferror 文件1/0错误信息</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>fid 文件句柄</li>
+<li>ioerror 为逻辑值，若文件的输入、输出 有错误则返回0 ，否则为1</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="（3）使位置指针重新返回文件的开头"><a href="#（3）使位置指针重新返回文件的开头" class="headerlink" title="（3）使位置指针重新返回文件的开头"></a>（3）使位置指针重新返回文件的开头</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start = frewind(fid)   <span class="comment">% frewind(fileID) 将文件位置指针设置到文件的开头</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>fid 为文件句柄</li>
+<li>start 为逻辑值，返回文件开头 start &#x3D; 0 ，否则为-1</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="（4）设置文件的位置指针"><a href="#（4）设置文件的位置指针" class="headerlink" title="（4）设置文件的位置指针"></a>（4）设置文件的位置指针</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">status = fseek(fid,offset,origin) <span class="comment">% fseek 移动至文件的指定位置</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>若成功 ，startus 返回值为 0 ，否则返回值为 -1</li>
+<li>fid 为文件句柄 </li>
+<li>offset 为位置指针相对移动的字节数；</li>
+<li>origin 表示位置指针移动的参照位置，可取值：<ul>
+<li><code>&#39;cof&#39;</code>表示当前位置</li>
+<li><code>&#39;bof&#39;</code>表示文件的开始位置</li>
+<li><code>&#39;eof&#39;</code>表示文件末尾</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="（5）查询当前文件指针的位置"><a href="#（5）查询当前文件指针的位置" class="headerlink" title="（5）查询当前文件指针的位置"></a>（5）查询当前文件指针的位置</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position = ftell(fid);  <span class="comment">% ftell 当前位置</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>fid为文件句柄</li>
+<li>position 返回值为从文件开始到当前指针位置的字节数<ul>
+<li>若返回值为- 1 ，则表示获取文件当前位置失败</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>例：读取 bs_08.txt文件，查询文件的文件大小和当前指针位置</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fid = fopen(<span class="string">&quot;bs_08.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line">fseek(fid,<span class="number">0</span>,<span class="string">&#x27;eof&#x27;</span>); x = ftell(fid);</span><br><span class="line">fprintf(<span class="number">1</span>,<span class="string">&#x27;File Size = % d\n&#x27;</span>,x);</span><br><span class="line">frewind(fid); x = ftell(fid);</span><br><span class="line">fprintf(<span class="number">1</span>,<span class="string">&#x27;File Position = %d\n&#x27;</span>,x);</span><br><span class="line">fclose(fid);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>1为文件句柄，指定要写入数据的文件</p>
+<ul>
+<li><blockquote>
+<p><strong><code>fileID</code> – 文件标识符<br><code> 1</code> （默认） | <code>2</code> | 标量</strong></p>
+</blockquote>
+<p>文件标识符，指定为下列值之一：</p>
+<ul>
+<li>从fopen获取的文件标识符。</li>
+<li><code>1</code> 表示标准输出（屏幕）。</li>
+<li><code>2</code> 表示标准错误</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6、按行读取数据"><a href="#6、按行读取数据" class="headerlink" title="6、按行读取数据"></a>6、按行读取数据</h2><h4 id="（1）fgetl函数"><a href="#（1）fgetl函数" class="headerlink" title="（1）fgetl函数"></a>（1）<code>fgetl</code>函数</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tline = fgetl(fid)   <span class="comment">% fgetl 从  fid 文件中读取一行数据并丢弃其中的字符串</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>fid 为文件句柄</li>
+<li>fgetl 从  fid 文件中读取一行数据并丢弃其中的字符串</li>
+<li>如果读取成功 ，tline 容纳了读取到的文本字符串；</li>
+<li>如果遇到文件末尾的结束标志（EOF），则函数返回-1，即 tline 值为 -1</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="（2）fgets函数"><a href="#（2）fgets函数" class="headerlink" title="（2）fgets函数"></a>（2）<code>fgets</code>函数</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tline = fgets(fid)       <span class="comment">% 读取文件的下一行，包括换行符</span></span><br><span class="line">tline = fgets(fid,nchar) <span class="comment">% 返回文件标识符，指向的一行，最多 nchar 个字符</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明：</p>
+<ul>
+<li><p><code>fgets</code>读取文件中的行，并保留换行符</p>
+</li>
+<li><p>读取一行数据，包括终止符</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：编写一个程序，用于读取生成的矩阵数据</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fid=fopen(<span class="string">&quot;bs_08.txt&quot;</span>,<span class="string">&#x27;r&#x27;</span>);</span><br><span class="line"><span class="keyword">while</span>~feof(fid)              <span class="comment">% 在文件没有结束时按行读取数据</span></span><br><span class="line">s = fgets(fid);fprintf(<span class="number">1</span>,<span class="string">&#x27;%s&#x27;</span>,s);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">fclose(fid);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>while ~feof 表示 若 未读到文件末尾 则 继续 循环</p>
+</blockquote>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

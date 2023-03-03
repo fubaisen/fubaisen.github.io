@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ros - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="ROS的安装1.ubuntu18.04  安装ros melodic
+2.ubuntu16  安装ros kinetic
+
+rosdep 不成功 可跳过
+
+ros学习教程地址
+ROS 功能1.ros,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Ros - fubaisen"/>
+    <meta name="twitter:description" content="ROS的安装1.ubuntu18.04  安装ros melodic
+2.ubuntu16  安装ros kinetic
+
+rosdep 不成功 可跳过
+
+ros学习教程地址
+ROS 功能1.ros,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="Ros - fubaisen"/>
+    <meta property="og:description" content="ROS的安装1.ubuntu18.04  安装ros melodic
+2.ubuntu16  安装ros kinetic
+
+rosdep 不成功 可跳过
+
+ros学习教程地址
+ROS 功能1.ros,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Ros</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Ros</h1>
+        <div class="stuff">
+            <span>一月 26, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="ROS的安装"><a href="#ROS的安装" class="headerlink" title="ROS的安装"></a>ROS的安装</h1><p>1.ubuntu18.04  安装ros melodic</p>
+<p>2.ubuntu16  安装ros kinetic</p>
+<ul>
+<li>rosdep 不成功 可跳过</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ci4y1L7ZZ/">ros学习教程地址</a><img src="https://s2.loli.net/2022/01/24/oBNb1VaCRxhgvnE.png" alt="image-20220124213358659"></p>
+<h1 id="ROS-功能"><a href="#ROS-功能" class="headerlink" title="ROS 功能"></a>ROS 功能</h1><h3 id="1-roscove节点式通信"><a href="#1-roscove节点式通信" class="headerlink" title="1.roscove节点式通信"></a>1.roscove节点式通信</h3><ul>
+<li>topic（通话）通信：</li>
+</ul>
+<p>​				单向  可连续发送</p>
+<ul>
+<li><p>service（服务）通信：</p>
+<p> 只有一次通信后 才可以建立通信通道</p>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/01/24/RscgOPkZ5hUqYre.png" alt="image-20220124210343443.png"></p>
+<p>模板 大概</p>
+<ul>
+<li><p>ros功能包：</p>
+<p><img src="https://s2.loli.net/2022/01/24/3PfcIu2DLWCKd5h.png" alt="image-20220124210431270">	</p>
+<ul>
+<li>build 产生的可执行文件</li>
+<li>devel 头文件、依赖的包</li>
+<li>src 源文件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>用到了         回调函数<img src="https://s2.loli.net/2022/01/24/HRSywPmNupcdUEa.png" alt="image-20220124211509030.png"></p>
+<p><img src="https://s2.loli.net/2022/01/24/N6tQ1zoTYdCH4ZD.png" alt="image-20220124210834225.png"></p>
+</blockquote>
+<ul>
+<li><p><img src="https://s2.loli.net/2022/01/24/vMixcuUFY75I9Wq.png" alt="image-20220124210550748"></p>
+<p>include——头文件				</p>
+<p>src——源码      </p>
+<p>CMakelists.txt——加载编译文件源码把药变异的内容交给编译器    </p>
+<p>package.xml——ros功能包相关内容</p>
+</li>
+</ul>
+<h3 id="2-物理仿生环境gazabo（可以想象成一个节点）"><a href="#2-物理仿生环境gazabo（可以想象成一个节点）" class="headerlink" title="2.物理仿生环境gazabo（可以想象成一个节点）"></a>2.物理仿生环境gazabo（可以想象成一个节点）</h3><p>​			模拟现实环境</p>
+<h3 id="3-Rivice"><a href="#3-Rivice" class="headerlink" title="3.Rivice"></a>3.Rivice<img src="https://s2.loli.net/2022/01/24/FMzKlZNi8eCP4c3.png" alt="image-20220124205422280"></h3><p>根据需要开发可视化界面</p>
+<h3 id="4-rqt工具箱"><a href="#4-rqt工具箱" class="headerlink" title="4.rqt工具箱"></a>4.rqt工具箱</h3><p><img src="https://s2.loli.net/2022/01/24/QR1e23P4ZDBsyvC.png" alt="image-20220124210135175"></p>
+<h3 id="5-收发模板"><a href="#5-收发模板" class="headerlink" title="5.收发模板"></a>5.收发模板</h3><p>北大模板生成   包&#x2F;项目   —–用 <code>类</code> 的方法 实现  多个节点同时工作  （多收多发）</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

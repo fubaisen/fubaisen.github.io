@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PID几个相关问题 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+如何理解PID控制中的容量滞后和纯滞后？两者有什么区别？
+前者表达的是一定的能量或者是阻力 后者表达的是时间概念， zhi从定义上说： 容量滞后一段是由于物料或能量的传递需要通过一定阻力而引起的，,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="PID几个相关问题 - fubaisen"/>
+    <meta name="twitter:description" content="
+如何理解PID控制中的容量滞后和纯滞后？两者有什么区别？
+前者表达的是一定的能量或者是阻力 后者表达的是时间概念， zhi从定义上说： 容量滞后一段是由于物料或能量的传递需要通过一定阻力而引起的，,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="PID几个相关问题 - fubaisen"/>
+    <meta property="og:description" content="
+如何理解PID控制中的容量滞后和纯滞后？两者有什么区别？
+前者表达的是一定的能量或者是阻力 后者表达的是时间概念， zhi从定义上说： 容量滞后一段是由于物料或能量的传递需要通过一定阻力而引起的，,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">PID几个相关问题</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">PID几个相关问题</h1>
+        <div class="stuff">
+            <span>五月 02, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><img src="https://s2.loli.net/2022/05/02/MOY7GV9Lrj5D6K3.png" alt="img"></p>
+<h2 id="如何理解PID控制中的容量滞后和纯滞后？两者有什么区别？"><a href="#如何理解PID控制中的容量滞后和纯滞后？两者有什么区别？" class="headerlink" title="如何理解PID控制中的容量滞后和纯滞后？两者有什么区别？"></a>如何理解PID控制中的容量滞后和纯滞后？两者有什么区别？</h2><ol>
+<li>前者表达的是一定的能量或者是阻力 后者表达的是时间概念， zhi从定义上说： 容量滞后一段是由于物料或能量的传递需要通过一定阻力而引起的，通俗的说，就是对象受到一定的作用后，能量从不稳定到再次稳定的过程； 传递滞后又叫纯滞后，它的产生一般是由于介质的输送需要一段时间而引起的。</li>
+<li>输出变量的变化落后于输入变量变化的时间称为纯滞后时间，纯滞后的产生一般是由于介质的输送或热的传递需要一段时间引起的。容量滞后通常又包括，测量滞后和传送滞后。测量滞后是检测元件在检测时需要建立一种平衡，如热电偶、热电阻、压力等响应较慢产生的一种滞后。而传送滞后则是在传感器、变送器、执行机构等设备产生的一种控制滞后，纯滞后是相对与测量滞后的。</li>
+</ol>
+<h2 id="显示器的坐标是什么？为什么发生器的信号不动呢？"><a href="#显示器的坐标是什么？为什么发生器的信号不动呢？" class="headerlink" title="显示器的坐标是什么？为什么发生器的信号不动呢？"></a>显示器的坐标是什么？为什么发生器的信号不动呢？</h2><h2 id="模糊控制规则"><a href="#模糊控制规则" class="headerlink" title="模糊控制规则"></a>模糊控制规则</h2><p>模糊控制规则是模糊控制器的核心，它的正确与否直接影响到控制器的性能，其数目的多寡也是衡量控制器性能的一个重要因素。</p>
+<p>模糊控制规则是模糊控制器中知识库的一部分，模糊控制规则建立在语言变量的基础上。语言变量取值为“大”、“中”、“小”等这样的模糊子集，各模糊子集以隶属函数表明基本论域上的精确值属于该模糊子集的程度。因此，为建立模糊控制规则，需要将基本论域上的精确值依据隶属函数归并到各模糊子集中，从而用语言变量值（大、中、小等）代替精确值。这个过程代表了人在控制过程中对观察到的变量和控制量的模糊划分。由于各变量取值范围各异，故首先将各基本论域分别以不同的对应关系，映射到一个标准化论域上。通常，对应关系取为量化因子。为便于处理，将标准论域等分离散化，然后对论域进行模糊划分，定义模糊子集，如NB、PZ、PS等。同一个模糊控制规则库，对基本论域的模糊划分不同，控制效果也不同</p>
+<p>其实if-then还是挺好想的</p>
+<p>模糊PID控制，即利用模糊逻辑并根据一定的模糊规则对PID的参数进行实时的优化，以克服传统PID参数无法实时调整PID参数的缺点。模糊PID控制包括模糊化，确定模糊规则，解模糊等组成部分。小车通过传感器采集赛道信息，确定当前距赛道中线的偏差E并根据当前偏差和上次偏差的变化ec，根据给定的模糊规则进行模糊推理，最后对模糊参数进行解模糊，输出PID控制参数。</p>
+<p><img src="https://s2.loli.net/2022/05/02/unL13chaoIlRK45.png" alt="img"></p>
+<hr>
+<p>版权声明：本文为CSDN博主「才大难为用」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/HeroIsUseless/article/details/108634876">https://blog.csdn.net/HeroIsUseless/article/details/108634876</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

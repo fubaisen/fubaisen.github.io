@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>02_类和对象基本概念 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="类和对象目标
+类和对象的概念
+类和对象的关系
+类的设计
+
+01. 类和对象的概念类 和 对象 是 面向对象编程的 两个 核心概念
+1.1 类
+类是对一群具有相同 特征或者行为的事物的一个统称，是抽象,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="02_类和对象基本概念 - fubaisen"/>
+    <meta name="twitter:description" content="类和对象目标
+类和对象的概念
+类和对象的关系
+类的设计
+
+01. 类和对象的概念类 和 对象 是 面向对象编程的 两个 核心概念
+1.1 类
+类是对一群具有相同 特征或者行为的事物的一个统称，是抽象,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="02_类和对象基本概念 - fubaisen"/>
+    <meta property="og:description" content="类和对象目标
+类和对象的概念
+类和对象的关系
+类的设计
+
+01. 类和对象的概念类 和 对象 是 面向对象编程的 两个 核心概念
+1.1 类
+类是对一群具有相同 特征或者行为的事物的一个统称，是抽象,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">02_类和对象基本概念</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">02_类和对象基本概念</h1>
+        <div class="stuff">
+            <span>三月 18, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python%E5%AD%A6%E4%B9%A0/" rel="tag">python学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>类和对象的概念</li>
+<li>类和对象的关系</li>
+<li>类的设计</li>
+</ul>
+<h2 id="01-类和对象的概念"><a href="#01-类和对象的概念" class="headerlink" title="01. 类和对象的概念"></a>01. 类和对象的概念</h2><p><strong>类</strong> 和 <strong>对象</strong> 是 <strong>面向对象编程的 两个 核心概念</strong></p>
+<h3 id="1-1-类"><a href="#1-1-类" class="headerlink" title="1.1 类"></a>1.1 类</h3><ul>
+<li><p>类是对一群具有相同 特征或者行为的事物的一个统称，是抽象的不能直接使用</p>
+<ul>
+<li><strong>特征</strong> 被称为 <strong>属性</strong></li>
+<li><strong>行为</strong> 被称为 <strong>方法</strong></li>
+</ul>
+</li>
+<li><p><strong>类</strong> 就相当于制造飞机时的<strong>图纸</strong>，是一个 <strong>模板</strong>，是 <strong>负责创建对象的</strong></p>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/16/rkGoAUPZy5Nnla3.png" alt="002_飞机设计图纸"></p>
+<h3 id="1-2-对象"><a href="#1-2-对象" class="headerlink" title="1.2 对象"></a>1.2 对象</h3><ul>
+<li><p><strong>对象</strong> 是 <strong>由类创建出来的一个具体存在</strong>，可以直接使用</p>
+</li>
+<li><p>由哪一个类创建出来的对象，就拥有在哪一个类中定义的：</p>
+<ul>
+<li>属性</li>
+<li>方法</li>
+</ul>
+</li>
+<li><p><strong>对象</strong> 就相当于用 <strong>图纸</strong> <strong>制造</strong> 的飞机</p>
+</li>
+</ul>
+<blockquote>
+<p>在程序开发中，应该 <strong>先有类，再有对象</strong></p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/03/16/5CZYScf4MD6dyiJ.png" alt="003_飞机对象"></p>
+<h2 id="02-类和对象的关系"><a href="#02-类和对象的关系" class="headerlink" title="02. 类和对象的关系"></a>02. 类和对象的关系</h2><ul>
+<li><p><strong>类是模板</strong>，<strong>对象</strong> 是根据 <strong>类</strong> 这个模板创建出来的，应该 <strong>先有类，再有对象</strong></p>
+</li>
+<li><p>类只有一个，而对象可以有很多个</p>
+<ul>
+<li><strong>不同的对象</strong> 之间 <strong>属性</strong> 可能会各不相同</li>
+</ul>
+</li>
+<li><p><strong>类</strong> 中定义了什么 <strong>属性和方法</strong>，<strong>对象</strong> 中就有什么属性和方法，<strong>不可能多，也不可能少</strong></p>
+</li>
+</ul>
+<h2 id="03-类的设计"><a href="#03-类的设计" class="headerlink" title="03. 类的设计"></a>03. 类的设计</h2><p>在使用面相对象开发前，应该首先分析需求，确定一下，程序中需要包含哪些类！</p>
+<p><img src="https://s2.loli.net/2022/03/16/24Ktq5Q3o1rOLFP.png" alt="001_植物大战僵尸类图"></p>
+<p>在程序开发中，要设计一个类，通常需要满足一下三个要素：</p>
+<ol>
+<li><strong>类名</strong> 这类事物的名字，<strong>满足大驼峰命名法</strong></li>
+<li><strong>属性</strong> 这类事物具有什么样的特征</li>
+<li><strong>方法</strong> 这类事物具有什么样的行为</li>
+</ol>
+<h3 id="大驼峰命名法"><a href="#大驼峰命名法" class="headerlink" title="大驼峰命名法"></a>大驼峰命名法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CapWords</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>每一个单词的首字母大写</li>
+<li>单词与单词之间没有下划线</li>
+</ol>
+<h3 id="3-1-类名的确定"><a href="#3-1-类名的确定" class="headerlink" title="3.1 类名的确定"></a>3.1 类名的确定</h3><p><strong>名词提炼法</strong> 分析 <strong>整个业务流程</strong>，出现的 <strong>名词</strong>，通常就是找到的类</p>
+<h3 id="3-2-属性和方法的确定"><a href="#3-2-属性和方法的确定" class="headerlink" title="3.2 属性和方法的确定"></a>3.2 属性和方法的确定</h3><ul>
+<li>对 <strong>对象的特征描述</strong>，通常可以定义成 <strong>属性</strong></li>
+<li><strong>对象具有的行为</strong>（动词），通常可以定义成 <strong>方法</strong></li>
+</ul>
+<blockquote>
+<p>提示：需求中没有涉及的属性或者方法在设计类时，不需要考虑</p>
+</blockquote>
+<h3 id="练习-1"><a href="#练习-1" class="headerlink" title="练习 1"></a>练习 1</h3><p><strong>需求</strong></p>
+<ul>
+<li><strong>小明</strong> 今年 <strong>18 岁</strong>，<strong>身高 1.75</strong>，每天早上 <strong>跑</strong> 完步，会去 <strong>吃</strong> 东西</li>
+<li><strong>小美</strong> 今年 <strong>17 岁</strong>，<strong>身高 1.65</strong>，小美不跑步，小美喜欢 <strong>吃</strong> 东西</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/16/2PD6wjgXvybfNMz.png" alt="002_Person类"></p>
+<h3 id="练习-2"><a href="#练习-2" class="headerlink" title="练习 2"></a>练习 2</h3><p><strong>需求</strong></p>
+<ul>
+<li>一只 <strong>黄颜色</strong> 的 <strong>狗狗</strong> 叫 <strong>大黄</strong></li>
+<li>看见生人 <strong>汪汪叫</strong></li>
+<li>看见家人 <strong>摇尾巴</strong></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/16/arkt9XpSVGIdKLc.png" alt="003_Dog类"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

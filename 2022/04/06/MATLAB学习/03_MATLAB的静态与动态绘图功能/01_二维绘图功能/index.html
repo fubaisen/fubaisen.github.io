@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>01_二维绘图功能 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一、二维绘图功能1、绘制一般函数曲线（1）plot命令MATLAB 的plot函数是二维图形最基本的函数之一，它可以针对向量或矩阵绘制出以 x 轴和 y 轴为线性尺度和直角坐标曲线
+
+语法格式：
+1,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="01_二维绘图功能 - fubaisen"/>
+    <meta name="twitter:description" content="一、二维绘图功能1、绘制一般函数曲线（1）plot命令MATLAB 的plot函数是二维图形最基本的函数之一，它可以针对向量或矩阵绘制出以 x 轴和 y 轴为线性尺度和直角坐标曲线
+
+语法格式：
+1,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="01_二维绘图功能 - fubaisen"/>
+    <meta property="og:description" content="一、二维绘图功能1、绘制一般函数曲线（1）plot命令MATLAB 的plot函数是二维图形最基本的函数之一，它可以针对向量或矩阵绘制出以 x 轴和 y 轴为线性尺度和直角坐标曲线
+
+语法格式：
+1,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">01_二维绘图功能</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">01_二维绘图功能</h1>
+        <div class="stuff">
+            <span>四月 06, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="一、二维绘图功能"><a href="#一、二维绘图功能" class="headerlink" title="一、二维绘图功能"></a>一、二维绘图功能</h1><h2 id="1、绘制一般函数曲线"><a href="#1、绘制一般函数曲线" class="headerlink" title="1、绘制一般函数曲线"></a>1、绘制一般函数曲线</h2><h4 id="（1）plot命令"><a href="#（1）plot命令" class="headerlink" title="（1）plot命令"></a>（1）<code>plot</code>命令</h4><p><strong>MATLAB 的plot函数是二维图形最基本的函数之一，它可以针对向量或矩阵绘制出以 x 轴和 y 轴为线性尺度和直角坐标曲线</strong></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">plot</span>(x1,y1,option1,x2,y2,option2,...)  <span class="comment">% 使用该命令可以画一条或多条曲线</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>x1,y1,x2,y2 给出的数据分别为 x轴和y轴坐标值</li>
+<li>option 定义了图形曲线的颜色、字符、线型</li>
+<li>若 x1,y1 都是数组，则按列 取坐标数据绘制</li>
+</ul>
+</blockquote>
+</li>
+<li><p>使用 option 来定义图形的颜色、字符 、线型 ，其见表1，表2，表3</p>
+<ul>
+<li>【表1】 颜色表示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘r’</td>
+<td>红色</td>
+</tr>
+<tr>
+<td>‘w’</td>
+<td>白色</td>
+</tr>
+<tr>
+<td>‘k’</td>
+<td>黑色</td>
+</tr>
+<tr>
+<td>‘g’</td>
+<td>绿色</td>
+</tr>
+<tr>
+<td>‘y’</td>
+<td>黄色</td>
+</tr>
+<tr>
+<td>‘m’</td>
+<td>锰紫色</td>
+</tr>
+<tr>
+<td>‘b’</td>
+<td>蓝色</td>
+</tr>
+<tr>
+<td>‘c’</td>
+<td>亮青色</td>
+</tr>
+</tbody></table>
+<ul>
+<li>【表2】 字符表示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘.’</td>
+<td>画点号</td>
+</tr>
+<tr>
+<td>‘*’</td>
+<td>画星号</td>
+</tr>
+<tr>
+<td>‘x’</td>
+<td>画叉号</td>
+</tr>
+<tr>
+<td>‘^’</td>
+<td>画上三角</td>
+</tr>
+<tr>
+<td>‘V’</td>
+<td>画左三角</td>
+</tr>
+<tr>
+<td>‘&lt;’</td>
+<td>画右三角</td>
+</tr>
+<tr>
+<td>‘&gt;’</td>
+<td>画下三角</td>
+</tr>
+<tr>
+<td>‘o’</td>
+<td>画圈符</td>
+</tr>
+<tr>
+<td>‘+’</td>
+<td>画十字符</td>
+</tr>
+<tr>
+<td>‘s’</td>
+<td>画方块符</td>
+</tr>
+<tr>
+<td>‘d’</td>
+<td>画菱形符</td>
+</tr>
+<tr>
+<td>‘p’</td>
+<td>画五角符</td>
+</tr>
+<tr>
+<td>‘h’</td>
+<td>画六角形符</td>
+</tr>
+</tbody></table>
+<ul>
+<li>【表3】 线型表示</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘-‘</td>
+<td>画实线</td>
+</tr>
+<tr>
+<td>‘–’</td>
+<td>画虚线</td>
+</tr>
+<tr>
+<td>‘.-‘</td>
+<td>点画线</td>
+</tr>
+<tr>
+<td>‘:’</td>
+<td>花点线</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>例：绘制函数曲线 <img src="https://s2.loli.net/2022/04/04/5gOjae4JiEQG8vB.jpg" alt="0ae94178ac903a070336b56d957020e.jpg" style="zoom:33%;" /></p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t =<span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">y1=<span class="number">2</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*t).*<span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*t);     <span class="comment">% exp指数</span></span><br><span class="line">y2=<span class="built_in">sin</span>(t);</span><br><span class="line"><span class="built_in">plot</span>(t,y1,<span class="string">&#x27;b-&#x27;</span>,t,y2,<span class="string">&#x27;r-o&#x27;</span>);        <span class="comment">% pplot二维线图</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/04/b1tOsMjGEeFuhm8.png" alt="image-20220404224129628"></p>
+</li>
+<li><p>例：绘制函数曲线 <code>x=tsin3t,y=tsintsint</code></p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">x=t.*<span class="built_in">sin</span>(<span class="number">3</span>*t);</span><br><span class="line">y=t.*<span class="built_in">sin</span>(t).*<span class="built_in">sin</span>(t);</span><br><span class="line"><span class="built_in">plot</span>(x,y,<span class="string">&#x27;r-p&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/04/ZB73CfPAURGDrYF.png" alt="image-20220404224159004"></p>
+</li>
+</ul>
+<h4 id="（2）图形屏幕控制命令"><a href="#（2）图形屏幕控制命令" class="headerlink" title="（2）图形屏幕控制命令"></a>（2）图形屏幕控制命令</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>figure</td>
+<td>打开图形窗口</td>
+</tr>
+<tr>
+<td>clf</td>
+<td>清除当前图形窗口的内容</td>
+</tr>
+<tr>
+<td>hold</td>
+<td>保持当前图形窗口的内容</td>
+</tr>
+<tr>
+<td>hold on</td>
+<td>再次使用hold就解除保持状态</td>
+</tr>
+<tr>
+<td>grid on</td>
+<td>给图形加上栅格线</td>
+</tr>
+<tr>
+<td>grid off</td>
+<td>删除图形中的栅格线</td>
+</tr>
+<tr>
+<td>box on</td>
+<td>在当前坐标系中显示一个边框</td>
+</tr>
+<tr>
+<td>box off</td>
+<td>在当前坐标系中去掉边框</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关闭当前图形窗口</td>
+</tr>
+<tr>
+<td>close all</td>
+<td>关闭所有图形窗口</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>例：在不同窗口绘制图形</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">y1=<span class="built_in">cos</span>(t);</span><br><span class="line">y2=<span class="built_in">sin</span>(t);</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">3</span>);<span class="built_in">plot</span>(t,y1,<span class="string">&#x27;g-p&#x27;</span>);box on</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">4</span>);<span class="built_in">plot</span>(t,y2,<span class="string">&#x27;r-o&#x27;</span>);grid on</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/05/UcWw5tLuySO7kdf.png" alt="image-20220405000607642"></p>
+</li>
+</ul>
+<h4 id="（3）图形标注命令"><a href="#（3）图形标注命令" class="headerlink" title="（3）图形标注命令"></a>（3）图形标注命令</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>图题标注</td>
+</tr>
+<tr>
+<td>sgtitle</td>
+<td>总标题</td>
+</tr>
+<tr>
+<td>xlabel</td>
+<td>x轴说明</td>
+</tr>
+<tr>
+<td>ylabel</td>
+<td>y轴说明</td>
+</tr>
+<tr>
+<td>zlabel</td>
+<td>z轴说明</td>
+</tr>
+<tr>
+<td>text</td>
+<td>在图形中指定的位置（x,y）上显示字符串string,例如text(x,y,’string’)</td>
+</tr>
+<tr>
+<td>annotation</td>
+<td>线条、剪头和图框标注，例如：annotation(‘arrow’,[0.1,0.45],[0.3,0.5])</td>
+</tr>
+<tr>
+<td>legend</td>
+<td>图例标注</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>legend 函数用于绘制曲线所用线型、颜色或数据点标记图例，用法如下：</p>
+<ul>
+<li><code>legend(&#39;字符串&#39;,&#39;字符串&#39;,…);</code>指定字符串标记当前轴的图例</li>
+<li><code>legend(句柄,&#39;字符串1&#39;,&#39;字符串2&#39;,...)</code>指定字符串换标记句柄图形对象图例</li>
+<li><code>legend(M)</code>用字符M矩阵的每一行字符串作为图像对象标记图里</li>
+<li><code>legend(句柄,M)</code>用字符M矩阵的每一行字符串作为指定句柄的图形对象标签标记图例</li>
+</ul>
+</blockquote>
+<h4 id="（4）注释的字体属性"><a href="#（4）注释的字体属性" class="headerlink" title="（4）注释的字体属性"></a>（4）注释的字体属性</h4><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FontName</td>
+<td>字体名称</td>
+</tr>
+<tr>
+<td>FonSize</td>
+<td>字体大小</td>
+</tr>
+<tr>
+<td>FontWeight</td>
+<td>字形</td>
+</tr>
+<tr>
+<td>FontAngle</td>
+<td>字体角度</td>
+</tr>
+<tr>
+<td>FonUnits</td>
+<td>字体大小单位</td>
+</tr>
+<tr>
+<td>Rotation</td>
+<td>字体旋转角度</td>
+</tr>
+<tr>
+<td>BackgroundColor</td>
+<td>背景色</td>
+</tr>
+<tr>
+<td>EdgeColor</td>
+<td>边框颜色</td>
+</tr>
+<tr>
+<td>HorizontalAlignment</td>
+<td>文本相对位置</td>
+</tr>
+</tbody></table>
+<blockquote>
+<ul>
+<li><code>FontName</code>属性定义名称，取值是系统支持的一种字体名</li>
+<li><code>FonSize</code>属性设置文本对象大小，其单位有<code>FonUnits</code>属性决定，默认为10磅</li>
+<li><code>FontWeight</code>  属性设置字体粗细，取值可以是<code>normal(默认值)、bold、light、demi</code></li>
+<li><code>FontAngle</code>属性设置斜体文字模式，取值可以是 <code>normal(默认值),iitalic、oblique</code></li>
+<li><code>Rotation</code>属性设置字体旋转角，去只是数值量，默认为0。<ul>
+<li>取正值时表示逆时针方向旋转</li>
+<li>取负值时表示顺时针方向旋转</li>
+</ul>
+</li>
+<li><code>BackgroundColor</code>和<code>EdgeColor</code>属性设置文本对象的背景颜色，可取值为 <code>none(默认值)、ColorSpec</code></li>
+<li><code>HorizontalAlignment</code>属性设置文本与指定点的相对位置，取值为 <code>left(默认值)、center、right</code></li>
+</ul>
+</blockquote>
+<h4 id="（5）axis用法"><a href="#（5）axis用法" class="headerlink" title="（5）axis用法"></a>（5）axis用法</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axis([xₘᵢₙ,xₘₐₓ,yₘᵢₙ,yₘₐₓ])或 axis([xₘᵢₙ,xₘₐₓ,yₘᵢₙ,yₘₐₓ,zₘᵢₙ,zₘₐₓ])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明：</p>
+<p>该函数用来输出图形或曲线的坐标范围。</p>
+<ul>
+<li><p>提前给出4个参数绘制二维曲线</p>
+</li>
+<li><p>给出所有参数绘制三维图形</p>
+</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>用法有：</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>axis equal</td>
+<td>将两坐标轴设为相等</td>
+<td></td>
+</tr>
+<tr>
+<td>axis on(off)</td>
+<td>显示（关闭）坐标轴</td>
+<td></td>
+</tr>
+<tr>
+<td>axis auto</td>
+<td>将坐标轴设置为默认值</td>
+<td></td>
+</tr>
+<tr>
+<td>axis squre</td>
+<td>产生正方形坐标系</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="（6）子图分割"><a href="#（6）子图分割" class="headerlink" title="（6）子图分割"></a>（6）子图分割</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subplot(n,m,p)   <span class="comment">% 在各个分块位置创建坐标区</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>n表示行数，m表示列数，p表示绘图序号</li>
+<li>按从左至右、从上至下排列，把图形窗口分为<code>n*m</code>个子图，在第<code>p</code>子图处绘制图形</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：绘制正弦和余弦函数曲线</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">y1 = <span class="built_in">sin</span>(t);</span><br><span class="line">y2 = <span class="built_in">cos</span>(t);</span><br><span class="line">y3 = <span class="built_in">sin</span>(t).^<span class="number">2</span>;</span><br><span class="line">y4 = <span class="built_in">cos</span>(t).^<span class="number">2</span>;</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>),<span class="built_in">plot</span>(t,y1);title(<span class="string">&quot;sin(t)&quot;</span>)           <span class="comment">% title()  添加标题</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>),<span class="built_in">plot</span>(t,y2,<span class="string">&#x27;g-p&#x27;</span>);title(<span class="string">&#x27;cos(t)&#x27;</span>)</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>),<span class="built_in">plot</span>(t,y3,<span class="string">&#x27;r-o&#x27;</span>);title(<span class="string">&#x27;sin^2(t)&#x27;</span>)</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>),<span class="built_in">plot</span>(t,y4,<span class="string">&#x27;k-h&#x27;</span>);title(<span class="string">&#x27;cos^2(t)&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/05/t4iQBOmEoabPlw7.png" alt="image-20220405165957238.png">)</p>
+</li>
+</ul>
+<h2 id="2、图形对象及其句柄"><a href="#2、图形对象及其句柄" class="headerlink" title="2、图形对象及其句柄"></a>2、图形对象及其句柄</h2><h4 id="（1）设置图形对象属性"><a href="#（1）设置图形对象属性" class="headerlink" title="（1）设置图形对象属性"></a>（1）设置图形对象属性</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set(句柄，属性名<span class="number">1</span>，属性值<span class="number">1</span>，属性名<span class="number">2</span>，属性值<span class="number">2</span>，...)</span><br><span class="line"><span class="comment">% set 设置图形对象属性</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>句柄  用于指明要操作的图形对象。</li>
+<li>如果在调用set函数时省略全部属性名和属性值，则将显示出句柄所有允许的属性</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="（2）获取图像对象属性"><a href="#（2）获取图像对象属性" class="headerlink" title="（2）获取图像对象属性"></a>（2）获取图像对象属性</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V = get(句柄，属性名)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>V是返回的属性值</li>
+<li>如果在调用  get 函数时省略属性名，则将返回句柄所有的属性值<ul>
+<li>例如：col &#x3D; get(h,’Color’)用来获得曲线的颜色属性值</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="（3）建立曲线对象"><a href="#（3）建立曲线对象" class="headerlink" title="（3）建立曲线对象"></a>（3）建立曲线对象</h4><p><strong>曲线对向是坐标州的子对象，它既可以定义在二维坐标系中，也可以定义在三维坐标系中。建立曲线对象使用  line 函数</strong></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">句柄变量 = line(x,y,属性名<span class="number">1</span>,属性值<span class="number">1</span>，属性名<span class="number">2</span>,属性值<span class="number">2</span>，...)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>曲线对象的常用属性如下：</p>
+<ul>
+<li>LineStyle 属性：定义曲型</li>
+<li>LinWidth属性：定义线宽，默认值为0.5磅</li>
+<li>MarKer属性：定义数据点标记符号的大小，默认值为6磅</li>
+<li>XData、YData、ZData属性：这 3 种属性的取值都是数值向量或矩阵，分别代表曲线对象的 3 个坐标轴数据</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：利用曲线对象绘制曲线<img src="https://s2.loli.net/2022/04/05/bka2JCdK9g7T1us.jpg" alt="image-20220407170001568" style="zoom:33%;" /></p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">100</span>:<span class="built_in">pi</span>;</span><br><span class="line">y=<span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*t).*<span class="built_in">exp</span>(-t);                               <span class="comment">% exp指数</span></span><br><span class="line">title(<span class="string">&quot;修改颜色和线宽&quot;</span>);                              <span class="comment">% title修改标题</span></span><br><span class="line">h1=line(<span class="string">&#x27;XData&#x27;</span>,t,<span class="string">&#x27;YData&#x27;</span>,y,<span class="string">&#x27;Marker&#x27;</span>,<span class="string">&#x27;*&#x27;</span>);            <span class="comment">% 创建基本线条</span></span><br><span class="line">text(<span class="number">1</span>,<span class="number">0.6</span>,<span class="string">&#x27;y=e^&#123;-t&#125;sin(2&#123;\pi&#125;t)&#x27;</span>,<span class="string">&#x27;FontSize&#x27;</span>,<span class="number">16</span>)      </span><br><span class="line"><span class="comment">%&#123; </span></span><br><span class="line"><span class="comment">text 在图形中指定的位置（1,0.6）上显示字符串【y=e^&#123;-t&#125;sin(2&#123;\pi&#125;t)】</span></span><br><span class="line"><span class="comment">【FontSize】为属性名:字符大小 属性值为【16】</span></span><br><span class="line"><span class="comment">%&#125;    </span></span><br><span class="line">set(h1,<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,<span class="string">&#x27;lineWidth&#x27;</span>,<span class="number">3</span>)                     <span class="comment">% 设置图形对象属性</span></span><br><span class="line">xlabel(<span class="string">&#x27;时间&#x27;</span>,<span class="string">&#x27;FontSize&#x27;</span>,<span class="number">20</span>)                          <span class="comment">% 为x轴添加标签</span></span><br><span class="line">ylabel(<span class="string">&#x27;幅度&#x27;</span>,<span class="string">&#x27;FontSize&#x27;</span>,<span class="number">20</span>)                          <span class="comment">% 为y轴添加标签</span></span><br><span class="line">grid on</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/05/h5vd7QrlOI9FPsw.png" alt="image-20220405200350606"></p>
+</li>
+</ul>
+<h4 id="（4）矩阵对象"><a href="#（4）矩阵对象" class="headerlink" title="（4）矩阵对象"></a>（4）矩阵对象</h4><p><strong>在MATLAB中，矩形、椭圆以及二者之间的过渡图形（如圆角矩阵）都称为矩形对象。</strong></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rectangle（属性名<span class="number">1</span>，属性值<span class="number">1</span>，属性名<span class="number">2</span>，属性值<span class="number">2</span>，...） <span class="comment">% rectangle创建矩阵对象的函数</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><strong>矩阵对象的常用属性如下：</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Position属性</td>
+<td>定义相对坐标原点的矩阵位置</td>
+</tr>
+<tr>
+<td>Curvature属性</td>
+<td>定义矩形边的曲率</td>
+</tr>
+<tr>
+<td>LineStyle属性</td>
+<td>定义线型</td>
+</tr>
+<tr>
+<td>LineWidth属性</td>
+<td>定义线宽，默认值为0.5磅</td>
+</tr>
+<tr>
+<td>EdgeColor属性</td>
+<td>定义边框线的颜色</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>例：在同一坐标轴上绘制矩形、圆角矩形和圆</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">6</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">3</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">5</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;b&#x27;</span>)             <span class="comment">% 创建带有尖角或圆角的矩形</span></span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">10.5</span>,<span class="number">4.1</span>,<span class="number">1.1</span>,<span class="number">9</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">3</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;g&#x27;</span>)</span><br><span class="line">x=[<span class="number">11</span>,<span class="number">9</span>,<span class="number">7</span>];y=[<span class="number">8</span>,<span class="number">10</span>,<span class="number">10</span>];</span><br><span class="line">px=[x,x(<span class="number">1</span>)];py=[y,y(<span class="number">1</span>)];line(px,py,<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">x=[<span class="number">15</span>,<span class="number">12</span>,<span class="number">11.5</span>];y=[<span class="number">13</span>,<span class="number">11</span>,<span class="number">9</span>];</span><br><span class="line">px=[x,x(<span class="number">1</span>)];py=[y,y(<span class="number">1</span>)];line(px,py,<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>,<span class="number">20</span>,<span class="number">18</span>],<span class="string">&#x27;Curvature&#x27;</span>,<span class="number">0.4</span>,<span class="string">&#x27;LineStyle&#x27;</span>,<span class="string">&#x27;-.&#x27;</span>)</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">10</span>,<span class="number">15</span>,<span class="number">2</span>,<span class="number">2</span>],<span class="string">&#x27;Curvature&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">9</span>,<span class="number">16.7</span>,<span class="number">2</span>,<span class="number">2</span>],<span class="string">&#x27;Curvature&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">11</span>,<span class="number">16.7</span>,<span class="number">2</span>,<span class="number">2</span>],<span class="string">&#x27;Curvature&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">8.05</span>,<span class="number">14.7</span>,<span class="number">2</span>,<span class="number">2</span>],<span class="string">&#x27;Curvature&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">12</span>,<span class="number">14.7</span>,<span class="number">2</span>,<span class="number">2</span>],<span class="string">&#x27;Curvature&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">11</span>,<span class="number">13</span>,<span class="number">2</span>,<span class="number">2</span>],<span class="string">&#x27;Curvature&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">rectangle(<span class="string">&#x27;Position&#x27;</span>,[<span class="number">9</span>,<span class="number">13</span>,<span class="number">2</span>,<span class="number">2</span>],<span class="string">&#x27;Curvature&#x27;</span>,[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">2</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">axis equal  <span class="comment">% 将两坐标设为相等</span></span><br><span class="line"><span class="comment">% axis设置坐标轴范围和纵横比  equal坐标范围和尺寸 </span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="3、绘制对数坐标图"><a href="#3、绘制对数坐标图" class="headerlink" title="3、绘制对数坐标图"></a>3、绘制对数坐标图</h2><p><strong>在实际应用中，常常使用到对数坐标，MATLAB提供了绘制对数和半对数坐标曲线的函数</strong></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">semilogx(x1,y2,选项<span class="number">1</span>,x2,y2,选项<span class="number">2</span>，...)</span><br><span class="line">semilogy(x1,y2,选项<span class="number">1</span>,x2,y2,选项<span class="number">2</span>，...)</span><br><span class="line">loglog(x1,y2,选项<span class="number">1</span>,x2,y2,选项<span class="number">2</span>，...)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>这些函数中的选项的定义与 plot 函数完全一样所不同的是坐标轴的选取<ul>
+<li>plot 函数<ul>
+<li>x1,y1,x2,y2 给出的数据分别为 x轴和y轴坐标值</li>
+<li>option 定义了图形曲线的颜色、字符、线型</li>
+<li>若 x1,y1 都是数组，则按列 取坐标数据绘制</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>semilogx 函数使用半对数坐标，x 轴为对数刻度，而 y 轴仍保持线性刻度：</li>
+<li>semilogy 函数使用半对数坐标，y 轴为对数刻度，而 x 轴仍保持线性刻度；<code>恰好和 semilogx 相反；</code></li>
+<li>loglog 函数 使用全对数坐标， x、y轴均采用对数刻度</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例： 绘制不同坐标曲线</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">10</span>;</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>);<span class="built_in">plot</span>(x,<span class="number">2.</span>^x,<span class="string">&#x27;b-*&#x27;</span>);title(<span class="string">&#x27;双线性坐标&#x27;</span>)         <span class="comment">% 在各个坐标位置创建坐标区</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>);semilogy(x,<span class="number">2.</span>^x,<span class="string">&#x27;b-*&#x27;</span>);title(<span class="string">&#x27;x线性y对数坐标&#x27;</span>) <span class="comment">% semilogx 半对数图(y轴有对数刻度)</span></span><br><span class="line">x=<span class="built_in">logspace</span>(<span class="number">-1</span>,<span class="number">2</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>);semilogx(x,<span class="number">1.</span>/x);title(<span class="string">&#x27;y线性对数坐标&#x27;</span>)        <span class="comment">% semilogy 半对数图(x轴有对数刻度)</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>);loglog(x,<span class="built_in">exp</span>(x),<span class="string">&#x27;-s&#x27;</span>);title(<span class="string">&#x27;双对数坐标&#x27;</span>)      <span class="comment">% loglog 双对数刻度图</span></span><br><span class="line">grid on                                                       <span class="comment">% grid显示或隐藏坐标区域网格</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="4、绘制特殊二维图形函数曲线"><a href="#4、绘制特殊二维图形函数曲线" class="headerlink" title="4、绘制特殊二维图形函数曲线"></a>4、绘制特殊二维图形函数曲线</h2><ul>
+<li><p>特殊二维图形函数见表</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bar</td>
+<td>条形图</td>
+</tr>
+<tr>
+<td>polar</td>
+<td>极坐标图</td>
+</tr>
+<tr>
+<td>stairs</td>
+<td>阶梯图</td>
+</tr>
+<tr>
+<td>stem</td>
+<td>火柴杆图</td>
+</tr>
+<tr>
+<td>fill</td>
+<td>实心图</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>例：绘制特殊二维图形函数曲线</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 二维绘图功能——绘制特殊二维图形函数曲线</span></span><br><span class="line">t = <span class="number">0</span>:<span class="number">0.2</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">y = <span class="built_in">sin</span>(t);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>),stairs(t,y);title(<span class="string">&#x27;stairs&#x27;</span>)<span class="comment">% stairs 阶梯图</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>),stem(t,y);title(<span class="string">&#x27;stem&#x27;</span>)</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>),bar(t,y);title(<span class="string">&#x27;bar&#x27;</span>)</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>),polar(t,y);title(<span class="string">&#x27;polar&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/06/JlsIHTWz9A4EBQF.png" alt="image-20220406005539355"></p>
+</li>
+</ul>
+<h2 id="5、绘制符号函数曲线"><a href="#5、绘制符号函数曲线" class="headerlink" title="5、绘制符号函数曲线"></a>5、绘制符号函数曲线</h2><h4 id="（1）绘制符号函数（显函数、隐函数、参数方程）曲线"><a href="#（1）绘制符号函数（显函数、隐函数、参数方程）曲线" class="headerlink" title="（1）绘制符号函数（显函数、隐函数、参数方程）曲线"></a>（1）<strong>绘制符号函数</strong>（显函数、隐函数、参数方程）<strong>曲线</strong></h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ezplot(<span class="string">&#x27;f(x)&#x27;</span>,[a,b])  <span class="comment">% 表示在 a&lt;x&lt;b 绘制显函数f=f(x)的函数图</span></span><br><span class="line">ezplot(f,[xminx,xmax],<span class="built_in">figure</span>(n))<span class="comment">% 指定绘图窗口绘图</span></span><br><span class="line">ezplot(<span class="string">&#x27;f(x,y)&#x27;</span>,[xminx,xmax,ymin,ymax])<span class="comment">% 表示在区间xmin&lt;x&lt;xmax 和 ymin&lt;y&lt;ymax 绘制隐函数f(x,y)=0 的函数图</span></span><br><span class="line">ezplot(<span class="string">&#x27;x(t)&#x27;</span>,<span class="string">&#x27;y(t)&#x27;</span>,[tmin,tmax])<span class="comment">% 表示在区间 tmin&lt;t&lt;tmax  绘制方程 x=x(t),y=y(t)的函数图</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例：使用explot在[-10,10]区间绘制函数 <img src="https://s2.loli.net/2022/04/06/h5H1SkbiCGpFy9n.png" alt="a00561c2cf1680e7f5d63ab438c47b0.png" style="zoom:50%;" />曲线</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ezplot(<span class="string">&#x27;sin(sqrt(2.*x.^2))/sqrt(2.*x.^2)&#x27;</span>,[<span class="number">-10</span>,<span class="number">10</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/06/BYO5ofJbA6j8Udi.png" alt="image-20220406102209676"></p>
+</li>
+<li><p>例： 在[0,2*pi]区间绘制函数 y&#x3D;cos(t),x&#x3D;sin3(t)的星形图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ezplot(<span class="string">&#x27;cos(t)^3&#x27;</span>,<span class="string">&#x27;sin(t)^3&#x27;</span>,[<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>]);         <span class="comment">% ezplot易用的函数绘图函数</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/06/ViYSLq6K81uWp4A.png" alt="image-20220406102244651"></p>
+</li>
+</ul>
+<h4 id="（2）函数图函数"><a href="#（2）函数图函数" class="headerlink" title="（2）函数图函数"></a>（2）函数图函数</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fplot(fun,lims);				<span class="comment">% 绘制函数 fun 在区间 lims= [xmin,xmax]的函数图</span></span><br><span class="line">fplot(fun,lims,<span class="string">&#x27;corline&#x27;</span>)		<span class="comment">% 以指定线性绘图</span></span><br><span class="line">[x,y]=fplot(fun,lims)		<span class="comment">% 只返回绘图点的值二不绘图，需用 plot(x,y)来绘图</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明：</p>
+<ul>
+<li>fun 必须是 M 文件的函数名或是独立变量为 x 的字符串</li>
+<li>fplot函数不能画参数方程和隐函数图形，但可以在一个图上画多个图形</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：建立函数文件 bs_10.m，在[-1,2] 区间上绘制 <code>y = e^2x+sin(3x^2)</code> 曲线</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Y</span>=<span class="title">bs_10_07</span><span class="params">(x)</span></span></span><br><span class="line">Y=<span class="built_in">exp</span>(<span class="number">2</span>*x)+<span class="built_in">sin</span>(<span class="number">3</span>*x.^<span class="number">2</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">% 在命令窗口输入命令 fplot(&#x27;bs_10_07&#x27;,[-1,2])</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/06/tKhgP8f2Vnwe5UC.png" alt="image-20220406015727263"></p>
+</li>
+<li><p>例：绘制函数 <code>sin(x)</code> 和 <code>tan(x)cos(x)</code>  在<code>[-2*pi,2*pi]</code>区间的曲线</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fplot(<span class="string">&#x27;[sin(x),tan(x),cos(x)]&#x27;</span>,<span class="number">2</span>*<span class="built_in">pi</span>*[<span class="number">-1</span> <span class="number">1</span> <span class="number">-1</span> <span class="number">1</span>],<span class="string">&#x27;r-p&#x27;</span>) 		<span class="comment">% fplot绘制表达式或函数</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/06/3ybvIigqXBELZdY.png" alt="image-20220406101059060"></p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

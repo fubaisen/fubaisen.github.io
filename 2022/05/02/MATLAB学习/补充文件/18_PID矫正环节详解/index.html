@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PID矫正环节详解.md - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+
+比例环节：即时成比例地反应控制系统的偏差信号e(t)，偏差一旦产生，控制器立即产生控制作用以减小误差。当偏差e&amp;#x3D;0时，控制作用也为0。因此，比例控制是基于偏差进行调节的，即有差调节。
+,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="PID矫正环节详解.md - fubaisen"/>
+    <meta name="twitter:description" content="
+
+比例环节：即时成比例地反应控制系统的偏差信号e(t)，偏差一旦产生，控制器立即产生控制作用以减小误差。当偏差e&amp;#x3D;0时，控制作用也为0。因此，比例控制是基于偏差进行调节的，即有差调节。
+,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="PID矫正环节详解.md - fubaisen"/>
+    <meta property="og:description" content="
+
+比例环节：即时成比例地反应控制系统的偏差信号e(t)，偏差一旦产生，控制器立即产生控制作用以减小误差。当偏差e&amp;#x3D;0时，控制作用也为0。因此，比例控制是基于偏差进行调节的，即有差调节。
+,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">PID矫正环节详解.md</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">PID矫正环节详解.md</h1>
+        <div class="stuff">
+            <span>五月 02, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><img src="https://s2.loli.net/2022/05/02/4c6xsVgrqwpYPXv.png" alt="img"></p>
+<ul>
+<li><p>比例环节：即时成比例地反应控制系统的偏差信号e(t)，偏差一旦产生，控制器立即产生控制作用以减小误差。当偏差e&#x3D;0时，控制作用也为0。因此，比例控制是基于偏差进行调节的，即有差调节。</p>
+</li>
+<li><p>积分环节：能对误差进行记忆，主要用于消除静差，提高系统的无差度，积分作用的强弱取决于积分时间常数Ti，Ti越大，积分作用越弱，反之则越强。</p>
+</li>
+<li><p>微分环节：能反映偏差信号的变化趋势(变化速率)，并能在偏差信号值变得太大之前，在系统中引入一个有效的早期修正信号，从而加快系统的动作速度，减小调节时间。</p>
+</li>
+</ul>
+<p><strong>从时间的角度讲，比例作用是针对系统当前误差进行控制，积分作用则针对系统误差的历史，而微分作用则反映了系统误差的变化趋势，这三者的组合是“过去、现在、未来”的完美结合  。</strong></p>
+<p>当被放入较重的物体时，PID控制器可以消除未来的误差，会立刻顶回去，而PI控制器必定会有被压下去的过程，慢慢回去。</p>
+<ul>
+<li><p>加大kp可以产生更刚性和更快的响应</p>
+</li>
+<li><p>加大ki可以减少震荡 </p>
+</li>
+<li><p>加大kd可以</p>
+</li>
+</ul>
+<blockquote>
+<p>例如自动控制汽车加速到指定速度，要是一加速，踩100%油门，很容易就超了，超速了立即踩100%刹车。。。自然是不行的，最好就是让它缓慢加速，这就是比例控制器参数的意义。</p>
+<p>kp一般小于1，这样不会剧烈震荡了。但是仍然还会抖动，狂抖。</p>
+</blockquote>
+<blockquote>
+<p>整个系统不是特别稳定，总是在“抖动”。</p>
+<p>你心里设想一个弹簧：现在在平衡位置上。拉它一下，然后松手。这时它会震荡起来。因为阻力很小，它可能会震荡很长时间，才会重新停在平衡位置。</p>
+<p>请想象一下：要是把上图所示的系统浸没在水里，同样拉它一下 ：这种情况下，重新停在平衡位置的时间就短得多。</p>
+<p>我们需要一个控制作用，让被控制的物理量的“变化速度”趋于0，即类似于“阻尼”的作用。越接近目标，P的作用越温柔。有很多内在的或者外部的因素，使控制量发生小范围的摆动。D的作用就是让物理量的速度趋于0，只要什么时候，这个量具有了速度，D就向相反的方向用力，尽力刹住这个变化。kD参数越大，向速度相反方向刹车的力道就越强。究竟怎么刹的细节，不是很清楚。</p>
+</blockquote>
+<blockquote>
+<p>还有静误差，例如电机的静摩檫力大于动摩擦力，调微的功率不够怎么办？(只要有误差，就能检测的到)。</p>
+<p>在P的作用下，水温慢慢升高。直到升高到45℃时，他发现了一个不好的事情：天气太冷，水散热的速度，和P控制的加热的速度相等了。</p>
+<p>这可怎么办？</p>
+<p>P兄这样想：我和目标已经很近了，只需要轻轻加热就可以了。但是轻轻加热完全不起作用。<br>D兄这样想：加热和散热相等，温度没有波动，我好像不用调整什么。<br>于是，水温永远地停留在45℃，永远到不了50℃。</p>
+<p>作为一个人，根据常识，我们知道，应该进一步增加加热的功率。可是增加多少该如何计算呢？</p>
+<p>设置一个积分量。只要偏差存在，就不断地对偏差进行积分（累加），并反应在调节力度上。</p>
+<p>什么意思呢？这样一来，即使45℃和50℃相差不太大，但是随着时间的推移，只要没达到目标温度，这个积分量就不断增加。系统就会慢慢意识到：还没有到达目标温度，该增加功率啦！在微分完全不起作用的情况下，功率就会越来越大。</p>
+<p>到了目标温度后，假设温度没有波动，积分值就不会再变动。这时，加热功率仍然等于散热功率。但是，温度是稳稳的50℃。</p>
+</blockquote>
+<p>kI的值越大，积分时乘的系数就越大，积分效果越明显。</p>
+<p>所以，I的作用就是，减小静态情况下的误差，让受控物理量尽可能接近目标值。</p>
+<p>I在使用时还有个问题：需要设定积分限制。防止在刚开始加热时，就把积分量积得太大，难以控制。</p>
+<p>三者并不是依次关系，谁先开始都没有问题。(当然kp最先。)</p>
+<p><img src="https://s2.loli.net/2022/05/02/Xua7d2e4onJlLbN.gif" alt="img"></p>
+<hr>
+<p>版权声明：本文为CSDN博主「才大难为用」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/HeroIsUseless/article/details/108634876">https://blog.csdn.net/HeroIsUseless/article/details/108634876</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

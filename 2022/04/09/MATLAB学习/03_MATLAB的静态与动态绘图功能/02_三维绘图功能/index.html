@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>02_三维绘图功能 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="二、三维绘图功能1、绘制三维空间曲线与plot类似，可以使用plot3函数来绘制一条三维空间的曲线
+
+语法格式：
+1plot3(x,y,option)
+
+
+与 plot 函数 中，x、y和  opt,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="02_三维绘图功能 - fubaisen"/>
+    <meta name="twitter:description" content="二、三维绘图功能1、绘制三维空间曲线与plot类似，可以使用plot3函数来绘制一条三维空间的曲线
+
+语法格式：
+1plot3(x,y,option)
+
+
+与 plot 函数 中，x、y和  opt,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="02_三维绘图功能 - fubaisen"/>
+    <meta property="og:description" content="二、三维绘图功能1、绘制三维空间曲线与plot类似，可以使用plot3函数来绘制一条三维空间的曲线
+
+语法格式：
+1plot3(x,y,option)
+
+
+与 plot 函数 中，x、y和  opt,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">02_三维绘图功能</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">02_三维绘图功能</h1>
+        <div class="stuff">
+            <span>四月 09, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="二、三维绘图功能"><a href="#二、三维绘图功能" class="headerlink" title="二、三维绘图功能"></a>二、三维绘图功能</h1><h2 id="1、绘制三维空间曲线"><a href="#1、绘制三维空间曲线" class="headerlink" title="1、绘制三维空间曲线"></a>1、绘制三维空间曲线</h2><p><strong>与plot类似，可以使用<code>plot3函数</code>来绘制一条三维空间的曲线</strong></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot3(x,y,option)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>与 plot 函数 中，x、y和  option类似，多了一个 z 坐标轴。option 指定曲线的颜色、线形等</p>
+</blockquote>
+</li>
+<li><p>例：绘制三维曲线并标注坐标</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">close;</span><br><span class="line">t=<span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">10</span>:<span class="number">20</span>*<span class="built_in">pi</span>;</span><br><span class="line">x=<span class="built_in">sin</span>(t);</span><br><span class="line">y=<span class="built_in">cos</span>(t);</span><br><span class="line">z=t.*<span class="built_in">sin</span>(t).*<span class="built_in">cos</span>(t);</span><br><span class="line"><span class="built_in">plot3</span>(x,y,z,<span class="string">&#x27;m:p&#x27;</span>);</span><br><span class="line">title(<span class="string">&#x27;线性三维空间&#x27;</span>);</span><br><span class="line">xlabel(<span class="string">&#x27;x轴&#x27;</span>);ylabel(<span class="string">&#x27;y轴&#x27;</span>);zlabel(<span class="string">&#x27;z轴&#x27;</span>);</span><br><span class="line">grid on</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/5fYjDgIszH9UVWa.png" alt="image-20220408134048928"></p>
+</li>
+</ul>
+<h2 id="2、绘制网格矩阵"><a href="#2、绘制网格矩阵" class="headerlink" title="2、绘制网格矩阵"></a>2、绘制网格矩阵</h2><p><strong>meshgrid 函数 产生二维阵和三维阵列。使用该函数时，用户需要知道各个四边形顶点的三维坐标值</strong></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[X,Y]=meshgrid(x,y)   % 向量x,y得别指定X轴和Y轴的数据点。当x为n维向量，y为m维向量时</span><br><span class="line">[X,Y,Z]=meshgrid(x,y,z)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例：利用meshgrid函数绘制三维函数曲线 z&#x3D;tan(x&#x2F;y)</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">-30</span>:<span class="number">1</span>:<span class="number">30</span>;</span><br><span class="line">b=<span class="number">-30</span>:<span class="number">1</span>:<span class="number">30</span>;</span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(a,b);</span><br><span class="line">z=<span class="built_in">atan</span>(x./y);</span><br><span class="line"><span class="built_in">plot3</span>(x,y,z);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/kBYlbnTmFpq5AGw.png" alt="image-20220408161700205"></p>
+</li>
+<li><p>例：利用 plot3函数 绘制三维曲线</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(x);</span><br><span class="line">z=<span class="built_in">sin</span>(y).*<span class="built_in">cos</span>(x);</span><br><span class="line"><span class="built_in">plot3</span>(x,y,z);</span><br><span class="line">xlabel(<span class="string">&#x27;x-axis&#x27;</span>),ylabel(<span class="string">&#x27;y-axis&#x27;</span>);</span><br><span class="line">zlabel(<span class="string">&#x27;z-axis&#x27;</span>);</span><br><span class="line">title(<span class="string">&#x27;三维曲线&#x27;</span>);</span><br><span class="line">grid on;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/Ncqwn2PRhGTsXEO.png" alt="image-20220408161740059"></p>
+</li>
+</ul>
+<h2 id="3、绘制常用三维图形"><a href="#3、绘制常用三维图形" class="headerlink" title="3、绘制常用三维图形"></a>3、绘制常用三维图形</h2><h4 id="（1）bar3"><a href="#（1）bar3" class="headerlink" title="（1）bar3"></a>（1）bar3</h4><ul>
+<li>bar3为绘制三维条形图，语法格式为：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bar3(y)   	<span class="comment">% y的每个元素对应于一个条形图</span></span><br><span class="line">bar3(x,y)   <span class="comment">% 在x 指定的位置上绘制y中元素的条形图</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="（2）stem3"><a href="#（2）stem3" class="headerlink" title="（2）stem3"></a>（2）stem3</h4><ul>
+<li>stem3为绘制针状形图，语法格式为：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stem3(z)    <span class="comment">% 将数据序列z表示为从xy平面向上延伸的杆形图，x和y自动生成</span></span><br><span class="line">stem3(x,y)  <span class="comment">% 在x指定的位置上绘制y中元素的条形图</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="（3）pie3"><a href="#（3）pie3" class="headerlink" title="（3）pie3"></a>（3）pie3</h4><ul>
+<li>pie3为函数绘制三维饼图，语法格式为：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pie3(x)     <span class="comment">% x为向量，用x 中的数据绘制一个三维饼图</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="（4）fill3"><a href="#（4）fill3" class="headerlink" title="（4）fill3"></a>（4）fill3</h4><ul>
+<li>fill3为函数可在三维空间内绘制出填充过的多边形，语法格式为：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fill3(x,y,z,c)  <span class="comment">% 用x、y、z做多边形的顶点，而c指定了填充的颜色</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>例：绘制三维条形图和三维杆形图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="number">0</span>:<span class="number">.1</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">x=t.^<span class="number">3.</span>*<span class="built_in">sin</span>(<span class="number">3</span>*t).*<span class="built_in">exp</span>(-t);</span><br><span class="line">y=t.^<span class="number">3.</span>*<span class="built_in">cos</span>(<span class="number">3</span>*t).*<span class="built_in">exp</span>(-t);</span><br><span class="line">z=t.^<span class="number">2</span>;</span><br><span class="line"><span class="built_in">plot3</span>(x,y,z);<span class="built_in">hold</span> on;<span class="comment">% 添加新绘制图时保留当前绘图</span></span><br><span class="line">stem3(x,y,z);<span class="built_in">hold</span> on;</span><br><span class="line">bar3(x,y,z);<span class="built_in">hold</span> on;</span><br><span class="line">xlabel(<span class="string">&#x27;x轴&#x27;</span>);ylabel(<span class="string">&#x27;y轴&#x27;</span>);zlabel(<span class="string">&#x27;z轴&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/rbQhnz92BNkyqST.png" alt="image-20220408161902325"></p>
+</li>
+<li><p>例：子图的使用和绘制，有排球：</p>
+<ul>
+<li>绘制魔方矩阵的三维线形图；</li>
+<li>绘制曲线y&#x3D;2sinx 的三维条形图</li>
+<li>已知 x&#x3D;[2347,1827,2043,3025],绘制三维饼图</li>
+<li>用随机的顶点坐标值画出5个黄色三角形</li>
+</ul>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>);bar3(<span class="built_in">magic</span>(<span class="number">4</span>));</span><br><span class="line">title(<span class="string">&#x27;魔方矩阵的三维条形图&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>);y=<span class="number">2</span>*<span class="built_in">sin</span>(<span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">6</span>:<span class="number">2</span>*<span class="built_in">pi</span>);</span><br><span class="line">stem3(y);title(<span class="string">&#x27;三维杆形图&#x27;</span>);<span class="comment">% 绘制三维离散序列数据</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>);pie3([<span class="number">25</span>,<span class="number">20</span>,<span class="number">22</span>,<span class="number">23</span>]);</span><br><span class="line">title(<span class="string">&#x27;饼形图&#x27;</span>);subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>);</span><br><span class="line">fill3(<span class="built_in">rand</span>(<span class="number">3</span>,<span class="number">5</span>),<span class="built_in">rand</span>(<span class="number">3</span>,<span class="number">5</span>),<span class="built_in">rand</span>(<span class="number">3</span>,<span class="number">5</span>),<span class="string">&#x27;y&#x27;</span>);</span><br><span class="line">title(<span class="string">&#x27;随机数填充图&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/k62HtpxbnNo5TzE.png" alt="image-20220408161801568"></p>
+</li>
+</ul>
+<h2 id="4、绘制三维曲面图"><a href="#4、绘制三维曲面图" class="headerlink" title="4、绘制三维曲面图"></a>4、绘制三维曲面图</h2><h4 id="（1）三维网格曲面图"><a href="#（1）三维网格曲面图" class="headerlink" title="（1）三维网格曲面图"></a>（1）三维网格曲面图</h4><p><strong>三维网格是有一些四边形相互连接在一起构建成的一种曲面图</strong></p>
+<ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mesh(x,y,z,c)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明：</p>
+<ul>
+<li>x、y、z 是维数同样的矩阵，x、y是网格坐标矩阵，z是网格电商的高度矩阵，c用于指定在不同高度下的颜色范围</li>
+<li>c省略时，c&#x3D;z 即颜色的设定是正比于图形的高度</li>
+<li>当 x、y是向量时，要求 **<code>x 的长度必须等于z矩阵的列，y的长度必须等于z的行</code>**。x、y相邻两元素的组合构成网格点的 x、y坐标，z坐标则取自z矩阵，然后绘制三维曲线</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：根据函数 z&#x3D; f(x,y)的x和y坐标找出z的高度，绘制<code>z=x^2+y^2</code>的三维网格图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">-5</span>:<span class="number">5</span>;y=x;</span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(x,y);   <span class="comment">% 只会返回绘图点的值而不绘图</span></span><br><span class="line">z=x.^<span class="number">2</span>+y.^<span class="number">2</span>;</span><br><span class="line">mesh(x,y,z)</span><br><span class="line">xlabel(<span class="string">&#x27;x轴&#x27;</span>);ylabel(<span class="string">&#x27;y轴&#x27;</span>);zlabel(<span class="string">&#x27;z轴&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/MrsyDawqkHTBjXU.png" alt="image-20220408161830617"></p>
+</li>
+<li><p>例：利用 mesh( )函数 绘制 z&#x3D;sin(x)cos(x) 的三维网格图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(x);</span><br><span class="line">z=<span class="built_in">sin</span>(y).*<span class="built_in">cos</span>(x);</span><br><span class="line">mesh(x,y,z);</span><br><span class="line">xlabel(<span class="string">&#x27;x-axis&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;y-axis&#x27;</span>);</span><br><span class="line">zlabel(<span class="string">&#x27;z-axis&#x27;</span>);</span><br><span class="line">title(<span class="string">&#x27;mesh&#x27;</span>);pause  <span class="comment">% pause 暂时停止执行MATLAB</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/FdT6UIlPygbGsfx.png" alt="image-20220408155742391"></p>
+</li>
+<li><p>例：绘制函数   z &#x3D; sin(x+sin(y))-x&#x2F;10 在 （0,4π) 的三维网格图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">close;</span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(<span class="number">0</span>:<span class="number">0.25</span>:<span class="number">4</span>*<span class="built_in">pi</span>);</span><br><span class="line">z=<span class="built_in">sin</span>(x+<span class="built_in">sin</span>(y))-x/<span class="number">10</span>;</span><br><span class="line">mesh(x,y,z);</span><br><span class="line">axis([<span class="number">0</span> <span class="number">4</span>*<span class="built_in">pi</span> <span class="number">0</span> <span class="number">4</span>*<span class="built_in">pi</span> <span class="number">-2.5</span> <span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/minar1OTb6kKwtj.png" alt="image-20220408163437395"></p>
+</li>
+</ul>
+<h4 id="（2）三维阴影曲面图"><a href="#（2）三维阴影曲面图" class="headerlink" title="（2）三维阴影曲面图"></a>（2）三维阴影曲面图</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">surf(x,y,z,c)  </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>x、y、z 含义与mesh相同<ul>
+<li>x、y、z 是维数同样的矩阵，x、y是网格坐标矩阵，z是网格电商的高度矩阵，c用于指定在不同高度下的颜色范围</li>
+<li>c省略时，c&#x3D;z 即颜色的设定是正比于图形的高度</li>
+<li>当 x、y是向量时，要求 **<code>x 的长度必须等于z矩阵的列，y的长度必须等于z的行</code>**。x、y相邻两元素的组合构成网格点的 x、y坐标，z坐标则取自z矩阵，然后绘制三维曲线</li>
+</ul>
+</li>
+<li>他们均使用网格矩阵 messhgrid 函数产生坐标，然后回图自动着色。</li>
+<li>其三维阴影曲面 surf 函数各个四边形的表面颜色分部通过 shading 命令指定</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：绘制函数 z&#x3D;sin(x+sin(y))-x&#x2F;10 在（0,4π）的三维曲面图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[x,y]=<span class="built_in">meshgrid</span>(<span class="number">0</span>:<span class="number">0.25</span>:<span class="number">4</span>*<span class="built_in">pi</span>);</span><br><span class="line">z=<span class="built_in">sin</span>(x+<span class="built_in">sin</span>(y))-x/<span class="number">10</span>;</span><br><span class="line">surf(x,y,z);</span><br><span class="line">axis([<span class="number">0</span> <span class="number">4</span>*<span class="built_in">pi</span> <span class="number">0</span> <span class="number">4</span>*<span class="built_in">pi</span> <span class="number">-2.5</span> <span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/5lNgHO4eBiqn27j.png" alt="image-20220408164028266"></p>
+</li>
+<li><p>例：绘制马铃函数 z&#x3D;f(x,y)&#x3D;x^2-y^2的三维曲画图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">-10</span>:<span class="number">0.1</span>:<span class="number">10</span>;</span><br><span class="line">[xx,yy]=<span class="built_in">meshgrid</span>(x);</span><br><span class="line">zz=xx.^<span class="number">2</span>-yy.^<span class="number">2</span>;</span><br><span class="line">surf(xx,yy,zz);</span><br><span class="line">title(<span class="string">&#x27;马铃面&#x27;</span>);xlable(<span class="string">&#x27;x轴&#x27;</span>)</span><br><span class="line">ylable(<span class="string">&#x27;y轴&#x27;</span>);zlable(<span class="string">&#x27;z轴&#x27;</span>);</span><br><span class="line">grid on;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/UPqZIDfSGrvlYTy.png" alt="image-20220408165042125"></p>
+<p><img src="https://s2.loli.net/2022/04/08/I2hb4gYNWftZjnl.png" alt="image-20220408165153631"></p>
+</li>
+<li><p>例：绘制函数 z&#x3D;f(x,y)&#x3D;x+2y^2 的曲面函数</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xx=<span class="built_in">linspace</span>(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">50</span>); <span class="comment">% 生成线性间距变量</span></span><br><span class="line">yy=<span class="built_in">linspace</span>(<span class="number">-2</span>,<span class="number">2</span>,<span class="number">100</span>);</span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(xx,yy);</span><br><span class="line">z=x.^<span class="number">2</span>+<span class="number">2</span>*y.^<span class="number">2</span>;</span><br><span class="line">surf(x,y,z);</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/15_linspace%E7%94%A8%E6%B3%95">linspace用法</a></p>
+<p><img src="https://s2.loli.net/2022/04/08/9kmN1PufMlOhHvp.png" alt="image-20220408170127534"></p>
+</li>
+<li><p>例：绘制 <img src="https://s2.loli.net/2022/04/08/v4ms7KtkiEZogdl.jpg" alt="35d2de6eb4eba4be362eadb377d8cbb" style="zoom:25%;" />函数的网格图与网格面</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">-10</span>:<span class="number">0.5</span>:<span class="number">10</span>;</span><br><span class="line">[xx,yy]=<span class="built_in">meshgrid</span>(x);</span><br><span class="line">R=<span class="built_in">sqrt</span>(xx.^<span class="number">2</span>+yy.^<span class="number">2</span>);</span><br><span class="line">zz=<span class="built_in">sin</span>(R)./R;</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>);mesh(xx,yy,zz);</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>);surf(xx,yy,zz);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/cqCoQ3zIib8hgJD.png" alt="image-20220408170458185"></p>
+<blockquote>
+<p>区别：</p>
+<p>　　　　（1）网线图：线条有颜色，内部是无颜色</p>
+<p>　　　　（2）曲面图：线条是黑色的，内部有颜色（把线条之间的空挡填充颜色，沿z轴按每一网格变化）</p>
+<p><img src="https://s2.loli.net/2022/04/09/MNi9qUH8goxXQvn.png" alt="image-20220409003850901.png"></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="5、绘制三维立体图"><a href="#5、绘制三维立体图" class="headerlink" title="5、绘制三维立体图"></a>5、绘制三维立体图</h2><p><strong>MATLAB提供了球面和柱面等标准的三维曲面绘制函数，使用户可以很方便地得到标准三维曲面图</strong></p>
+<h4 id="（1）球曲面"><a href="#（1）球曲面" class="headerlink" title="（1）球曲面"></a>（1）球曲面</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">spere(n)   <span class="comment">% 画n等分球面，n表示球面绘制的精度，默认半径=1 ，n=20</span></span><br><span class="line">[x,y,z]=spere(n)   <span class="comment">% 获取球面 x、y、z空间坐标位置</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例：绘制 当 n&#x3D;4,6,20,40 时不同球面图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>);sphere(<span class="number">4</span>);title(<span class="string">&#x27;n=4&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>);sphere(<span class="number">6</span>);title(<span class="string">&#x27;n=6&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>);sphere(<span class="number">20</span>);title(<span class="string">&#x27;n=20&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>);sphere(<span class="number">40</span>);title(<span class="string">&#x27;n=40&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/1xpNtqHI7ahXzBS.png" alt="image-20220408231458781"></p>
+</li>
+</ul>
+<h4 id="（2）柱面图"><a href="#（2）柱面图" class="headerlink" title="（2）柱面图"></a>（2）柱面图</h4><ul>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cylinder(R,n)   <span class="comment">% R 为半径，n为煮面圆周等分数</span></span><br><span class="line">[x,y,z]=cylinder(R,n)  <span class="comment">% x,y,z代表空间坐标位置</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说明：</p>
+<ul>
+<li>若在调用该函数是不带输入参数，则直接绘制所需柱面</li>
+<li>n决定了柱面的圆滑程度，其默认值为 20 。若 n 值取得比较小，则绘制出多面体的表面图</li>
+</ul>
+</blockquote>
+</li>
+<li><p>例：绘制当 n &#x3D; 3,6,20,50时的不同柱面图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t=<span class="built_in">linspace</span>(<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">3.5</span>*<span class="built_in">pi</span>,<span class="number">50</span>);</span><br><span class="line">R=<span class="built_in">cos</span>(t)+<span class="number">2</span>;</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>);cylinder(R,<span class="number">3</span>);title(<span class="string">&#x27;n=3&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>);cylinder(R,<span class="number">6</span>);title(<span class="string">&#x27;n=6&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>);cylinder(R,<span class="number">20</span>);title(<span class="string">&#x27;n=20&#x27;</span>);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>);cylinder(R,<span class="number">50</span>);title(<span class="string">&#x27;n=50&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/bzmOkSGCEFWoxRa.png" alt="image-20220408231433535"></p>
+</li>
+<li><p>例：绘制函数 2+cos²t 的柱面图</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>)</span><br><span class="line">t=<span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">10</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[x,y,z]=cylinder(<span class="number">2</span>+(<span class="built_in">cos</span>(t).^<span class="number">2</span>));</span><br><span class="line">surf(x,y,z);</span><br><span class="line">axis square     <span class="comment">% 产生正方形坐标系</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/umGFUWdyIJvTowe.png" alt="image-20220408231416721"></p>
+</li>
+</ul>
+<h4 id="（3）利用多峰函数绘图"><a href="#（3）利用多峰函数绘图" class="headerlink" title="（3）利用多峰函数绘图"></a>（3）利用多峰函数绘图</h4><ul>
+<li><p><strong>多峰函数为：</strong><img src="https://s2.loli.net/2022/04/08/j1FpfYE5RNDKWib.jpg" alt="088acea2090df91417d2a5944b4ad06"></p>
+</li>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">peaks(n)   		  <span class="comment">% 输出n×n 矩阵峰值函数图形</span></span><br><span class="line">[x,y,z]=peaks(n)  <span class="comment">% x,y,z代表空间坐标位置</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例：绘制多峰函数</p>
+<p>程序命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[x,y,z]=peaks(<span class="number">30</span>);</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>);surf(x,y,z)</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>);surfc(x,y,z)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/08/UDKlgwuW6P9mO8i.png" alt="image-20220408231340317"></p>
+</li>
+</ul>
+<h2 id="6、图形颜色的修饰"><a href="#6、图形颜色的修饰" class="headerlink" title="6、图形颜色的修饰"></a>6、图形颜色的修饰</h2><ul>
+<li><p>MATLAB有极好的颜色表现功能</p>
+</li>
+<li><p><strong>colormap实际上是一个 m×3 矩阵，m为颜色维数。</strong></p>
+</li>
+<li><p>用 MAP矩阵映射当前图形的色图，<strong>每一行的3个值都为 0~1 之间的数，分别代表颜色组成的 RGB 值，</strong></p>
+<ul>
+<li>如[0 0 1]代表蓝色。</li>
+</ul>
+</li>
+<li><p>系统自带了一些色图，例如输入 <strong>winter 就可以看到它是一个 63×3 的矩阵</strong>	</p>
+</li>
+<li><p>语法格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clormap(MAP)   	   <span class="comment">% 色图设定函数，MAP为 m×3维色矩阵</span></span><br><span class="line">clolrmap([R,G,B])  <span class="comment">% 绘制当前颜色</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="（1）三基色调色"><a href="#（1）三基色调色" class="headerlink" title="（1）三基色调色"></a>（1）三基色调色</h4><table>
+<thead>
+<tr>
+<th>三基色比例</th>
+<th>颜色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[0 0 0]</td>
+<td>黑色</td>
+</tr>
+<tr>
+<td>[0 0 1]</td>
+<td>蓝色</td>
+</tr>
+<tr>
+<td>[0 1 0]</td>
+<td>绿色</td>
+</tr>
+<tr>
+<td>[0 1 1]</td>
+<td>浅蓝色</td>
+</tr>
+<tr>
+<td>[1 0 0]</td>
+<td>红色</td>
+</tr>
+<tr>
+<td>[1 0 1]</td>
+<td>品红色</td>
+</tr>
+<tr>
+<td>[1 1 0]</td>
+<td>黄色</td>
+</tr>
+<tr>
+<td>[1 1 1]</td>
+<td>白色</td>
+</tr>
+<tr>
+<td>[0.5 0.5 0.5]</td>
+<td>灰色</td>
+</tr>
+<tr>
+<td>[0.5 0 0]</td>
+<td>暗红色</td>
+</tr>
+<tr>
+<td>[1 0.26 0.4]</td>
+<td>铜色</td>
+</tr>
+<tr>
+<td>[0.49 1 0.8]</td>
+<td>浅绿色</td>
+</tr>
+<tr>
+<td>[0.49 1 0.83]</td>
+<td>宝石蓝</td>
+</tr>
+<tr>
+<td>[1 0.5 0]</td>
+<td>橘色</td>
+</tr>
+<tr>
+<td>[0.667 0.667 1]</td>
+<td>天蓝</td>
+</tr>
+<tr>
+<td>[0.5 0 0.5]</td>
+<td>紫色</td>
+</tr>
+</tbody></table>
+<h4 id="（2）常见色图配置"><a href="#（2）常见色图配置" class="headerlink" title="（2）常见色图配置"></a>（2）常见色图配置</h4><table>
+<thead>
+<tr>
+<th><code>色图函数名</code></th>
+<th><code>颜色性质及说明</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bone</td>
+<td>黑色渐变到白色</td>
+</tr>
+<tr>
+<td>cool</td>
+<td>青色渐变到品红色</td>
+</tr>
+<tr>
+<td>copper</td>
+<td>黑色渐变到亮铜色</td>
+</tr>
+<tr>
+<td>flag</td>
+<td>红-白-蓝-黑交错色</td>
+</tr>
+<tr>
+<td>gray</td>
+<td>线性灰度</td>
+</tr>
+<tr>
+<td>hot</td>
+<td>黑-红-黄-白交错色</td>
+</tr>
+<tr>
+<td>hsv(默认值)</td>
+<td>带饱和值的色图、颜色从红、黄、绿、青、蓝到品红，循环变化</td>
+</tr>
+<tr>
+<td>line</td>
+<td>产生由坐标系 ColoOrder特性和暗灰色指定的颜色</td>
+</tr>
+<tr>
+<td>jet</td>
+<td>色图是一种变体，颜色从蓝、红、青、黄到品红变化</td>
+</tr>
+<tr>
+<td>pink</td>
+<td>淡粉红色</td>
+</tr>
+<tr>
+<td>prism</td>
+<td>光谱，重复六种颜色：红、品红、黄、绿、蓝、雪青</td>
+</tr>
+<tr>
+<td>spring</td>
+<td>由品红和黄色构成的颜色</td>
+</tr>
+<tr>
+<td>summer</td>
+<td>由绿色和黄色构成的颜色</td>
+</tr>
+<tr>
+<td>autumn</td>
+<td>由红色渐变到黄色</td>
+</tr>
+<tr>
+<td>winter</td>
+<td>由蓝色和绿色构建的颜色</td>
+</tr>
+<tr>
+<td>while</td>
+<td>全白的单色色图</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>例：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">figure</span>;sphere(<span class="number">30</span>);colormap([<span class="number">1</span> <span class="number">1</span> <span class="number">0</span>])  <span class="comment">% colormap 查看并设置当前颜色图</span></span><br><span class="line"><span class="built_in">figure</span>;sphere(<span class="number">30</span>);colormap([<span class="number">0.5</span> <span class="number">0</span> <span class="number">0.5</span>])</span><br><span class="line"><span class="built_in">figure</span>;sphere(<span class="number">30</span>);colormap(hot)</span><br><span class="line"><span class="built_in">figure</span>;sphere(<span class="number">30</span>);colormap(winter)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="7、色彩的渲染"><a href="#7、色彩的渲染" class="headerlink" title="7、色彩的渲染"></a>7、色彩的渲染</h2><h4 id="（1）着色函数-shading"><a href="#（1）着色函数-shading" class="headerlink" title="（1）着色函数 shading"></a>（1）着色函数 <code>shading</code></h4><ul>
+<li>shading 是阴影函数 。控制图形对象着色及图形的渲染方式包括以下三种形式：<ul>
+<li>shading faceted :在曲线或图形对象上叠加黑色的网格线</li>
+<li>shading flat :在shading faceted 的基础上去掉图上的网格线</li>
+<li>shading interp :在图形对象的颜色进行色彩的插值处理，使色彩平滑过渡</li>
+</ul>
+</li>
+</ul>
+<h4 id="（2）关于着色的说明"><a href="#（2）关于着色的说明" class="headerlink" title="（2）关于着色的说明"></a>（2）关于着色的说明</h4><ul>
+<li><p>shading faceted 命令将每个网格片用其高度对应的颜色进行着色、但网格线仍保留，其颜色是黑色。这是系统的默认着色方式。</p>
+</li>
+<li><p>shading fat 命令将图形渲染为平坦状态，即每个小方块表面取一种颜色，其值由线段两端点或小方块四角的颜色值决定。</p>
+</li>
+<li><p>shading interp 命令表示每条线段或每个小方块面的颜色是线性渐变的，其值由两端点或小方块四角颜色的插值决定。</p>
+</li>
+<li><p>维表面图形的着色是在网格图的每一个网格片上涂上颜色。shading flat 命令将每个网格片用同一个颜色进行着色，且网格线也用相应的颜色，从而使得图形表面显得更加光滑。shading interp命令在网格片内采用颜色插值处理，得出的表面图显得最光滑。</p>
+</li>
+<li><p>surf 函数用默认的着色方式对网格片着色。除此之外，还可以用  shading 命令来改变着色方式</p>
+</li>
+<li><p>例：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>);peaks(<span class="number">30</span>);shading faceted 				<span class="comment">%默认的自动着色 </span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>);peaks(<span class="number">30</span>);shading flat 					<span class="comment">%去掉黑色线条，根据小方块的值确定色 </span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>);peaks(<span class="number">30</span>);shading interp 				<span class="comment">%每条线段或每个小方块表面的颜色是线性渐变的，其值曲线段两端点或小方块四角颜色的插值决定</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>);peaks(<span class="number">30</span>);shading interp;colormap(hot)	<span class="comment">%在暖色基础上,将网格片内采用颜色插值处理，得出的表面图显得最光滑</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/09/rcd8zgwZ9YVUTOP.png" alt="image-20220409002715171"></p>
+</li>
+<li><p>例：对球体进行不同着色处理</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[x,y,z]=sphere(<span class="number">20</span>);</span><br><span class="line">colormap(cool);</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>);surf(x,y,z);</span><br><span class="line">axis equal;subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>);</span><br><span class="line">surf(x,y,z);shading flat;</span><br><span class="line">anis equal;subplot(<span class="number">1</span>,<span class="number">3</span>,<span class="number">3</span>);</span><br><span class="line">surf(x,y,z);shading interp;</span><br><span class="line">anis equual;   <span class="comment">% axis equal将两坐标轴设为相等</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/09/oT7t9qvGuHcQ6l1.png" alt="image-20220409003247984"></p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

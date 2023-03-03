@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>01_Simulink常用模块库 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="simulink基础教程
+Simulink常用模块库Ground  将未连接的输入端口接地
+Simulink &amp;#x2F; Commonly Used Blocks
+
+Simulink / Sour,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="01_Simulink常用模块库 - fubaisen"/>
+    <meta name="twitter:description" content="simulink基础教程
+Simulink常用模块库Ground  将未连接的输入端口接地
+Simulink &amp;#x2F; Commonly Used Blocks
+
+Simulink / Sour,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="01_Simulink常用模块库 - fubaisen"/>
+    <meta property="og:description" content="simulink基础教程
+Simulink常用模块库Ground  将未连接的输入端口接地
+Simulink &amp;#x2F; Commonly Used Blocks
+
+Simulink / Sour,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">01_Simulink常用模块库</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">01_Simulink常用模块库</h1>
+        <div class="stuff">
+            <span>四月 17, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/d5a880ebc679d613f147ccda.html">simulink基础教程</a></p>
+<h1 id="Simulink常用模块库"><a href="#Simulink常用模块库" class="headerlink" title="Simulink常用模块库"></a>Simulink常用模块库</h1><h2 id="Ground-将未连接的输入端口接地"><a href="#Ground-将未连接的输入端口接地" class="headerlink" title="Ground  将未连接的输入端口接地"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/ground_block_icon.png" alt="Ground block">Ground  将未连接的输入端口接地</h2><ul>
+<li><p>Simulink &#x2F; Commonly Used Blocks</p>
+</li>
+<li><p><code>Simulink / Sources</code></p>
+</li>
+</ul>
+<blockquote>
+<p>Ground 模块连接到其输入端口不连接到其他模块的模块。如果您使用具有未连接的输入端口的模块运行仿真, Simulink会发出警告。使用Ground模块将那些未连接的模块接地可以防止出现这些警告。</p>
+<p>接地模块产生的信号是一个0值信号</p>
+</blockquote>
+<hr>
+<h2 id="Terminator-终止未连接的输出端口"><a href="#Terminator-终止未连接的输出端口" class="headerlink" title="Terminator  终止未连接的输出端口"></a><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/terminator_block_icon.png" alt="Terminator block">Terminator  终止未连接的输出端口</h2><ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li><code>Simulink / Sinks</code></li>
+</ul>
+<blockquote>
+<p>使用 Terminator 模块终止输出端口未连接其他模块的模块。如果您运行的仿真中有一些模块的输出端口未连接任何模块，Simulink® 将发出警告消息。使用 Terminator 模块终止这些模块，可以防止出现此类警告消息。</p>
+</blockquote>
+<hr>
+<h2 id="Constant-生成常量值"><a href="#Constant-生成常量值" class="headerlink" title="Constant  生成常量值"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/constant_block_icon.png" alt="Constant block">Constant  生成常量值</h2><ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li><code>Simulink / Sources</code></li>
+</ul>
+<blockquote>
+<p>Constant 模块生成实数或复数常量值信号。使用此模块提供常量信号输入。此模块是生成标量、向量还是混合输出要取决于：</p>
+<ul>
+<li><strong>常量值</strong>参数的维度</li>
+<li><strong>将向量参数解释为一维向量</strong>参数的设置</li>
+</ul>
+<p>此模块的输出与<strong>常量值</strong>参数具有相同的维度和元素。如果为此参数指定向量，即您希望模块将其解析为向量，请选中<strong>将向量参数解释为一维向量</strong>复选框。否则，如果为<strong>常量值</strong>参数指定了向量，模块会将该向量视为一个矩阵。</p>
+</blockquote>
+<p>向量和矩阵的区别：</p>
+<ul>
+<li><p>数学领域：</p>
+<p>可以称向量为矩阵    理解为：某一维为一的矩阵  &#x2F;  旁矩阵  &#x2F;  列矩阵</p>
+</li>
+<li><p>matlab    :</p>
+<p>称这样的矩阵（某一维为一的矩阵  &#x2F;  旁矩阵  &#x2F;  列矩阵）为向量</p>
+</li>
+</ul>
+<blockquote>
+<p>为什么要区别？</p>
+<p>在matlab 中向量与矩阵运行规则不同：</p>
+<ul>
+<li>向量： 按相应的元素逐个进行计算（被理解为计算机领域中<strong>数组</strong>的概念）</li>
+</ul>
+<blockquote>
+<p>数组：在内存中连续排列的一系列数</p>
+</blockquote>
+<ul>
+<li>矩阵： 按数学中矩阵的运算规则运算</li>
+</ul>
+<p>（标量  向量 《矩阵MATLAB程序设计语言》）</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/04/18/7RcpQUx9jGNzPmL.png" alt="image-20220416130310651"></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 将向量看做是一维的 ——数组</li>
+<li><input disabled="" type="checkbox"> 将向量看做是矩阵  按矩阵规则进行计算</li>
+</ul>
+<hr>
+<h2 id="输入信号的加减运算"><a href="#输入信号的加减运算" class="headerlink" title="输入信号的加减运算"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/sum_block_icon.png" alt="Add block">输入信号的加减运算</h2><p><strong>Add, Subtract, Sum of Elements, Sum</strong></p>
+<ul>
+<li><code>Simulink / Math Operations</code></li>
+</ul>
+<blockquote>
+<p>Sum 模块对输入信号执行加减运算。Add、Subtract、Sum of Elements 和 Sum 模块是相同的模块。此模块可对标量、向量或矩阵输入执行加减运算。它还可以缩减信号的元素并执行求和。</p>
+<p>您可以使用<strong>符号列表</strong>参数以及加号 (<code>+</code>)、减号 (<code>-</code>) 和分隔符 (<code>|</code>) 指定模块的运算。</p>
+<ul>
+<li><code>+</code> 和 <code>-</code> 字符的个数等于输入的个数。例如，<code>+-+</code> 需要三个输入。模块从第一个（顶部）输入信号中减去第二个（中间）输入信号，然后加上第三个（底部）输入信号。</li>
+<li>分隔符在模块图标上的端口之间产生额外空间。</li>
+<li>如果仅执行加法，则可以使用一个与输入个数相等的数值。</li>
+<li>如果只有一个输入端口，则单个 <code>+</code> 或 <code>-</code> 会在所有维度上或在指定的维度中加上或减去元素。</li>
+</ul>
+<p>Sum 模块首先将输入数据类型转换为其累加器数据类型，然后执行指定的运算。最后，模块使用指定的舍入和溢出模式，将计算结果转换为输出数据类型。</p>
+<h3 id="模块输出的计算"><a href="#模块输出的计算" class="headerlink" title="模块输出的计算"></a>模块输出的计算</h3><p>Sum 模块的输出计算取决于模块输入的个数和输入端口的符号：</p>
+<table>
+<thead>
+<tr>
+<th align="left">如果 Sum 模块有…</th>
+<th align="left">而且…</th>
+<th align="left">输出计算公式为…</th>
+<th align="left">其中…</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">一个输入端口</td>
+<td align="left">输入端口符号为 + 号</td>
+<td align="left">y &#x3D; e[0] + e[1] + e[2] … + e[m]</td>
+<td align="left"><code>e[i]</code> 是输入 u 的第 i 个元素</td>
+</tr>
+<tr>
+<td align="left">输入端口符号为 – 号</td>
+<td align="left">y &#x3D; 0.0 – e[0] – e[1] – e[2] … – e[m]</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">两个或更多输入端口</td>
+<td align="left">所有输入端口符号均为 – 号</td>
+<td align="left">y &#x3D; 0.0 – u[0] – u[1] – u[2] … – u[n]</td>
+<td align="left"><code>u[i]</code> 是第 i 个输入端口的输入</td>
+</tr>
+<tr>
+<td align="left">第 k 个输入端口是第一个符号为 + 号的端口</td>
+<td align="left">y &#x3D; u[k] – u[0] – u[1] – u[2] – u[k–1] (+&#x2F;–) u[k+1] … (+&#x2F;–) u[n]</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/04/18/U9NS5iTot7zMOdB.png" alt="image-20220416131518374"></p>
+<blockquote>
+<ul>
+<li><p>如果有一个量是标量，另一个量是矩阵&#x2F;向量 ：标量会自动实现扩展和对应的 矩阵&#x2F;向量进行匹配</p>
+<p>例 ：[1 1 ; 1 1] 矩阵 与  标量  1 相加</p>
+<p><img src="https://s2.loli.net/2022/04/18/VpZNDqOzEuC5LSQ.png" alt="image-20220416131936148"></p>
+</li>
+<li><p>如果所有输入都是非标量的输入 必须要有相应的维度</p>
+<p>例： 两个不同维度的 矩阵相乘  ——报错</p>
+<p><img src="https://s2.loli.net/2022/04/18/21JU8jQh4YcaTrA.png" alt="image-20220416132610012.png"></p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="Product输入信号的乘除运算-或-乘法和逆运算"><a href="#Product输入信号的乘除运算-或-乘法和逆运算" class="headerlink" title="Product输入信号的乘除运算    或     乘法和逆运算"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/product_block_icon.png" alt="Product block">Product输入信号的乘除运算    或     乘法和逆运算</h2><p><strong>标量和非标量的乘除运算或者矩阵的乘法和逆运算</strong></p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Math Operations</li>
+</ul>
+<blockquote>
+<p>Product 模块输出两个输入（两个标量、一个标量和一个非标量，或者具有相同维度的两个非标量）的相乘结果。指定此行为的默认参数值包括：</p>
+<ul>
+<li><strong>乘法：</strong>“<code>按元素(.*)</code>”</li>
+<li><strong>输入的数目</strong>：“<code>2</code>”</li>
+</ul>
+<p>下表显示了 Product 模块使用默认模块参数值的<a href="matlab:open_system(docpath(fullfile(docroot,'toolbox','simulink','examples','blocks','ex_product_block_input_dims')))">示例输入</a>的输出。</p>
+<table>
+<thead>
+<tr>
+<th align="left">输入和行为</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>标量 X 标量</strong>输出两个输入的乘积。</td>
+<td align="left"><img src="https://ww2.mathworks.cn/help/simulink/slref/prod_x1.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left"><strong>标量 X 非标量</strong>输出与非标量输入具有相同维度的非标量。非标量输出中的每个元素是标量输入与非标量输入中对应元素的乘积。</td>
+<td align="left"><img src="https://ww2.mathworks.cn/help/simulink/slref/prod_x2.png" alt="img"></td>
+</tr>
+<tr>
+<td align="left"><strong>非标量 X 非标量</strong>输出与输入具有相同维度的非标量。输出中的每个元素是与输入中对应元素的乘积。</td>
+<td align="left"><img src="https://ww2.mathworks.cn/help/simulink/slref/prod_x3.png" alt="img"></td>
+</tr>
+</tbody></table>
+<p>Divide 和 Product of Elements 模块是 Product 模块的变体。</p>
+<ul>
+<li>有关 Divide 模块的信息，请参阅 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/slref/divide.html">Divide</a>。</li>
+<li>有关 Product of Elements 模块的信息，请参阅 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/slref/productofelements.html">Product of Elements</a>。</li>
+</ul>
+<p>Product 模块（或者经过适当配置的 Divide 模块或 Product of Elements 模块）可以：</p>
+<ul>
+<li>对任意多个标量、向量或矩阵输入进行数值乘除运算</li>
+<li>对任意多个矩阵输入执行矩阵乘除运算</li>
+</ul>
+<p>Product 模块可以执行标量或矩阵乘法运算，具体取决于<strong>乘法</strong>参数的值。此模块接受一个或多个输入，具体取决于<strong>输入的数目</strong>参数。<strong>输入的数目</strong>参数还指定要对每个输入执行的运算。</p>
+<p>Product 模块可以输入标量、向量和矩阵的任意组合，对于这些输入，执行的运算必须具有数学定义的结果。该模块对输入执行指定的运算，然后输出结果。</p>
+</blockquote>
+<h3 id="✍Product-模块有两种模式："><a href="#✍Product-模块有两种模式：" class="headerlink" title="✍Product 模块有两种模式："></a>✍Product 模块有两种模式：</h3><ul>
+<li><h2 id="✌按元素模式，按元素处理非标量输入元素"><a href="#✌按元素模式，按元素处理非标量输入元素" class="headerlink" title="✌按元素模式，按元素处理非标量输入元素"></a>✌按元素模式，按元素处理非标量输入元素</h2><ol>
+<li><p>当<strong>乘法</strong>设置为“<code>按元素(.*)</code>” 模式下，模块将对任何非标量输入的单个数值元素执行运算。</p>
+</li>
+<li><p>这<code>相当于 MATLAB® 中的 .* 运算符</code>。Product 模块可以执行<em>各种乘法、除法和算术逆运算</em>。</p>
+</li>
+<li><p>当 Product 模块在按元素模式下且只有一个输入时，它的功能相当于 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/slref/productofelements.html">Product of Elements</a> 模块。</p>
+</li>
+<li><p><strong><code>当模块具有多个输入时，任何非标量输入都必须具有相同的维度，而模块将输出具有这些维度的非标量。</code></strong></p>
+<p><strong><code>为了计算输出，模块首先将任何标量输入展开为与非标量输入具有相同维度的非标量</code></strong></p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">参数值</th>
+<th align="left">示例</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>2</code>          <code>[1 1]</code></td>
+<td align="left"><img src="https://s2.loli.net/2022/04/18/zQIVwseJn6XLBvT.png" alt="image-20220416135124585"></td>
+<td>在2016a后无论将<code>[1 1]</code>看做 一维数组或矩阵都表示为 <strong>行矩阵形式</strong></td>
+</tr>
+<tr>
+<td align="left"><code>[1 1][1 1]</code></td>
+<td align="left"><img src="https://s2.loli.net/2022/04/18/3CByQuwcSnArRhI.png" alt="image-20220416135541957"></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><h2 id="✌矩阵模式，以矩阵方式处理非标量输入"><a href="#✌矩阵模式，以矩阵方式处理非标量输入" class="headerlink" title="✌矩阵模式，以矩阵方式处理非标量输入"></a>✌<em>矩阵模式</em>，以矩阵方式处理非标量输入</h2><ol>
+<li>当<strong>乘法</strong>参数的值为“<code>矩阵(*)</code>”模式下，模块按矩阵处理非标量输入。</li>
+<li>相当于 <code>MATLAB 中的 * 运算符</code>。Product 模块可以对单个方阵进行逆运算，或者对任意多个具有维度的矩阵（通过数学方式为它们定义了结果）进行乘法或除法运算。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>示例</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[1 1]</code>          <code>[1 1]</code></td>
+<td><img src="https://s2.loli.net/2022/04/18/ibFkCzlGsetDcJg.png" alt="image-20220416135800513"></td>
+<td><img src="https://s2.loli.net/2022/04/18/6rfYUuMvGzBt58N.png" alt="image-20220416135817568">[1 1] * [1 1] 两个1×1矩阵不满足矩阵相乘规</td>
+<td>会报错</td>
+</tr>
+<tr>
+<td><code>[1 1]</code>          <code>[1 1]</code></td>
+<td><img src="https://s2.loli.net/2022/04/18/kuiGyP5jfMRObg3.png" alt="image-20220416140313656"></td>
+<td>将 <strong>第一个[1 1] 看做一维数组</strong>                        【数组×矩阵】</td>
+<td>不会报错                  （视频中2016版本前simulink将[1 1]一维数组默认表示为2×1的列矩阵，满足矩阵相乘改规则，但新版本默认为1×1的列矩阵 相乘任然不报错  【未知原因】）</td>
+</tr>
+<tr>
+<td><code>[1 1]</code>          <code>[1 1]</code></td>
+<td><img src="https://s2.loli.net/2022/04/18/6XfeF4lWHzqZBnY.png" alt="image-20220416142918589"></td>
+<td>将 <strong>第二个[1 1] 看做一维数组</strong>                    【矩阵×数组】</td>
+<td>不会报错</td>
+</tr>
+</tbody></table>
+</li>
+<li><h4 id="这两个模式的不同之处在于发生的乘法和除法的类型"><a href="#这两个模式的不同之处在于发生的乘法和除法的类型" class="headerlink" title="这两个模式的不同之处在于发生的乘法和除法的类型"></a>这两个模式的不同之处在于发生的乘法和除法的类型</h4></li>
+</ul>
+<blockquote>
+<p>仿真与代码生成之间的预期差异</p>
+<p>对于复数浮点输入的按元素运算，仿真和代码生成结果在接近溢出情况下可能会有所差异。尽管在“配置参数”对话框的<strong>代码生成</strong> &gt; <strong>接口</strong>窗格上选中了<strong>复数</strong>且取消选中了<strong>非有限数</strong>，代码生成器也不会为中间溢出生成特殊情况代码。此方法可以提高嵌入式运算在不含极值的一般情况下的效率。如果输入可能包含极值，必须显式处理这些情况。</p>
+<p>如果 <code>NaN</code> 和 <code>inf</code> 值在数学上没有意义，则生成的代码可能不会为这些值生成与仿真相同的模式。例如，如果仿真输出包含 <code>NaN</code>，生成的代码的输出也会包含 <code>NaN</code>，但不一定在相同的位置。</p>
+</blockquote>
+<hr>
+<h2 id="Bus-Creator总线"><a href="#Bus-Creator总线" class="headerlink" title="Bus Creator总线"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/bus_creator_block_icon.png" alt="Bus Creator block">Bus Creator总线</h2><p>根据输入元素创建总线</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Signal Routing</li>
+</ul>
+<blockquote>
+<ul>
+<li><p>防止界面由于线过多而杂乱</p>
+</li>
+<li><p>总线元素必须具有唯一名称。</p>
+<p>默认情况下，总线的每个元素都继承连接到 Bus Creator 模块的元素的名称。</p>
+<p>如果存在重复名称，Bus Creator 模块会将端口号追加到所有输入元素名称。</p>
+<p>对于没有名称的元素，Bus Creator 模块会生成 <code>signaln</code> 形式的名称，其中 <code>n</code> 是连接到元素的端口号。当您搜索元素源或选择元素以连接到其他模块时，您可以按名称引用元素</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="Bus-Selector总线分配器"><a href="#Bus-Selector总线分配器" class="headerlink" title="Bus Selector总线分配器"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/bus_selector_block_icon.png" alt="Bus Selector block">Bus Selector总线分配器</h2><p>从传入总线中选择元素</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Signal Routing</li>
+</ul>
+<blockquote>
+<ul>
+<li>将  ‘电缆 ’  中的信号线打乱输出</li>
+<li>Bus Selector 模块输出您从输入总线选择的元素。该模块可以单独输出所选的各元素或在一个新的虚拟总线中输出所选元素。</li>
+</ul>
+</blockquote>
+<h2 id="Scope示波器"><a href="#Scope示波器" class="headerlink" title="Scope示波器"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/scope_block_icon.png" alt="Scope block">Scope示波器</h2><p>显示仿真过程中生成的信号</p>
+<ul>
+<li><p>Simulink &#x2F; Commonly Used Blocks</p>
+</li>
+<li><p>Simulink &#x2F; Sinks</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><p>输出随时间变化的波形</p>
+</li>
+<li><p>Simulink® Scope 模块和 DSP System Toolbox™ Time Scope 模块显示时域信号。</p>
+<p><img src="https://ww2.mathworks.cn/help/simulink/slref/timescope_block_open.png" alt="img"><img src="https://ww2.mathworks.cn/help/simulink/slref/scope_block_open.png" alt="img"></p>
+<p>这两个模块具有相同的功能，但是默认设置不同。Time Scope 针对离散时间处理进行了优化。Scope 针对一般时域仿真进行了优化。如需并排比较，请参阅 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/ug/simulation-data-display-and-capture-using-scopes.html#buw7l4r-5">Simulink Scope 与 DSP System Toolbox Time Scope 的比较</a>。</p>
+<p>示波器具有以下功能面板：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/ug/scope-trigger-panel.html">触发器</a> - 设置触发器，在发生指定事件时同步重复的信号并暂停显示。</li>
+<li><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/ug/cursor-measurements-panel.html">游标测量</a> - 使用垂直游标和水平游标测量信号值。</li>
+<li><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/ug/signal-statistics-panel.html">信号统计</a> - 显示所选信号的最大值、最小值、峰间差、均值、中位数和 RMS 值。</li>
+<li><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/ug/peak-finder-panel.html">峰值查找器</a> - 查找最大值，显示出现最大值时的 x 轴值。</li>
+<li><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/ug/bilevel-measurements-panel.html">双电平测量</a> - 测量过渡过程、过冲、下冲和循环。</li>
+</ul>
+<p>您必须拥有 Simscape™ 或 DSP System Toolbox 许可证，才能使用峰值查找器、双电平测量和信号统计这些功能面板。</p>
+<p>示波器画面支持：</p>
+<ul>
+<li><p>仿真控制 - 从“范围”窗口中使用<strong>运行</strong>、<strong>步进</strong>和<strong>步退</strong>工具栏按钮可以调试模型。</p>
+</li>
+<li><p>多个信号 - 可使用多个输入端口在同一个 <em>y</em> 轴（视图）上绘制多个信号。</p>
+</li>
+<li><p>多个 y 轴（显示）- 显示多个 <em>y</em> 轴。所有 <em>y</em> 轴在 <em>x</em> 轴上具有共同的时间范围。</p>
+</li>
+<li><p>修改参数 - 在仿真之前和仿真期间修改波形参数值。</p>
+</li>
+<li><p>自动缩放轴范围 - 在仿真期间或仿真结束时自动缩放轴范围。在坐标区的顶部和底部会留有边距。</p>
+</li>
+<li><p>仿真后显示数据 - 仿真期间保存波形数据。如果在仿真开始时波形视图关闭，则当您在仿真后打开波形视图时，波形视图将显示附加的输入信号的仿真结果。</p>
+<p><strong>注意：</strong></p>
+<p>如果采样率高或仿真时间长，可能会遇到内存或系统性能问题，因为示波器在内部保存数据。要限制为波形可视化保存的数据量，请使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/slref/scope.html#f5-1117037_sep_buuaefi-1">将数据点限制为最后, Limit data points to last将数据点限制为最后Limit data points to last</a> 属性。</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="Mux复用器"><a href="#Mux复用器" class="headerlink" title="Mux复用器"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/mux_block_icon.png" alt="Mux block">Mux复用器</h2><p>将相同数据类型和复&#x2F;实性的输入信号合并为虚拟向量</p>
+<blockquote>
+<p>Mux 模块将具有相同数据类型和复&#x2F;实性的输入合并为一个向量输出。复路输出信号是扁平的，即使您从其他复路信号创建复路信号也是如此。但是，您可以使用多个 Mux 模块分阶段创建一个复路信号。</p>
+<p>复路信号通过将两条或多条信号线合并为一条线，简化模型的视觉外观。复路信号不影响仿真或代码生成。</p>
+<p><strong>提示：</strong></p>
+<p>如果输入具有不同数据类型或复&#x2F;实性，可使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/slref/buscreator.html">Bus Creator</a> 模块在外观上对虚拟总线中的信号进行分组。有关详细信息，请参阅<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/simulink/ug/composite-signal-techniques.html">合成信号的类型</a>。</p>
+</blockquote>
+<h2 id="Demux分路器（推荐"><a href="#Demux分路器（推荐" class="headerlink" title="Demux分路器（推荐)"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/demux_block_icon.png" alt="Demux block">Demux分路器（推荐)</h2><p>提取并输出虚拟向量信号的元素</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Signal Routing</li>
+</ul>
+<blockquote>
+<ul>
+<li><p>-1 表示自动分配</p>
+<p><img src="https://s2.loli.net/2022/04/18/K9Sj6tOYoP28iXm.png" alt="image-20220416154052585.png"></p>
+</li>
+<li><p>Demux 模块提取输入向量信号的分量，再将它们输出为单独的信号。输出信号端口从上到下排列</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="Switch开关模块"><a href="#Switch开关模块" class="headerlink" title="Switch开关模块"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/switch_block_icon.png" alt="Switch block">Switch开关模块</h2><p>将多个信号合并为一个信号</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Signal Routing</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/04/18/GpvymQeaHUP7xYr.png" alt="image-20220416155518138"></p>
+<h2 id="Gain增益模块"><a href="#Gain增益模块" class="headerlink" title="Gain增益模块"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/gain_block_icon.png" alt="Gain block">Gain增益模块</h2><p>将输入乘以常量</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Math Operations</li>
+</ul>
+<blockquote>
+<p>Gain 模块将输入乘以一个常量值（增益）。输入和增益可以是标量、向量或矩阵。</p>
+<p>在<strong>增益</strong>参数中指定增益的值。<strong>乘法</strong>参数用于指定按元素还是矩阵乘法。对于矩阵乘法，此参数还用于指示被乘数的阶。</p>
+<p>通过舍入到最接近的值和饱和操作将增益从双精度型离线转换为模块封装中指定的数据类型。然后将输入和增益相乘，结果通过指定的舍入和溢出模式转换为输出数据类型。</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/04/18/HbOhF82RlsxavNT.png" alt="image-20220416163402335.png"></p>
+<p><img src="https://s2.loli.net/2022/04/18/qyR5jH2IhLuDwxb.png" alt="image-20220416164624240"></p>
+<h2 id="Relational-Operator关系运算"><a href="#Relational-Operator关系运算" class="headerlink" title="Relational Operator关系运算"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/relational_operator_block_icon.png" alt="Relational Operator block">Relational Operator关系运算</h2><p>对输入执行指定的关系运算</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Logic and Bit Operations</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">运算</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>==</code></td>
+<td align="left">如果第一个输入等于第二个输入，则为 TRUE</td>
+</tr>
+<tr>
+<td align="left"><code>~=</code></td>
+<td align="left">如果第一个输入不等于第二个输入，则为 TRUE</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;</code></td>
+<td align="left">如果第一个输入小于第二个输入，则为 TRUE</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;=</code></td>
+<td align="left">如果第一个输入小于或等于第二个输入，则为 TRUE</td>
+</tr>
+<tr>
+<td align="left"><code>&gt;=</code></td>
+<td align="left">如果第一个输入大于或等于第二个输入，则为 TRUE</td>
+</tr>
+<tr>
+<td align="left"><code>&gt;</code></td>
+<td align="left">如果第一个输入大于第二个输入，则为 TRUE</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">运算</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>isInf</code></td>
+<td align="left">如果输入为 <code>无穷大Inf</code>，则为 TRUE</td>
+</tr>
+<tr>
+<td align="left"><code>isNaN</code></td>
+<td align="left">如果输入为 <code>数值NaN</code>，则为 TRUE                                                            （NaN(Not Number)不定式 例如：0&#x2F;0   inf&#x2F;inf）</td>
+</tr>
+<tr>
+<td align="left"><code>isFinite</code></td>
+<td align="left">如果输入为有限值，则为 TRUE</td>
+</tr>
+</tbody></table>
+<p><img src="https://s2.loli.net/2022/04/18/XBWGfVo6j1xwmdN.png" alt="image-20220416170920516"></p>
+<h2 id="Logical-Operator逻辑运算"><a href="#Logical-Operator逻辑运算" class="headerlink" title="Logical Operator逻辑运算"></a><img src="https://ww2.mathworks.cn/help/simulink/slref/logical_operator_block_icon.png" alt="Logical Operator block">Logical Operator逻辑运算</h2><p>对输入进行指定的逻辑运算</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Logic and Bit Operations</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">运算</th>
+<th align="left">描述</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">AND</td>
+<td align="left">如果所有输入均为 TRUE，则为 TRUE</td>
+<td>与</td>
+</tr>
+<tr>
+<td align="left">OR</td>
+<td align="left">如果至少有一个输入为 TRUE，则为 TRUE</td>
+<td>或</td>
+</tr>
+<tr>
+<td align="left">NAND</td>
+<td align="left">如果至少有一个输入为 FALSE，则为 TRUE</td>
+<td>与非</td>
+</tr>
+<tr>
+<td align="left">NOR</td>
+<td align="left">如果所有输入均不为 TRUE，则为 TRUE</td>
+<td>或非</td>
+</tr>
+<tr>
+<td align="left">XOR</td>
+<td align="left">如果有奇数个输入为 TRUE，则为 TRUE</td>
+<td>异或</td>
+</tr>
+<tr>
+<td align="left">NXOR</td>
+<td align="left">如果有偶数个输入为 TRUE，则为 TRUE</td>
+<td>同或</td>
+</tr>
+<tr>
+<td align="left">NOT</td>
+<td align="left">如果输入为 FALSE，则为 TRUE</td>
+<td>非</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Logical Operator 模块对其输入执行指定的逻辑运算。输入值为非零值时为 true (<code>1</code>)，为零时则为 false (<code>0</code>)。</p>
+<p>使用<strong>运算符</strong>参数列表选择连接输入的布尔运算。如果您选择“<code>矩形</code>”作为<strong>图标形状</strong>属性，所选运算符的名称将显示在模块图标上。</p>
+<p>如果您选择“<code>不同</code>”作为<strong>图标形状</strong>属性，则所选运算符的名称不会显示在模块图标上。</p>
+<p>如果选择“<code>不同</code>”作为<strong>图标形状</strong>，则模块的外观会指示其功能。Simulink® 软件将按照 IEEE® 逻辑函数的图形符号标准，显示所选运算符的独特形状。</p>
+<p><img src="https://ww2.mathworks.cn/help/simulink/slref/logical_operator_shapes.png" alt="img"></p>
+<p>要指定输入端口的数量，请使用<strong>输入端口数目</strong>参数。使用<strong>输出数据类型</strong>参数指定输出类型。如果为 TRUE，则输出值为 <code>1</code>，如果为 FALSE，则输出值为 <code>0</code>。</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>输出数据类型应该准确表示零。满足此条件的数据类型包括有符号整数和无符号整数，以及所有浮点数据类型。</p>
+<p>输出大小取决于输入向量大小和所选运算符：</p>
+<ul>
+<li><p>如果模块有多个输入，则任何非标量输入都必须具有相同的维度。例如，如果有任何输入是 2×2 数组，则所有其他非标量输入也必须是 2×2 数组。</p>
+<p>标量输入将扩展为与非标量输入具有相同的维度。</p>
+<p>如果模块有多个输入，则输出与输入具有相同的维度（标量扩展后），并且每个输出元素都是将指定逻辑运算应用于相应输入元素的结果。例如，如果指定运算为 AND，输入为 2×2 数组，则输出为 2×2 数组，其左上角的元素是将 AND 应用于输入的左上角元素的结果，以此类推。</p>
+</li>
+<li><p>对于单个向量输入，模块会将运算（除 NOT 运算符外）应用于向量的所有元素。输出始终为标量。</p>
+</li>
+<li><p>NOT 运算符仅接受一个输入，该输入可以是标量也可以是向量。如果输入为向量，则输出为相同大小的向量，其中包含输入向量元素的逻辑补码。</p>
+</li>
+</ul>
+<p>当配置为多输入 XOR 门时，此模块将按照 IEEE 逻辑元素标准的规定执行加法双模运算。</p>
+</blockquote>
+</blockquote>
+<h2 id="Integrator积分模块"><a href="#Integrator积分模块" class="headerlink" title="Integrator积分模块"></a><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/integrator_block_icon.png" alt="Integrator block">Integrator积分模块</h2><p>对信号求积分</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Continuous</li>
+</ul>
+<blockquote>
+<ul>
+<li><h6 id="输出其-输入信号-相对于-时间-的积分值"><a href="#输出其-输入信号-相对于-时间-的积分值" class="headerlink" title="输出其   输入信号   相对于  时间  的积分值"></a>输出其   输入信号   相对于  时间  的积分值</h6></li>
+<li><h6 id="Simulink®-将-Integrator-模块作为具有一种状态的动态系统进行处理。模块动态由以下方程指定："><a href="#Simulink®-将-Integrator-模块作为具有一种状态的动态系统进行处理。模块动态由以下方程指定：" class="headerlink" title="Simulink® 将 Integrator 模块作为具有一种状态的动态系统进行处理。模块动态由以下方程指定："></a>Simulink® 将 Integrator 模块作为具有一种状态的动态系统进行处理。模块动态由以下方程指定：</h6><p><img src="https://s2.loli.net/2022/04/18/vpuIhKq8Ejxtrc4.png" alt="image-20220417085622410"></p>
+<ul>
+<li>u 是模块输入。</li>
+<li>y 是模块输出。</li>
+<li>x 是模块状态。</li>
+<li>x0 是 x 的初始条件。</li>
+</ul>
+<p>方程定义了连续时间下的准确关系，但 Simulink 使用数值逼近方法以有限精度来进行计算。使用“配置参数”对话框的<strong>求解器</strong>窗格（请参阅<a target="_blank" rel="noopener" href="https://www.mathworks.com/help/releases/R2022a/simulink/gui/solver-pane.html">求解器窗格</a>）可以选择最适合的方法。</p>
+</li>
+<li><h6 id="使用参数对话框可以："><a href="#使用参数对话框可以：" class="headerlink" title="使用参数对话框可以："></a>使用参数对话框可以：</h6><ul>
+<li>定义积分的上限和下限</li>
+<li>创建可将模块的输出（状态）重置为初始值的输入，具体取决于输入的变化方式。</li>
+<li>创建可选的状态输出，以便模块的输出值可以触发模块重置</li>
+</ul>
+<p>使用 Discrete-Time Integrator 模块可以创建纯离散系统。</p>
+</li>
+<li><h6 id="定义初始条件"><a href="#定义初始条件" class="headerlink" title="定义初始条件"></a>定义初始条件</h6><p>可以在模块对话框上将初始条件定义为参数，或者从外部信号输入初始条件：</p>
+<ul>
+<li><p>要将初始条件定义为模块参数，请将<strong>初始条件来源</strong>参数指定为“<code>内部</code>”并在<strong>初始条件</strong>字段中输入值。</p>
+</li>
+<li><p>要从外部源提供初始条件，请将<strong>初始条件来源</strong>参数指定为“<code>外部</code>”。模块输入下会显示一个额外输入端口。</p>
+<p><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/intx0.png" alt="img"></p>
+<p>注意</p>
+<p>如果积分器限制其输出（请参阅<a target="_blank" rel="noopener" href="https://www.mathworks.com/help/releases/R2022a/simulink/slref/integrator.html#f7-890704_sep_f7-1739821">限制积分</a>），则初始条件必须在积分器的饱和界限范围内。如果初始条件在模块饱和界限范围之外，该模块会显示错误消息。</p>
+</li>
+</ul>
+</li>
+<li><h6 id="限制积分"><a href="#限制积分" class="headerlink" title="限制积分"></a>限制积分</h6><p>要防止输出超出可指定的级别，请选中<strong>限制输出</strong>复选框，并在相应的参数字段中输入限制。此操作会使该模块起到限量积分器的作用。当输出达到界限时，积分操作将关闭以防止积分饱和。在仿真期间，您可以更改限制，但不能更改是否限制输出。模块按如下方式确定输出：</p>
+<ul>
+<li>当积分小于或等于<strong>饱和下限</strong>时，输出保持在<strong>饱和下限</strong>。</li>
+<li>当积分在<strong>饱和下限</strong>和<strong>饱和上限</strong>之间时，输出为积分。</li>
+<li>当积分大于或等于<strong>饱和上限</strong>时，输出保持在<strong>饱和上限</strong>。</li>
+</ul>
+<p>要生成指示状态正受到限制的信号，请选中<strong>显示饱和端口</strong>复选框。模块输出端口下方会显示一个饱和端口。</p>
+<p><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/intsaturation.png" alt="img"></p>
+<p>信号具有以下三个值之一：</p>
+<ul>
+<li>1 表示正在应用上限。</li>
+<li>0 表示积分不受限制。</li>
+<li>-1 表示正在应用下限。</li>
+</ul>
+<p>如果选中此复选框，模块将包含三个过零点：一个用于检测何时进入饱和上界，一个用于检测何时进入饱和下界，一个用于检测何时不再饱和。</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>对于 Integrator Limited 模块，默认情况下<strong>限制输出</strong>处于选中状态，<strong>饱和上限</strong>设置为 <code>1</code>，<strong>饱和下限</strong>设置为 <code>0</code>。</p>
+</blockquote>
+</li>
+<li><h6 id="重置状态"><a href="#重置状态" class="headerlink" title="重置状态"></a>重置状态</h6><p>模块可以根据外部信号将其状态重置为指定的初始条件。要使模块重置其状态，选中<strong>外部重置</strong>选项</p>
+<p><img src="https://s2.loli.net/2022/04/18/cySXQiukv3Yx7nH.png" alt="image-20220417093202891"></p>
+<p>模块输入端口下方将显示一个触发端口，并指示触发类型。</p>
+<p><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/intreset.png" alt="img"></p>
+<ul>
+<li><p>选择“<code>上升沿</code>”可在重置信号从负值或零上升到正值时重置状态。</p>
+<p>✍例：</p>
+<p>​			<img src="https://s2.loli.net/2022/04/18/DXPzBxN1SMHh8FT.png" alt="image-20220417094919561"></p>
+</li>
+<li><p>选择“<code>下降沿</code>”可在重置信号从正值下降到零或负值时重置状态。</p>
+</li>
+<li><p>选择“<code>任一沿</code>”可在重置信号从零变为非零值、从非零值变为零或改变符号时重置状态。</p>
+</li>
+<li><p>选择“<code>级别</code>”可于重置信号在当前时间步为非零值时或者从上一个时间步的非零值更改为当前时间步的零值时重置状态。</p>
+</li>
+<li><p>选择“<code>级别保持</code>”可于重置信号在当前时间步为非零值时重置状态。</p>
+</li>
+</ul>
+</li>
+<li><h6 id="状态端口"><a href="#状态端口" class="headerlink" title="状态端口"></a>状态端口</h6><p>在 Integrator 模块的参数对话框上选中<strong>显示状态端口</strong>复选框会导致 Integrator 模块的顶部显示一个附加输出端口，即状态端口。</p>
+<p><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/intstateout.png" alt="img"></p>
+<p>状态端口的输出与模块的标准输出端口的输出相同，但以下情况除外：</p>
+<ul>
+<li><p>如果在当前时间步重置模块，则状态端口的输出为模块尚未重置时在模块的标准输出中显示的值。</p>
+</li>
+<li><p>状态端口的输出在时间步中的显示会早于 Integrator 模块输出端口的输出的显示。</p>
+</li>
+</ul>
+<p>使用状态端口可以避免以下建模方案中出现代数环（输出直接反馈为输入相当于蛇咬住自己的尾巴）：</p>
+<ul>
+<li><p>自重置积分器（请参阅<a target="_blank" rel="noopener" href="https://www.mathworks.com/help/releases/R2022a/simulink/slref/integrator.html#f7-890704_sep_f7-1513507">创建自重置积分器</a>）</p>
+</li>
+<li><p>将状态从一个使能子系统切换到另一个（请参阅<a target="_blank" rel="noopener" href="https://www.mathworks.com/help/releases/R2022a/simulink/slref/integrator.html#f7-890704_sep_f7-1513533">在使能子系统之间切换状态</a>）</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>当更新模型时，Simulink 会检查状态端口是否适用于这两个方案中的一个。如果不适用，会显示错误消息。此外，不能将此端口的输出记录在于加速模式下执行的引用模型中。如果为该端口启用记录，Simulink 将在执行引用模型期间生成“signal not found”警告。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>Integrator 模块支持绕回状态</p>
+<p>在角状态达到 2π 时将其重置为 <code>0</code>（或者在其达到 π 时重置为 –π，以确保数值对称）。</p>
+<p>此方法可改进正弦和余弦计算的准确性，并缩短角度减小时间。但该方法还需要过零检测，并引入了求解器重置，这会减慢变步长求解器的仿真，尤其是在大型模型中</p>
+<p><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/wrappedintegrator.png" alt="img"></p>
+<p>Simulink 允许以绕回状态上限和下限值参数为边界的绕回状态。下面的方程给出了确定绕回状态的算法：</p>
+<p><img src="https://s2.loli.net/2022/04/18/Hj7wSPhkOt9v3Va.png" alt="image-20220417090407004.png"></p>
+<p>其中：</p>
+<ul>
+<li>xl 是绕回状态的下限值。</li>
+<li>xu 是绕回状态的上限值。</li>
+<li>y 是输出。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="Saturation限制模块"><a href="#Saturation限制模块" class="headerlink" title="Saturation限制模块"></a><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/saturation_block_icon.png" alt="Saturation block">Saturation限制模块</h2><p>将输入信号限制在饱和上界和下界值之间</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Discontinuities</li>
+</ul>
+<blockquote>
+<p>Saturation 模块产生输出信号，该信号是在饱和上界和下界值之间的输入信号值。上界和下界由参数<strong>上限</strong>和<strong>下限</strong>指定。</p>
+<table>
+<thead>
+<tr>
+<th align="left">输入</th>
+<th align="left">输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">下限 ≤ 输入值 ≤ 上限</td>
+<td align="left">输入值</td>
+</tr>
+<tr>
+<td align="left">输入值 &lt; 下限</td>
+<td align="left">下限</td>
+</tr>
+<tr>
+<td align="left">输入值 &gt; 上限</td>
+<td align="left">上限</td>
+</tr>
+</tbody></table>
+<p><img src="https://s2.loli.net/2022/04/18/iq6aEtDIjTbwdWX.png" alt="image-20220417092049477.png"><img src="https://s2.loli.net/2022/04/17/a61nO2iBljPHUsK.png" alt="image-20220417092753929"></p>
+</blockquote>
+<h2 id="Unit-Delat单位延迟模块"><a href="#Unit-Delat单位延迟模块" class="headerlink" title="Unit Delat单位延迟模块"></a><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/unit_delay_block_icon.png" alt="Unit Delay block">Unit Delat单位延迟模块</h2><p>将信号延迟一个采样周期</p>
+<ul>
+<li>Simulink &#x2F; Discrete</li>
+<li>HDL Coder &#x2F; Discrete</li>
+</ul>
+<blockquote>
+<ul>
+<li>延迟一个采样周期</li>
+</ul>
+</blockquote>
+<h2 id="Convert数据类型转换"><a href="#Convert数据类型转换" class="headerlink" title="Convert数据类型转换"></a><img src="https://www.mathworks.com/help/releases/R2022a/simulink/slref/data_type_conversion_block_icon.png" alt="Data Type Conversion block">Convert数据类型转换</h2><p>将输入信号转换为指定的数据类型</p>
+<ul>
+<li>Simulink &#x2F; Commonly Used Blocks</li>
+<li>Simulink &#x2F; Signal Attributes</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/04/18/m4rQlegkWMwCv1F.png" alt="image-20220417222147778.png"></p>
+<blockquote>
+<p>采用Inherit via internal rule</p>
+<p><img src="https://www.ilovematlab.cn/data/attachment/forum/201811/14/150728p95979jydrnmi051.jpg" alt="采用Inherit via internal rule"></p>
+<p>采用定义输出类型的方式<img src="https://www.ilovematlab.cn/data/attachment/forum/201811/14/150837lv329j3hj2hywwd3.jpg" alt="采用定义输出类型的方式"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://s2.loli.net/2022/04/18/zCBelTvV4MYXSA6.png" alt="image-20220417220102608.png"></p>
+<p>其中有3类用fixdt表示的定点数类型。</p>
+<p>其中fixdt(1,16,0)中的“1”表示“有符号数”，“16”表示16位二进制，“0”表示0位小数（即整数）。fixdt(1,16,0)等效于int16。fixdt(1,16,0)中的最后一个0可以省略，即为fixdt(1,16)。</p>
+<p>当表示n位小数位时，n可以为正数，也可以为负数。比如n&#x3D;1时，所表示的小数的最小精度为0.5；当n&#x3D;-1时，所表示的“小数”的最小精度为2</p>
+<p><strong><a href="%5B(4%E6%9D%A1%E6%B6%88%E6%81%AF">更多</a> 深入研究simulink建模与仿真之定点数据类型fixdt_booksyhay的博客-CSDN博客_fixdt(0,16,0.1,0)](<a target="_blank" rel="noopener" href="https://blog.csdn.net/booksyhay/article/details/88032743">https://blog.csdn.net/booksyhay/article/details/88032743</a>))</strong></p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/04/18/XudeO6loD8cSUMJ.png" alt="image-20220417165003063.png"></p>
+<p>rwv方式以浮点数进行存储</p>
+<p>si 方式会将浮点数转换成相应的定点数</p>
+<p><strong>ி涉及二进制移位运算，再转换设计小数点的丢失</strong></p>
+<ul>
+<li><p>例1：</p>
+<p><img src="https://s2.loli.net/2022/04/18/G3P2EbwOajhVLYQ.png" alt="image-20220417163409353.png"></p>
+<blockquote>
+<p>转换比例  (En2) :  2^-2    </p>
+<p>将15 转换位相应的二进制数   ——&gt;  001111  由于比例  转换为  <code>001111.00</code></p>
+<p>在 SI 转换中 因转换为 	相应的定点数类型 所以<strong>小数点信息而被丢失</strong></p>
+</blockquote>
+<p>丢失2个二进制小数点，相当于乘以2的平方 所以15×4&#x3D;60</p>
+</li>
+<li><p>例2：<img src="https://s2.loli.net/2022/04/18/MpTcbI4JowPdxDg.png" alt="image-20220417232646881.png"></p>
+<blockquote>
+<p><code>sfix8_En2</code></p>
+<ul>
+<li><p><code>sfix8</code> 表示  8位  有符号  定点数</p>
+</li>
+<li><p><code>En2</code>  表示 2 位二进制小数</p>
+</li>
+<li><p>sfix表示的是signed fixed-point</p>
+<ul>
+<li><p>s 表示 有符号</p>
+</li>
+<li><p>fix 代表 定点数  </p>
+<p>✍定点数 (fixed-point number)就是<strong>小数点位置固定的数</strong>，也就是说，小数点后面的位数是固定的，比如要记录一笔账目，这些账目的数字都不会超过100，就可以使用2位小数位定点数来记录，比如99.99，2.30，75.28；如果要更精确，可以使用3位小数位的定点数来记录，比如7.668，38.235</p>
+</li>
+</ul>
+</li>
+<li><p>后续的En13表示小数位的长度 </p>
+<ul>
+<li>E表示底数为2       n表示指数为负，故为En13表示13位二进制小数</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

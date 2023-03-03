@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>02_MATLAB语言基础 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="二、MATLAB语言基础1.变量命名规则
+基本规则
+
+变量名和函数名对字母的大小写敏感，故而a与A是两个不同的变量名。
+
+变量名必须以字母开头，其后可以是任意字母或下划线，但是不能有空格、中文或标点,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="02_MATLAB语言基础 - fubaisen"/>
+    <meta name="twitter:description" content="二、MATLAB语言基础1.变量命名规则
+基本规则
+
+变量名和函数名对字母的大小写敏感，故而a与A是两个不同的变量名。
+
+变量名必须以字母开头，其后可以是任意字母或下划线，但是不能有空格、中文或标点,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="02_MATLAB语言基础 - fubaisen"/>
+    <meta property="og:description" content="二、MATLAB语言基础1.变量命名规则
+基本规则
+
+变量名和函数名对字母的大小写敏感，故而a与A是两个不同的变量名。
+
+变量名必须以字母开头，其后可以是任意字母或下划线，但是不能有空格、中文或标点,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">02_MATLAB语言基础</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">02_MATLAB语言基础</h1>
+        <div class="stuff">
+            <span>三月 31, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="二、MATLAB语言基础"><a href="#二、MATLAB语言基础" class="headerlink" title="二、MATLAB语言基础"></a>二、MATLAB语言基础</h1><h3 id="1-变量命名规则"><a href="#1-变量命名规则" class="headerlink" title="1.变量命名规则"></a>1.变量命名规则</h3><ul>
+<li><p>基本规则</p>
+<ul>
+<li><p>变量名和函数名对字母的大小写敏感，故而a与A是两个不同的变量名。</p>
+</li>
+<li><p>变量名必须以字母开头，其后可以是任意字母或下划线，但是不能有空格、中文或标点，例如_xy、a.b均是不合法的变量名，而classNum_x是一个合法的变量名。</p>
+</li>
+<li><p>不能使用<code>MATLAB</code>的关键字作为变量名。避免使用函数名作为变量名，如果你使用了函数名，则该函数失效。</p>
+<p>如果你使用<code>sin = 1</code>，则在未清理缓存的情况下，将会出现<code>sin(1) = 1</code>，所以不要使用，以免造成不必要的麻烦。</p>
+</li>
+<li><p>变量名最多可包含63个字符，从第64个字符开始之后的字符将会被忽略</p>
+</li>
+<li><p><strong>如果运算结果没有赋予任何变量，系统将其赋予 <code>ans</code>，它是特殊变量，只保留最新值</strong></p>
+</li>
+</ul>
+</li>
+<li><p>在<code>MATLAB</code>中，可以通过调用<code>isvarname</code>函数,来验证变量名是否符合<code>MATLAB</code>所接受的合法变量名。该函数值返回值为1或0,1代表合法，0代表不合法。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; isvarname(<span class="string">&#x27;_xy&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">  logical</span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   </span><br><span class="line">&gt;&gt; isvarname(<span class="string">&#x27;classNum_x&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">  logical</span><br><span class="line">   <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/1Ecz8niMPCyXxJCj8pHZxQ">预定义变量</a></p>
+<p>预定义变量就是系统已经定义好了的变量，我们可以把它们当做常量来看待。有如下几种类型：</p>
+<table>
+<thead>
+<tr>
+<th align="left">预定义变量</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ans</td>
+<td align="center">系统默认的用作保存运算结果的变量名</td>
+</tr>
+<tr>
+<td align="left">pi</td>
+<td align="center">圆周率</td>
+</tr>
+<tr>
+<td align="left">eps</td>
+<td align="center">机器零阈值，<code>MATLAB</code>中的最小数</td>
+</tr>
+<tr>
+<td align="left">inf</td>
+<td align="center">表示无穷大</td>
+</tr>
+<tr>
+<td align="left">NaN或nan</td>
+<td align="center">表示不定数</td>
+</tr>
+<tr>
+<td align="left">i或j</td>
+<td align="center">虚数单位</td>
+</tr>
+<tr>
+<td align="left">nargin</td>
+<td align="center">函数的输入参数个数</td>
+</tr>
+<tr>
+<td align="left">nargout</td>
+<td align="center">函数的输出参数个数</td>
+</tr>
+<tr>
+<td align="left">realmin</td>
+<td align="center">可用的最小正实数</td>
+</tr>
+<tr>
+<td align="left">realmax</td>
+<td align="center">可用的最大正实数</td>
+</tr>
+<tr>
+<td align="left">bitmax</td>
+<td align="center">可用的最大正整数（以双精度格式存储）</td>
+</tr>
+<tr>
+<td align="left">varargin</td>
+<td align="center">可变的函数输入参数</td>
+</tr>
+<tr>
+<td align="left">varargout</td>
+<td align="center">可变的函数输出参数</td>
+</tr>
+<tr>
+<td align="left">beep</td>
+<td align="center">使计算机发出“嘟嘟”的声音</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>举一个例子<br>根据<em>S</em>&#x3D;<em>π**r</em>2，计算当<em>r</em>&#x3D;3时，圆的面积。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pi</span>*(<span class="number">3</span>^<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">   <span class="number">28.2743</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关键字</p>
+<p>关键字是<code>MATLAB</code>程序设计中常用到的流程控制变量，共有20个，前面提到了不建议使用关键字作为变量的名字，因而在此列举出来，这些我们在后面还会提到。在命令行窗口输入命令<code>iskeyword</code>，即可查询到：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; iskeyword</span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">  <span class="number">20</span>×<span class="number">1</span> cell 数组</span><br><span class="line">    <span class="string">&#x27;break&#x27;</span></span><br><span class="line">    <span class="string">&#x27;case&#x27;</span></span><br><span class="line">    <span class="string">&#x27;catch&#x27;</span></span><br><span class="line">    <span class="string">&#x27;classdef&#x27;</span></span><br><span class="line">    <span class="string">&#x27;continue&#x27;</span></span><br><span class="line">    <span class="string">&#x27;else&#x27;</span></span><br><span class="line">    <span class="string">&#x27;elseif&#x27;</span></span><br><span class="line">    <span class="string">&#x27;end&#x27;</span></span><br><span class="line">    <span class="string">&#x27;for&#x27;</span></span><br><span class="line">    <span class="string">&#x27;function&#x27;</span></span><br><span class="line">    <span class="string">&#x27;global&#x27;</span></span><br><span class="line">    <span class="string">&#x27;if&#x27;</span></span><br><span class="line">    <span class="string">&#x27;otherwise&#x27;</span></span><br><span class="line">    <span class="string">&#x27;parfor&#x27;</span></span><br><span class="line">    <span class="string">&#x27;persistent&#x27;</span></span><br><span class="line">    <span class="string">&#x27;return&#x27;</span></span><br><span class="line">    <span class="string">&#x27;spmd&#x27;</span></span><br><span class="line">    <span class="string">&#x27;switch&#x27;</span></span><br><span class="line">    <span class="string">&#x27;try&#x27;</span></span><br><span class="line">    <span class="string">&#x27;while&#x27;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-全局变量和局部变量"><a href="#2-全局变量和局部变量" class="headerlink" title="2.全局变量和局部变量"></a>2.全局变量和局部变量</h3><ul>
+<li><p>各个函数之间以及命令行窗口的工作空间中，内存空间独立，不能相互访问</p>
+</li>
+<li><p>初始化是仅需声明一次，用时需要声明一次</p>
+<ul>
+<li>（在一个内存空间里声明global，在另一个内存空间里使用这个global时需要再次声明global，各内存空间声明一次即可）</li>
+</ul>
+</li>
+<li><p>如果只在某个内存空间使用一次，在全局变量影响内存空间变量时，可使用clear命令清除变量名</p>
+</li>
+<li><p>如果一个函数内的边框没有特别声明，那么变量只在函数内部使用，即为全局变量</p>
+</li>
+<li><p>子程序较多时，全局变量会给程序调试和维护带来不便，一般不使用全局变量，如果使用 原则上   全部用大写字母表示</p>
+</li>
+</ul>
+<h3 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/OB4TKgoFEpo8W54W10xE0A">3.数据类型</a></h3><h4 id="——常量与变量"><a href="#——常量与变量" class="headerlink" title="——常量与变量"></a>——常量与变量</h4><p>​							<a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/01_MATLAB%E5%8A%9F%E8%83%BD%E5%92%8C%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8/02_MATLAB%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">见</a>       <code>1.变量命名规则</code></p>
+<h4 id="——数值类型"><a href="#——数值类型" class="headerlink" title="——数值类型"></a>——数值类型</h4><p><strong>整数型、单精度浮点型、双精度浮点型、字符串型、结构体型、函数句柄型、逻辑型和单元数组型</strong></p>
+<h5 id="1-整数"><a href="#1-整数" class="headerlink" title="1)整数:"></a>1)整数:</h5><ul>
+<li><p>有符号数和无符号数使用整型变量和单精度变量可以节约内存空间。</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th align="left">整数类型</th>
+<th align="center">数值范围</th>
+<th align="right">转换函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">有符号8位整数</td>
+<td align="center">−27 ~27−1</td>
+<td align="right">int8</td>
+</tr>
+<tr>
+<td align="left">无符号8位整数</td>
+<td align="center">0 ~28−1</td>
+<td align="right">uint8</td>
+</tr>
+<tr>
+<td align="left">有符号16位整数</td>
+<td align="center">−215 ~215−1</td>
+<td align="right">int16</td>
+</tr>
+<tr>
+<td align="left">无符号16位整数</td>
+<td align="center">0 ~216−1</td>
+<td align="right">uint16</td>
+</tr>
+<tr>
+<td align="left">有符号32位整数</td>
+<td align="center">−231 ~231−1</td>
+<td align="right">int32</td>
+</tr>
+<tr>
+<td align="left">无符号32位整数</td>
+<td align="center">0 ~232−1</td>
+<td align="right">uint32</td>
+</tr>
+<tr>
+<td align="left">有符号64位整数</td>
+<td align="center">−263 ~263−1</td>
+<td align="right">int64</td>
+</tr>
+<tr>
+<td align="left">无符号64位整数</td>
+<td align="center">0 ~264−1</td>
+<td align="right">uint64</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h5 id="2-浮点数"><a href="#2-浮点数" class="headerlink" title="2)浮点数:"></a>2)浮点数:</h5><ul>
+<li><p>在默认状态下，MATLAB将所有的数都看作是双精度的浮点数</p>
+<p>(单精度（single）和双精度（float，或者直接输入小数，因为matlab默认即为双精度）)</p>
+</li>
+<li><p>直接输人变量值创建的是<strong>double类型</strong>，创建<strong>single类型</strong>需要用输人类型<strong>转换函数</strong>。其他类型函数可以利用转换函数存储为需要的类型，如果有小数部分，自动四舍五入处理</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th align="left">浮点类型</th>
+<th align="center">存储位宽</th>
+<th align="right">各位数的意义</th>
+<th align="left">数值范围</th>
+<th align="left">转换函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单精度</td>
+<td align="center">32</td>
+<td align="right">0-22位表示小数部分，23-30位表示指数部分，31位表示符号（0正1负）</td>
+<td align="left">−3.4028238<del>−1.17549−38 1.17549−38</del>3.4028238</td>
+<td align="left">single</td>
+</tr>
+<tr>
+<td align="left">双精度</td>
+<td align="center">64</td>
+<td align="right">0-51位表示小数部分，52-62位表示指数部分，63位表示符号（0正1负）</td>
+<td align="left">−1.79769308<del>−2.22507−308 2.22507−308</del>1.79769308</td>
+<td align="left">double</td>
+</tr>
+</tbody></table>
+<p><img src="https://s2.loli.net/2022/02/26/opg2cBljI5WK6TZ.png" alt="image-20220226163136135"></p>
+</li>
+</ul>
+<h6 id="运算法则："><a href="#运算法则：" class="headerlink" title="运算法则："></a><strong>运算法则：</strong></h6><ul>
+<li><p><strong>单精度不能和整数类型进行计算</strong>，整数类型只能和整数和双精度进行计算</p>
+</li>
+<li><p>双精度和单精度或者整数计算结果为单精度或者整数</p>
+</li>
+<li><p>双精度和逻辑或者字符进行计算的时候，结果为双精度</p>
+</li>
+<li><p>其中和字符进行计算的时候，是用字符对应的ASCII 编码十进制进行对应计算的</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Str = <span class="string">&#x27;h&#x27;</span> - <span class="number">44.3</span>; Ans = <span class="number">59.7000</span>   #因为h对应的编码为<span class="number">104</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双精度的精度要远高于单精度，用<strong>eps函数</strong>可以查看实际值与其浮点数的间隙</p>
+</li>
+<li><p>在不同的数值类型参与的运算中，返回的数值类型要看具体情况</p>
+<ul>
+<li>双精度浮点数参与运算时，返回值的类型依赖于参与运算的其他数据类型</li>
+<li>参与运算的其他数据为逻辑型、字符型时，返回结果为双精度浮点型</li>
+<li>参与运算的其他数据为整数型时，返回结果为相应的整数类型</li>
+<li>参与运算的其他数据为单精度浮点型时，返回结果为相应的单精度浮点型</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;&gt; a = uint32(<span class="number">120</span>);</span><br><span class="line">&gt;&gt; b = single(<span class="number">22.809</span>);</span><br><span class="line">&gt;&gt; c = <span class="number">73.226</span>;</span><br><span class="line">&gt;&gt; ab = a*b</span><br><span class="line">错误使用  * </span><br><span class="line">整数只能与相同类的整数或标量双精度值组合使用。</span><br><span class="line"></span><br><span class="line">&gt;&gt; ac = a*c</span><br><span class="line"></span><br><span class="line">ac =</span><br><span class="line"></span><br><span class="line">        <span class="number">8787</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; bc = b*c</span><br><span class="line"></span><br><span class="line">bc =</span><br><span class="line"></span><br><span class="line">  <span class="number">1.6702e+03</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; str = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line">&gt;&gt; newstr = str<span class="number">-44.3</span></span><br><span class="line"></span><br><span class="line">newstr =</span><br><span class="line"></span><br><span class="line">   <span class="number">59.7000</span>   <span class="number">56.7000</span>   <span class="number">63.7000</span>   <span class="number">63.7000</span>   <span class="number">66.7000</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; whos #List variables in workspace, with sizes and types</span><br><span class="line">  Name        Size            Bytes  Class     Attributes</span><br><span class="line"></span><br><span class="line">  a           <span class="number">1</span>x1                 <span class="number">4</span>  uint32              </span><br><span class="line">  ac          <span class="number">1</span>x1                 <span class="number">4</span>  uint32              </span><br><span class="line">  b           <span class="number">1</span>x1                 <span class="number">4</span>  single              </span><br><span class="line">  bc          <span class="number">1</span>x1                 <span class="number">4</span>  single              </span><br><span class="line">  c           <span class="number">1</span>x1                 <span class="number">8</span>  double              </span><br><span class="line">  newstr      <span class="number">1</span>x5                <span class="number">40</span>  double              </span><br><span class="line">  str         <span class="number">1</span>x5                <span class="number">10</span>  char  </span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="built_in">eps</span>(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">     <span class="number">4.440892098500626e-16</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="built_in">eps</span>(single(<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">   <span class="number">2.3841858e-07</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>数据类型的强制转换、数值范围</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">shu=<span class="number">66</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">%双精度浮点型，强制转换成整型</span></span><br><span class="line"></span><br><span class="line">shu8=int8(shu)</span><br><span class="line"></span><br><span class="line">shu16=int16(shu)</span><br><span class="line"></span><br><span class="line">shu32=int32(shu)</span><br><span class="line"></span><br><span class="line">shu64=int64(shu)</span><br><span class="line"></span><br><span class="line">string=<span class="string">&#x27;Max&#x27;</span></span><br><span class="line"></span><br><span class="line">switch1=int8(string)</span><br></pre></td></tr></table></figure>
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/7fLgmsrLPNiblpD6dfbUsdcz5gMGlTicTUfmZmcb6ibkaIfeMUSsqibTEsYFn70pkZ8tzVRnMWqiaAmNW8icJayPtR8g/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:50%;" />
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fudian=<span class="number">14.89</span>             <span class="comment">%默认是双精度浮点型</span></span><br><span class="line"></span><br><span class="line">fusingle=single(fudian)  <span class="comment">%转换成单精度浮点型</span></span><br><span class="line"></span><br><span class="line">fudouble=double(fudian)  <span class="comment">%转换成双精度浮点型</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 查看数据类型的数值范围</span></span><br><span class="line"></span><br><span class="line">singlefanwei=[<span class="built_in">realmin</span>(<span class="string">&#x27;single&#x27;</span>) <span class="built_in">realmax</span>(<span class="string">&#x27;single&#x27;</span>)]</span><br><span class="line"></span><br><span class="line">doublefanwei=[<span class="built_in">realmax</span>(<span class="string">&#x27;double&#x27;</span>) <span class="built_in">realmax</span>(<span class="string">&#x27;double&#x27;</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment">% 结果</span></span><br><span class="line"></span><br><span class="line">fudian =</span><br><span class="line"></span><br><span class="line">   <span class="number">14.8900</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fusingle =</span><br><span class="line"></span><br><span class="line">  single</span><br><span class="line"></span><br><span class="line">   <span class="number">14.8900</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fudouble =</span><br><span class="line"></span><br><span class="line">   <span class="number">14.8900</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">singlefanwei =</span><br><span class="line"></span><br><span class="line">  <span class="number">1</span>×<span class="number">2</span> single 行向量</span><br><span class="line"></span><br><span class="line">   <span class="number">1.0e+38</span> *</span><br><span class="line"></span><br><span class="line">    <span class="number">0.0000</span>    <span class="number">3.4028</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">doublefanwei =</span><br><span class="line"></span><br><span class="line">  <span class="number">1.0e+308</span> *</span><br><span class="line"></span><br><span class="line">    <span class="number">1.7977</span>    <span class="number">1.7977</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="——逻辑类型"><a href="#——逻辑类型" class="headerlink" title="——逻辑类型"></a>——逻辑类型</h4><p><strong>逻辑类型的数据类型</strong>是指布尔类型的数据及数据之间的逻辑关系，出现这些运算的目的是为了<strong>提供求解真&#x2F;假命题的答案</strong>。作为所有关系和逻辑表达式的输入，逻辑类型数据类型进行运算时需要用到关系操作符和<strong>逻辑运算符</strong></p>
+<p><code>MATLAB</code>把任何非零数值当作真，把零当作假。所有关系和逻辑表达式的输出：</p>
+<ul>
+<li>对于真，输出为1；对于假，输出为0</li>
+</ul>
+<h4 id="——字符和字符串"><a href="#——字符和字符串" class="headerlink" title="——字符和字符串"></a>——<a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/05_%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2">字符和字符串</a></h4><h4 id="——函数句柄"><a href="#——函数句柄" class="headerlink" title="——函数句柄"></a>——<a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/01_%E5%87%BD%E6%95%B0%E5%8F%A5%E6%9F%84">函数句柄</a></h4><h4 id="——结构体类型"><a href="#——结构体类型" class="headerlink" title="——结构体类型"></a>——<a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/07_%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B">结构体类型</a></h4><h3 id="4-常用标点符号"><a href="#4-常用标点符号" class="headerlink" title="4.常用标点符号"></a>4.常用标点符号</h3><p><img src="https://s2.loli.net/2022/02/26/E7uyxSU4ZnzLgiB.png" alt="image-20220226214144162"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

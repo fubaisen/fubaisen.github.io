@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>10_单例 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="单例目标
+单例设计模式
+__new__ 方法
+Python 中的单例
+
+01. 单例设计模式
+设计模式
+
+设计模式 是 前人工作的总结和提炼，通常，被人们广泛流传的设计模式都是针对 某一特定问题 的,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="10_单例 - fubaisen"/>
+    <meta name="twitter:description" content="单例目标
+单例设计模式
+__new__ 方法
+Python 中的单例
+
+01. 单例设计模式
+设计模式
+
+设计模式 是 前人工作的总结和提炼，通常，被人们广泛流传的设计模式都是针对 某一特定问题 的,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="10_单例 - fubaisen"/>
+    <meta property="og:description" content="单例目标
+单例设计模式
+__new__ 方法
+Python 中的单例
+
+01. 单例设计模式
+设计模式
+
+设计模式 是 前人工作的总结和提炼，通常，被人们广泛流传的设计模式都是针对 某一特定问题 的,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">10_单例</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">10_单例</h1>
+        <div class="stuff">
+            <span>三月 26, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python%E5%AD%A6%E4%B9%A0/" rel="tag">python学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>单例设计模式</li>
+<li><code>__new__</code> 方法</li>
+<li>Python 中的单例</li>
+</ul>
+<h2 id="01-单例设计模式"><a href="#01-单例设计模式" class="headerlink" title="01. 单例设计模式"></a>01. 单例设计模式</h2><ul>
+<li><p>设计模式</p>
+<ul>
+<li><strong>设计模式</strong> 是 <strong>前人工作的总结和提炼</strong>，通常，被人们广泛流传的设计模式都是针对 <strong>某一特定问题</strong> 的成熟的解决方案</li>
+<li>使用 <strong>设计模式</strong> 是为了可重用代码、让代码更容易被他人理解、保证代码可靠性</li>
+</ul>
+</li>
+<li><p>单例设计模式</p>
+<ul>
+<li><p><strong>目的</strong> —— 让 <strong>类</strong> 创建的对象，aazx在系统中 <strong>只有</strong> <strong>唯一的一个实例</strong></p>
+<p>​		  ——对象在内存空间分配空间的时候，永远只会返回<strong>一个、固定的、唯一的</strong>内存空间，保证内存中类的对象只有一份</p>
+</li>
+<li><p>每一次执行 <code>类名()</code> 返回的对象，<strong>内存地址是相同的</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="单例设计模式的应用场景"><a href="#单例设计模式的应用场景" class="headerlink" title="单例设计模式的应用场景"></a>单例设计模式的应用场景</h3><ul>
+<li><strong>音乐播放</strong> 对象</li>
+<li><strong>回收站</strong> 对象</li>
+<li><strong>打印机</strong> 对象</li>
+<li>……</li>
+</ul>
+<h2 id="02-new-方法"><a href="#02-new-方法" class="headerlink" title="02. __new__ 方法"></a>02. <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/5484.html"><code>__new__</code> 方法</a></h2><blockquote>
+<p><strong>new</strong>() 是一种负责创建类实例的静态方法，它无需使用 staticmethod 装饰器修饰，且该方法会优先 <strong>init</strong>() 初始化方法被调用。</p>
+<p>那么，什么情况下使用 <strong>new</strong>() 呢？答案很简单，在 <strong>init</strong>() 不够用的时候。</p>
+<p>例如，前面例子中对 Python 不可变的内置类型（如 int、str、float 等）进行了子类化，这是因为一旦创建了这样不可变的对象实例，就无法在 <strong>init</strong>() 方法中对其进行修改。</p>
+<p>有些读者可能会认为，<strong>new</strong>() 对执行重要的对象初始化很有用，如果用户忘记使用 super()，可能会漏掉这一初始化。虽然这听上去很合理，但有一个主要的缺点，即如果使用这样的方法，那么即便初始化过程已经是预期的行为，程序员明确跳过初始化步骤也会变得更加困难。不仅如此，它还破坏了“<strong>init</strong>() 中执行所有初始化工作”的潜规则。</p>
+<p>注意，由于 <strong>new</strong>() 不限于返回同一个类的实例，所以很容易被滥用，不负责任地使用这种方法可能会对代码有害，所以要谨慎使用。一般来说，对于特定问题，最好搜索其他可用的解决方案，最好不要影响对象的创建过程，使其违背程序员的预期。比如说，前面提到的覆写不可变类型初始化的例子，完全可以用工厂方法（一种<a target="_blank" rel="noopener" href="http://c.biancheng.net/design_pattern/">设计模式</a>）来替代。</p>
+<blockquote>
+<p>Python中大量使用 <strong>new</strong>() 方法且合理的，就是 MetaClass 元类。有关元类的介绍，可阅读《<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2293.html">Python MetaClass元类</a>》一节。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>使用 <strong>类名()</strong> 创建对象时，<code>Python</code> 的解释器 <strong>首先</strong> 会 调用 <code>__new__</code> 方法为对象 <strong>分配空间</strong></li>
+<li><code>__new__</code>是一个 由<strong>object</strong>基类提供的内置的静态方法，主要作用有两个：<ul>
+<li>\1) 在内存中为对象 <strong>分配空间</strong></li>
+<li>\2) <strong>返回</strong> 对象的引用<a href="">（python解释器拿到对象引用后会传递给初始化方法__init__的第一个参数）</a></li>
+</ul>
+</li>
+<li><code>Python</code> 的解释器获得对象的 <strong>引用</strong> 后，将引用作为 <strong>第一个参数</strong>，传递给 <code>__init__</code> 方法</li>
+</ul>
+<blockquote>
+<p>重写 <code>__new__</code> 方法 的代码非常固定！</p>
+</blockquote>
+<ul>
+<li><p>重写 <code>__new__</code> 方法 <strong>一定要</strong> <code>return super().__new__(cls)</code></p>
+</li>
+<li><p>否则 Python 的解释器 <strong>得不到</strong> 分配了空间的 <strong>对象引用</strong>，<strong>就不会调用对象的初始化方法</strong></p>
+</li>
+<li><p>注意：<code>__new__</code> 是一个静态方法，在调用时需要 <strong>主动传递</strong> <code>cls</code> 参数</p>
+<blockquote>
+<h2 id="当在超方法中调用其父级的-new-时，为什么-new-方法需要传递cls参数？"><a href="#当在超方法中调用其父级的-new-时，为什么-new-方法需要传递cls参数？" class="headerlink" title="当在超方法中调用其父级的__new__时，为什么__new__方法需要传递cls参数？"></a>当在超方法中调用其父级的__new__时，为什么__new__方法需要传递cls参数？</h2><p>​	我知道当我们跨超级方法调用父方法时，可以忽略绑定方法中的“ self”参数，如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Foo, self).__init__() <span class="comment"># We needn&#x27;t pass in the &quot;self&quot; argument</span></span><br><span class="line">        <span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+
+<p>但是<code>__new__</code>方法有所不同：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Bar</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">super</span>(Bar, cls).__new__(cls, *args, **kwargs) <span class="comment"># Why need a &quot;cls&quot; argument?</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><hr>
+<p><code>__new__</code>不是实例方法；它是传递给类对象的静态方法（也使其不是类方法）。</p>
+<p>从<a target="_blank" rel="noopener" href="http://docs.python.org/2/reference/datamodel.html#object.__new__"><code>__new__</code>文档中</a>：</p>
+<blockquote>
+<p><code>__new__()</code> 是一个静态方法（特殊情况，因此您无需这样声明），它将实例被请求的类作为其第一个参数。</p>
+</blockquote>
+<p>这样，即使用于在MRO中<code>super()</code>查找下一个<code>__new__</code>方法，您仍需要<code>cls</code>显式传递。</p>
+<p>通常在<em>type</em>上查找带有双下划线的特殊方法，在类的元类上查找（<code>type()</code>默认情况下）。那是行不通的，<code>__new__</code>因为您直接在类本身上声明了它。作为这种无<a target="_blank" rel="noopener" href="http://docs.python.org/2/howto/descriptor.html">描述符协议</a>可以应用于<em>任一</em>（这是通常打开的功能成绑定的方法，为类和实例方法）。因此，该<code>__new__</code>钩子必须是特殊情况的，并且永不束缚</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/YR95NICdTth4vDZ.png" alt="022_对象分配空间和初始化"></p>
+<p><strong>示例代码</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MusicPlayer</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 如果不返回任何结果，</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">super</span>().__new__(cls)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;初始化音乐播放对象&quot;</span>)</span><br><span class="line"></span><br><span class="line">player = MusicPlayer()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(player)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>new</strong>() 通常会返回该类的一个实例，但有时也可能会返回其他类的实例，如果发生了这种情况，则会跳过对 <strong>init</strong>() 方法的调用。而在某些情况下（比如需要修改不可变类实例（<a target="_blank" rel="noopener" href="http://c.biancheng.net/python/">Python</a> 的某些内置类型）的创建行为），利用这一点会事半功倍。比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">nonZero</span>(<span class="title class_ inherited__">int</span>):    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls,value</span>):        <span class="keyword">return</span> <span class="built_in">super</span>().__new__(cls,value) <span class="keyword">if</span> value != <span class="number">0</span> <span class="keyword">else</span> <span class="literal">None</span>    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,skipped_value</span>):        <span class="comment">#此例中会跳过此方法        print(&quot;__init__()&quot;)        super().__init__()print(type(nonZero(-12)))print(type(nonZero(0)))</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__init__()</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;__main__.nonZero&#x27;</span>&gt;</span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;NoneType&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="03-Python-中的单例"><a href="#03-Python-中的单例" class="headerlink" title="03. Python 中的单例"></a>03. Python 中的单例</h2><ul>
+<li>单例—— 让类创建对象，在系统中 只有唯一的一个实例<ol>
+<li>定义一个 <strong>类属性</strong>，初始值是 <code>None</code>，用于记录 <strong>单例对象的引用</strong></li>
+<li>重写 <code>__new__</code> 方法</li>
+<li>如果 <strong>类属性</strong> <code>is None</code>，调用父类方法分配空间，并在类属性中记录结果</li>
+<li>返回 <strong>类属性</strong> 中记录的 <strong>对象引用</strong></li>
+</ol>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/20/cM1ZtkUFdQWspmH.png" alt="023_单例流程"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MusicPlayer</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义类属性记录单例对象引用</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 1. 判断类属性是否已经被赋值</span></span><br><span class="line">        <span class="keyword">if</span> cls.instance <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            cls.instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 2. 返回类属性的单例引用</span></span><br><span class="line">        <span class="keyword">return</span> cls.instance</span><br></pre></td></tr></table></figure>
+
+<h3 id="只执行一次初始化工作"><a href="#只执行一次初始化工作" class="headerlink" title="只执行一次初始化工作"></a>只执行一次初始化工作</h3><ul>
+<li>在每次使用<strong>类名</strong>()创建对象时，Python的解释器都会自动调用两个方法：<ul>
+<li><code>__new__</code> 分配空间</li>
+<li><code>__init__</code> 对象初始化</li>
+</ul>
+</li>
+<li>在上一小节对 <code>__new__</code> 方法改造之后，每次都会得到 <strong>第一次被创建对象的引用</strong></li>
+<li>但是：<strong>初始化方法还会被再次调用</strong></li>
+</ul>
+<p><strong>需求</strong></p>
+<ul>
+<li>让 <strong>初始化动作</strong> 只被 <strong>执行一次</strong></li>
+</ul>
+<p><strong>解决办法</strong></p>
+<ol>
+<li>定义一个类属性 <code>init_flag</code> 标记是否 <strong>执行过初始化动作</strong>，初始值为 <code>False</code></li>
+<li>在 <code>__init__</code> 方法中，判断 <code>init_flag</code>，如果为 <code>False</code> 就执行初始化动作</li>
+<li>然后将 <code>init_flag</code> 设置为 <code>True</code></li>
+<li>这样，再次 <strong>自动</strong> 调用 <code>__init__</code> 方法时，<strong>初始化动作就不会被再次执行</strong> 了</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MusicPlayer</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 记录第一个被创建对象的引用</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line">    <span class="comment"># 记录是否执行过初始化动作</span></span><br><span class="line">    init_flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 1. 判断类属性是否是空对象</span></span><br><span class="line">        <span class="keyword">if</span> cls.instance <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># 2. 调用父类的方法，为第一个对象分配空间</span></span><br><span class="line">            cls.instance = <span class="built_in">super</span>().__new__(cls)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 3. 返回类属性保存的对象引用</span></span><br><span class="line">        <span class="keyword">return</span> cls.instance</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> MusicPlayer.init_flag:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;初始化音乐播放器&quot;</span>)</span><br><span class="line"></span><br><span class="line">            MusicPlayer.init_flag = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个对象</span></span><br><span class="line">player1 = MusicPlayer()</span><br><span class="line"><span class="built_in">print</span>(player1)</span><br><span class="line"></span><br><span class="line">player2 = MusicPlayer()</span><br><span class="line"><span class="built_in">print</span>(player2)</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

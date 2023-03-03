@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>15.变量进阶（理解） - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="变量进阶（理解）目标
+变量的引用
+可变和不可变类型
+局部变量和全局变量
+
+01. 变量的引用
+
+变量 和 数据 都是保存在 内存 中的
+在 Python 中 函数 的 参数传递 以及 返回值 都是靠,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="15.变量进阶（理解） - fubaisen"/>
+    <meta name="twitter:description" content="变量进阶（理解）目标
+变量的引用
+可变和不可变类型
+局部变量和全局变量
+
+01. 变量的引用
+
+变量 和 数据 都是保存在 内存 中的
+在 Python 中 函数 的 参数传递 以及 返回值 都是靠,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="15.变量进阶（理解） - fubaisen"/>
+    <meta property="og:description" content="变量进阶（理解）目标
+变量的引用
+可变和不可变类型
+局部变量和全局变量
+
+01. 变量的引用
+
+变量 和 数据 都是保存在 内存 中的
+在 Python 中 函数 的 参数传递 以及 返回值 都是靠,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">15.变量进阶（理解）</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">15.变量进阶（理解）</h1>
+        <div class="stuff">
+            <span>一月 23, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python%E5%AD%A6%E4%B9%A0/" rel="tag">python学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="变量进阶（理解）"><a href="#变量进阶（理解）" class="headerlink" title="变量进阶（理解）"></a>变量进阶（理解）</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>变量的引用</li>
+<li>可变和不可变类型</li>
+<li>局部变量和全局变量</li>
+</ul>
+<h2 id="01-变量的引用"><a href="#01-变量的引用" class="headerlink" title="01. 变量的引用"></a>01. 变量的引用</h2><blockquote>
+<ul>
+<li>变量 和 数据 都是保存在 <strong>内存</strong> 中的</li>
+<li>在 <code>Python</code> 中 <strong>函数 的 参数传递</strong> 以及 <strong>返回值</strong> 都是靠 <strong>引用</strong> 传递的</li>
+</ul>
+</blockquote>
+<h3 id="1-1-引用的概念"><a href="#1-1-引用的概念" class="headerlink" title="1.1 引用的概念"></a>1.1 引用的概念</h3><p>在 <code>Python</code> 中</p>
+<ul>
+<li><p><strong>变量</strong> 和 <strong>数据</strong> 是分开存储的</p>
+</li>
+<li><p><strong>数据</strong> 保存在内存中的一个位置</p>
+</li>
+<li><p><strong>变量</strong> 中保存着数据在内存中的地址</p>
+</li>
+<li><p><strong>变量</strong> 中 <strong>记录数据的地址</strong>，就叫做 <strong>引用</strong></p>
+</li>
+<li><p>使用 <code>id()</code> 函数可以查看变量中保存数据所在的 <strong>内存地址</strong></p>
+<p><img src="https://s2.loli.net/2022/01/19/gGbKSqx1kinLpTt.png" alt="image-20220119015905442"></p>
+</li>
+</ul>
+<blockquote>
+<p>注意：如果变量已经被定义，当给一个变量赋值的时候，本质上是 <strong>修改了数据的引用</strong></p>
+<ul>
+<li><p>变量 <strong>不再</strong> 对之前的数据引用</p>
+</li>
+<li><p>变量 <strong>改为</strong> 对新赋值的数据引用</p>
+<p><img src="https://s2.loli.net/2022/01/19/ilw6TyVbr5Y1SQH.png" alt="image-20220119020136505"></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="1-2-变量引用-的示例"><a href="#1-2-变量引用-的示例" class="headerlink" title="1.2 变量引用 的示例"></a>1.2 <code>变量引用</code> 的示例</h3><p>在 <code>Python</code> 中，变量的名字类似于 <strong>便签纸</strong> 贴在 <strong>数据</strong> 上</p>
+<ul>
+<li>定义一个整数变量 <code>a</code>，并且赋值为 <code>1</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">图示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a &#x3D; 1</td>
+<td align="center"><img src="https://s2.loli.net/2022/01/11/GbzaskfAQuqJ5Mn.png" alt="004_a1tag.png"></td>
+</tr>
+</tbody></table>
+<ul>
+<li>将变量 <code>a</code> 赋值为 <code>2</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">图示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a &#x3D; 2</td>
+<td align="center"><img src="https://s2.loli.net/2022/01/11/gTGzus5DKSOcitq.png" alt="005_a2tag.png"><img src="https://s2.loli.net/2022/01/11/Ksq8hnMAcwHgyEN.png" alt="005_1.png"></td>
+</tr>
+</tbody></table>
+<ul>
+<li>定义一个整数变量 <code>b</code>，并且将变量 <code>a</code> 的值赋值给 <code>b</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">图示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">b &#x3D; a</td>
+<td align="center"><img src="https://s2.loli.net/2022/01/11/roB5ODQFpSXZlKR.png" alt="006_ab2tag.png"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>变量 <code>b</code> 是第 2 个贴在数字 <code>2</code> 上的标签</p>
+</blockquote>
+<h3 id="1-3-函数的参数和返回值的传递"><a href="#1-3-函数的参数和返回值的传递" class="headerlink" title="1.3 函数的参数和返回值的传递"></a>1.3 函数的参数和返回值的传递</h3><p>在 <code>Python</code> 中，函数的 <strong>实参</strong>&#x2F;<strong>返回值</strong> 都是是靠 <strong>引用</strong> 来传递来的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">num</span>):</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d 在函数内的内存地址是 %x&quot;</span> % (num, <span class="built_in">id</span>(num)))</span><br><span class="line"></span><br><span class="line">    result = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;返回值 %d 在内存中的地址是 %x&quot;</span> % (result, <span class="built_in">id</span>(result)))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span>  result</span><br><span class="line"></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;调用函数前 内存地址是 %x&quot;</span> % <span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">r = test(a)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;调用函数后 实参内存地址是 %x&quot;</span> % <span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;调用函数后 返回值内存地址是 %x&quot;</span> % <span class="built_in">id</span>(r))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="02-可变和不可变类型"><a href="#02-可变和不可变类型" class="headerlink" title="02. 可变和不可变类型"></a>02. 可变和不可变类型</h2><ul>
+<li><strong>不可变类型</strong>，内存中的数据不允许被修改：<ul>
+<li>数字类型 <code>int</code>, <code>bool</code>, <code>float</code>, <code>complex</code>, <code>long(2.x)</code></li>
+<li>字符串 <code>str</code></li>
+<li>元组 <code>tuple</code></li>
+</ul>
+</li>
+<li><strong>可变类型</strong>，内存中的数据可以被修改：<ul>
+<li>列表 <code>list</code></li>
+<li>字典 <code>dict</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">a = <span class="string">&quot;hello&quot;</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">a = [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><img src="https://s2.loli.net/2022/01/19/PidWkfpxQDVe7zw.png" alt="image-20220119151254042"></p>
+<p><img src="https://s2.loli.net/2022/01/19/fUBFKcEYjdCwlb7.png" alt="image-20220119151448716">直接 “覆盖 ”不是修改内容 ，而是 在改变变量的引用地址</p>
+<p>要通过   <strong>“变量 . 方法”</strong> 来修改 可变类型的内容</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">demo_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;定义列表后的内存地址 %d&quot;</span> % <span class="built_in">id</span>(demo_list))</span><br><span class="line"></span><br><span class="line">demo_list.append(<span class="number">999</span>)</span><br><span class="line">demo_list.pop(<span class="number">0</span>)</span><br><span class="line">demo_list.remove(<span class="number">2</span>)</span><br><span class="line">demo_list[<span class="number">0</span>] = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;修改数据后的内存地址 %d&quot;</span> % <span class="built_in">id</span>(demo_list))</span><br><span class="line"></span><br><span class="line">demo_dict = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;小明&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;定义字典后的内存地址 %d&quot;</span> % <span class="built_in">id</span>(demo_dict))</span><br><span class="line"></span><br><span class="line">demo_dict[<span class="string">&quot;age&quot;</span>] = <span class="number">18</span></span><br><span class="line">demo_dict.pop(<span class="string">&quot;name&quot;</span>)</span><br><span class="line">demo_dict[<span class="string">&quot;name&quot;</span>] = <span class="string">&quot;老王&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;修改数据后的内存地址 %d&quot;</span> % <span class="built_in">id</span>(demo_dict))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：字典的 <code>key</code> <strong>只能使用不可变类型的数据</strong></p>
+</blockquote>
+<p><strong>注意</strong></p>
+<ol>
+<li><strong>可变类型</strong>的数据变化，是通过 <strong>方法</strong> 来实现的</li>
+<li>如果给一个可变类型的变量，赋值了一个新的数据，<strong>引用会修改</strong><ul>
+<li>变量 <strong>不再</strong> 对之前的数据引用</li>
+<li>变量 <strong>改为</strong> 对新赋值的数据引用</li>
+</ul>
+</li>
+</ol>
+<h3 id="哈希-hash"><a href="#哈希-hash" class="headerlink" title="哈希 (hash)"></a>哈希 <code>(hash)</code></h3><ul>
+<li><code>Python</code> 中内置有一个名字叫做 <code>hash(o)</code> 的函数<ul>
+<li>接收一个 <strong>不可变类型</strong> 的数据作为 <strong>参数</strong></li>
+<li><strong>返回</strong> 结果是一个 <strong>整数</strong></li>
+</ul>
+</li>
+<li><code>哈希</code> 是一种 <strong>算法</strong>，其作用就是提取数据的 <strong>特征码（指纹）</strong><ul>
+<li><strong>相同的内容</strong> 得到 <strong>相同的结果</strong></li>
+<li><strong>不同的内容</strong> 得到 <strong>不同的结果</strong></li>
+</ul>
+</li>
+<li>在 <code>Python</code> 中，设置字典的 <strong>键值对</strong> 时，会首先对 <code>key</code> 进行 <code>hash</code> 已决定如何在内存中保存字典的数据，以方便 <strong>后续</strong> 对字典的操作：<strong>增、删、改、查</strong><ul>
+<li>键值对的 <code>key</code> 必须是不可变类型数据</li>
+<li>键值对的 <code>value</code> 可以是任意类型的数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="03-局部变量和全局变量"><a href="#03-局部变量和全局变量" class="headerlink" title="03. 局部变量和全局变量"></a>03. 局部变量和全局变量</h2><ul>
+<li><strong>局部变量</strong> 是在 <strong>函数内部</strong> 定义的变量，<strong>只能在函数内部使用</strong></li>
+<li><strong>全局变量</strong> 是在 <strong>函数外部定义</strong> 的变量（没有定义在某一个函数内），<strong>所有函数</strong> 内部 <strong>都可以使用这个变量</strong></li>
+</ul>
+<blockquote>
+<p>提示：在其他的开发语言中，大多 <strong>不推荐使用全局变量</strong> —— 可变范围太大，导致程序不好维护！</p>
+</blockquote>
+<h3 id="3-1-局部变量"><a href="#3-1-局部变量" class="headerlink" title="3.1 局部变量"></a>3.1 局部变量</h3><ul>
+<li><p><strong>局部变量</strong> 是在 <strong>函数内部</strong> 定义的变量，<strong>只能在函数内部使用</strong></p>
+</li>
+<li><p>函数执行结束后，<strong>函数内部的局部变量，会被系统回收</strong></p>
+</li>
+<li><p>不同的函数，可以定义相同的名字的局部变量，但是 <strong>彼此之间</strong> 不会产生影响</p>
+<blockquote>
+<p>定义局部变量代码执行之后 变量才会被定创建–—-出生<img src="https://s2.loli.net/2022/01/20/KivU4X7Pb1R3IFk.png" alt="image-20220120020203900"></p>
+<p>函数结束执行之后 局部变量被系统回收  ——死亡</p>
+<p><img src="https://s2.loli.net/2022/01/20/GXh9R3xM1N2e75l.png" alt="image-20220120020301492"></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="局部变量的作用"><a href="#局部变量的作用" class="headerlink" title="局部变量的作用"></a>局部变量的作用</h4><ul>
+<li>在函数内部使用，<strong>临时</strong> 保存 <strong>函数内部需要使用的数据</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">demo1</span>():</span><br><span class="line"></span><br><span class="line">    num = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line">    num = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;修改后 %d&quot;</span> % num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo2</span>():</span><br><span class="line"></span><br><span class="line">    num = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line">demo1()</span><br><span class="line">demo2()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;over&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="局部变量的生命周期"><a href="#局部变量的生命周期" class="headerlink" title="局部变量的生命周期"></a>局部变量的生命周期</h4><ul>
+<li>所谓 <strong>生命周期</strong> 就是变量从 <strong>被创建</strong> 到 <strong>被系统回收</strong> 的过程</li>
+<li><strong>局部变量</strong> 在 <strong>函数执行时</strong> 才会被创建</li>
+<li><strong>函数执行结束后</strong> 局部变量 <strong>被系统回收</strong></li>
+<li><strong>局部变量在生命周期</strong> 内，可以用来存储 <strong>函数内部临时使用到的数据</strong></li>
+</ul>
+<h3 id="3-2-全局变量"><a href="#3-2-全局变量" class="headerlink" title="3.2 全局变量"></a>3.2 全局变量</h3><ul>
+<li><strong>全局变量</strong> 是在 <strong>函数外部定义</strong> 的变量，所有函数内部都可以使用这个变量</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个全局变量</span></span><br><span class="line">num = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo1</span>():</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo2</span>():</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line">demo1()</span><br><span class="line">demo2()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;over&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：函数执行时，<strong>需要处理变量时</strong> 会：</p>
+<ol>
+<li><strong>首先</strong> 查找 <strong>函数内部</strong> 是否存在 <strong>指定名称 的局部变量</strong>，<strong>如果有，直接使用</strong></li>
+<li>如果没有，查找 <strong>函数外部</strong> 是否存在 <strong>指定名称 的全局变量</strong>，<strong>如果有，直接使用</strong></li>
+<li>如果还没有，程序报错！</li>
+</ol>
+<h4 id="1-函数不能直接修改-全局变量的引用"><a href="#1-函数不能直接修改-全局变量的引用" class="headerlink" title="1) 函数不能直接修改 全局变量的引用"></a>1) 函数不能直接修改 <code>全局变量的引用</code></h4><ul>
+<li><strong>全局变量</strong> 是在 <strong>函数外部定义</strong> 的变量（没有定义在某一个函数内），<strong>所有函数</strong> 内部 <strong>都可以使用这个变量</strong></li>
+</ul>
+<blockquote>
+<p>提示：在其他的开发语言中，大多 <strong>不推荐使用全局变量</strong> —— 可变范围太大，导致程序不好维护！</p>
+</blockquote>
+<ul>
+<li>在函数内部，可以 <strong>通过全局变量的引用获取对应的数据</strong></li>
+<li>但是，<strong>不允许直接修改全局变量的引用</strong> —— 使用赋值语句修改全局变量的值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo1</span>():</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;demo1&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 只是定义了一个局部变量，不会修改到全局变量，只是变量名相同而已</span></span><br><span class="line">    num = <span class="number">100</span></span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo2</span>():</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;demo2&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line">demo1()</span><br><span class="line">demo2()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;over&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：只是在函数内部定义了一个局部变量而已，只是变量名相同 —— 在函数内部不能直接修改全局变量的值</p>
+</blockquote>
+<h4 id="2-在函数内部修改全局变量的值"><a href="#2-在函数内部修改全局变量的值" class="headerlink" title="2) 在函数内部修改全局变量的值"></a>2) 在函数内部修改全局变量的值</h4><ul>
+<li>如果在函数中需要修改全局变量，需要使用 <code>global</code> 进行声明</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo1</span>():</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;demo1&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># global 关键字，告诉 Python 解释器 num 是一个全局变量</span></span><br><span class="line">    <span class="keyword">global</span> num</span><br><span class="line">    <span class="comment"># 只是定义了一个局部变量，不会修改到全局变量，只是变量名相同而已</span></span><br><span class="line">    num = <span class="number">100</span></span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo2</span>():</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;demo2&quot;</span> + <span class="string">&quot;-&quot;</span> * <span class="number">50</span>)</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line">demo1()</span><br><span class="line">demo2()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;over&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-全局变量定义的位置"><a href="#3-全局变量定义的位置" class="headerlink" title="3) 全局变量定义的位置"></a>3) 全局变量定义的位置</h4><ul>
+<li>为了保证所有的函数都能够正确使用到全局变量，应该 <strong>将全局变量定义在其他函数的上方</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">demo</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d&quot;</span> % a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d&quot;</span> % b)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;%d&quot;</span> % c)</span><br><span class="line"></span><br><span class="line">b = <span class="number">20</span></span><br><span class="line">demo()</span><br><span class="line">c = <span class="number">30</span></span><br><span class="line"><span class="comment"># 由于全局变量 c，是在调用函数之后，才定义的，在执行函数时，变量还没有定义，所以程序会报错！</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong></p>
+<ul>
+<li>由于全局变量 c，是在调用函数之后，才定义的，在执行函数时，变量还没有定义，所以程序会报错！</li>
+</ul>
+<p><strong>代码结构示意图如下</strong></p>
+<p><img src="https://s2.loli.net/2022/01/11/JUnLEpOCzXg1lih.png" alt="001_代码结构示意图.png"></p>
+<h4 id="4-全局变量命名的建议"><a href="#4-全局变量命名的建议" class="headerlink" title="4) 全局变量命名的建议"></a>4) 全局变量命名的建议</h4><ul>
+<li>为了避免局部变量和全局变量出现混淆，在定义全局变量时，有些公司会有一些开发要求，例如：</li>
+<li>全局变量名前应该增加 <code>g_</code> 或者 <code>gl_</code> 的前缀</li>
+</ul>
+<blockquote>
+<p>提示：具体的要求格式，各公司要求可能会有些差异</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/01/23/bSnFHy35xjCBlhQ.png" alt="image-20220123123135040"></p>
+<h1 id="Shebang"><a href="#Shebang" class="headerlink" title="Shebang"></a><img src="https://img-blog.csdn.net/20171102205825965" alt="这里写图片描述" style="zoom:33%;" />Shebang</h1><p>这个符号的名称，叫做”Shebang”或者”Sha-bang”。长期以来，Shebang都没有正式的中文名称。Linux中国翻译组的GOLinux将其翻译为“释伴”，即“解释伴随行”的简称，同时又是Shebang的音译。本文将简单介绍一下Shebang这个符号。<br>1.词源与历史<br>  Shebang 的名字来自于 SHArp 和 bang，或 haSH bang 的缩写，指代 Shebang 中 #! 两个符号的典型 Unix 名称。 Unix 术语中，井号通常称为 sharp，hash 或 mesh；而叹号则常常称为 bang。也有看法认为，shebang 名字中的 sh 来自于默认shell Bourne shell 的名称，sh，因为常常使用 shebang 调用之。<br>  在2010年版的 Advanced bash scripting guide（revision 6.2)中，Shebang 被称为 “sha-bang”，同时提到”也写作 she-bang 或 sh-bang”，但该文件中没有提到 “shebang” 这一形式。</p>
+<p>2.用法<br>  Shebang通常出现在类Unix系统的脚本中第一行，作为前两个字符。在Shebang之后，可以有一个或数个空白字符，后接解释器的绝对路径，用于指明执行这个脚本文件的解释器。在直接调用脚本时，系统的程序载入器会分析 Shebang 后的内容，将这些内容作为解释器指令，并调用该指令，将载有 Shebang 的文件路径作为该解释器的参数，执行脚本，从而使得脚本文件的调用方式与普通的可执行文件类似。例如，以指令#!&#x2F;bin&#x2F;sh开头的文件，在执行时会实际调用 &#x2F;bin&#x2F;sh 程序（通常是 Bourne shell 或兼容的 shell，例如 bash、dash 等）来执行。<br>  由于 # 符号在许多脚本语言中都是注释标识符，Shebang 的内容会被这些脚本解释器自动忽略。 在 # 字符不是注释标识符的语言中，例如 Scheme，解释器也可能忽略以 #! 开头的首行内容，以提供与 Shebang 的兼容性。</p>
+<p>  Shebang的一些具体用法罗列如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、如果脚本文件中没有#!这一行，那么执行时会默认采用当前Shell去解释这个脚本(即：$SHELL环境变量）。</span><br><span class="line">2、如果#!之后的解释程序是一个可执行文件，那么执行这个脚本时，它就会把文件名及其参数一起作为参数传给那个解释程序去执行。</span><br><span class="line">3、如果#!指定的解释程序没有可执行权限，则会报错“bad interpreter: Permission</span><br><span class="line">denied”。如果#!指定的解释程序不是一个可执行文件，那么指定的解释程序会被忽略，转而交给当前的SHELL去执行这个脚本。</span><br><span class="line">4、如果#!指定的解释程序不存在，那么会报错“bad interpreter: No such file or directory”。注意：#!之后的解释程序，需要写其绝对路径（如：#!/bin/bash），它是不会自动到$PATH中寻找解释器的。</span><br><span class="line">5、当然，如果你使用类似于”bash test.sh”这样的命令来执行脚本，那么#!这一行将会被忽略掉，解释器当然是用命令行中显式指定的bash。</span><br><span class="line">6、脚本文件必须拥有可执行权限。</span><br></pre></td></tr></table></figure>
+
+<p>  Shebang的好处在于，允许脚本和数据文件充当系统命令，无需在调用时由用户指定解释器，从而对用户和其它程序隐藏其实现细节。下面我们一起来看几个典型的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. #!/bin/sh：使用 sh，即 Bourne shell 或其它兼容 shell 执行脚本</span><br><span class="line">2. #!/bin/csh：使用 csh，即 C shell 执行</span><br><span class="line">3. #!/usr/bin/perl -w：使用带警告的 Perl 执行</span><br><span class="line">4. #!/usr/bin/python -O：使用具有代码优化的 Python 执行</span><br><span class="line">5. #!/usr/bin/php：使用 PHP 的命令行解释器执行</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Shebang 行也可以包含需要传递到解释器的特定选项（如上述的 Perl 和 Python 例子）。</p>
+<p>(2).使用 #!&#x2F;usr&#x2F;bin&#x2F;env 脚本解释器名称 是一种常见的在不同平台上都能正确找到解释器的办法。因为env一般固定在&#x2F;usr&#x2F;bin目录下，而其余解释器的安装位置就相对不那么固定。但是，用env时你应该注意这么一个事实：传递给解释器的argv和你想象得并不一样。下面这个就是不对的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env perl -w</span><br></pre></td></tr></table></figure>
+
+<p>shell会提示：&#x2F;usr&#x2F;bin&#x2F;env: perl -w: No such file or directory。错误的根源就在于 perl -w 被当成了整体传递给env。</p>
+<blockquote>
+<p>最后，我们来总结一下Shebang的几点要求：</p>
+<ol>
+<li>#! 必须连接在一起</li>
+<li>#! 一句必须在文件的最开始，第一行</li>
+<li>开头的语句一般情况下会被当成注释而忽略，所以Shebang 对文件的内容是没有影响的	</li>
+<li>#! 开头的一行会设置解释器运行环境</li>
+</ol>
+</blockquote>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

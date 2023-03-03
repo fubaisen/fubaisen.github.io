@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>sum函数 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="sum函数1、操作对象是向量：生成一个向量以及使用sum函数对向量进行操作.sum函数对向量的所有元素进行求和。
+
+调用格式：
+
+b&amp;#x3D;sum(a);
+a表示行向量
+b表示行向量求和的值
+
+,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="sum函数 - fubaisen"/>
+    <meta name="twitter:description" content="sum函数1、操作对象是向量：生成一个向量以及使用sum函数对向量进行操作.sum函数对向量的所有元素进行求和。
+
+调用格式：
+
+b&amp;#x3D;sum(a);
+a表示行向量
+b表示行向量求和的值
+
+,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="sum函数 - fubaisen"/>
+    <meta property="og:description" content="sum函数1、操作对象是向量：生成一个向量以及使用sum函数对向量进行操作.sum函数对向量的所有元素进行求和。
+
+调用格式：
+
+b&amp;#x3D;sum(a);
+a表示行向量
+b表示行向量求和的值
+
+,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">sum函数</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">sum函数</h1>
+        <div class="stuff">
+            <span>四月 01, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="sum函数"><a href="#sum函数" class="headerlink" title="sum函数"></a>sum函数</h1><h2 id="1、操作对象是向量："><a href="#1、操作对象是向量：" class="headerlink" title="1、操作对象是向量："></a><strong>1、操作对象是向量：</strong></h2><p>生成一个向量以及使用sum函数对向量进行操作.sum函数对向量的所有元素进行求和。</p>
+<blockquote>
+<p>调用格式：</p>
+<ul>
+<li>b&#x3D;sum(a);<ul>
+<li>a表示行向量</li>
+<li>b表示行向量求和的值</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>例子如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">b=sum(a);</span><br><span class="line"></span><br><span class="line">b=</span><br><span class="line"></span><br><span class="line">   <span class="number">15</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://exp-picture.cdn.bcebos.com/e4b5e2f5ee0d3ace0f2944de87e265e7350fbb57.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<h2 id="2、操作对象是一个矩阵："><a href="#2、操作对象是一个矩阵：" class="headerlink" title="2、操作对象是一个矩阵："></a>2、<strong>操作对象是一个矩阵：</strong></h2><p>生成一个矩阵以及使用sum函数对矩阵进行操作。在MATLAB默认的情况下，sum函数对矩阵的每一列的元素进行求和，结果是一个横向量。</p>
+<blockquote>
+<p>调用格式：</p>
+<ul>
+<li>b&#x3D;sum(a);<ul>
+<li>a表示矩阵</li>
+<li>b表示矩阵每列求和得到的行向量</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>例子如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">   <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></span><br><span class="line"></span><br><span class="line">   <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line"></span><br><span class="line">sum(a)=</span><br><span class="line"></span><br><span class="line">	[<span class="number">12</span> <span class="number">15</span> <span class="number">18</span>];</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://exp-picture.cdn.bcebos.com/ba97ffd06de89a6135db772645e8b004551bad57.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<h2 id="3、设定sum函数的参数列表的参数dim"><a href="#3、设定sum函数的参数列表的参数dim" class="headerlink" title="3、设定sum函数的参数列表的参数dim"></a>3、设定sum函数的参数列表的参数dim</h2><p>对矩阵每一列或者每一列求和或每一行求和，得到<strong>行向量或者列向量</strong></p>
+<blockquote>
+<p><strong>调用格式</strong>：</p>
+<ul>
+<li><p>b&#x3D;sum(a,dim);</p>
+</li>
+<li><p>a表示矩阵；</p>
+</li>
+<li><p>dim等于1或者2，</p>
+<ul>
+<li><p>1表示每一列进行求和，</p>
+</li>
+<li><p>2表示每一行进行求和；</p>
+</li>
+</ul>
+</li>
+<li><p>b表示求得的行向量。</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>例子如下</strong>：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">   <span class="number">4</span> <span class="number">5</span> <span class="number">6</span></span><br><span class="line">   <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line"></span><br><span class="line">sum(a,<span class="number">1</span>)=[<span class="number">12</span> <span class="number">15</span> <span class="number">18</span>];</span><br><span class="line"></span><br><span class="line">sum(a,<span class="number">2</span>)=[ <span class="number">6</span></span><br><span class="line"></span><br><span class="line">           <span class="number">15</span></span><br><span class="line"></span><br><span class="line">       	   <span class="number">24</span>];</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://exp-picture.cdn.bcebos.com/e86ba4b842406afe02eac7701eee41c1b6279f57.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<p><img src="https://exp-picture.cdn.bcebos.com/91091efc77f7980e90de75c4d4db3620b83a9157.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<h1 id="使用sum函数关于数据类型的方法案例"><a href="#使用sum函数关于数据类型的方法案例" class="headerlink" title="使用sum函数关于数据类型的方法案例"></a>使用sum函数关于数据类型的方法案例</h1><h2 id="1、如果没有规定输出与输入变量的数据类型"><a href="#1、如果没有规定输出与输入变量的数据类型" class="headerlink" title="1、如果没有规定输出与输入变量的数据类型"></a>1、如果没有规定输出与输入变量的数据类型</h2><ul>
+<li>生成矩阵为 默认double型矩阵   ，    用sum函数进行操作</li>
+<li>结果表示  矩阵a与结果向量b的数据类型都是double型</li>
+</ul>
+<p><img src="https://exp-picture.cdn.bcebos.com/589f5b078801387008bf0c392d08a50f95fc8357.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<h2 id="2、如果输入变量的数据类型是single类型，则输出的数据类型为single类型"><a href="#2、如果输入变量的数据类型是single类型，则输出的数据类型为single类型" class="headerlink" title="2、如果输入变量的数据类型是single类型，则输出的数据类型为single类型"></a>2、如果输入变量的数据类型是single类型，则输出的数据类型为single类型</h2><ul>
+<li><p>生成一个Int8（整数型）矩阵  用sum函数进行操作 </p>
+</li>
+<li><p><strong>结果观察</strong>：输入的a矩阵为int8型，输出的矩阵b为double型</p>
+</li>
+</ul>
+<p><img src="https://exp-picture.cdn.bcebos.com/e6ae36066b0192ddddbe80461a87031c98c0f057.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<h2 id="3、使用类型参数-native-使输入与输出的矩阵或向量的数据类型一致"><a href="#3、使用类型参数-native-使输入与输出的矩阵或向量的数据类型一致" class="headerlink" title="3、使用类型参数 native 使输入与输出的矩阵或向量的数据类型一致"></a>3、使用类型参数 <code>native</code> 使输入与输出的矩阵或向量的数据类型一致</h2><blockquote>
+<p>调用格式：</p>
+<ul>
+<li>b&#x3D;sum(a,type); <ul>
+<li>type等于<code>native</code>时，输入变量与输出变量的数据类型是相同的</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>生成一个Int8（整数型）矩阵      用sum函数进行操作</p>
+</li>
+<li><p><strong>结果观察</strong>：输入的a矩阵为int8型，输出的矩阵b为int8型</p>
+</li>
+</ul>
+<p><img src="https://exp-picture.cdn.bcebos.com/bfa52adaf05e4a23858fc8a81dd818196020e257.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<h2 id="4、使用类型参数double-强制使输出变量的数据为类型double"><a href="#4、使用类型参数double-强制使输出变量的数据为类型double" class="headerlink" title="4、使用类型参数double,强制使输出变量的数据为类型double"></a>4、使用类型参数<code>double</code>,强制使输出变量的数据为类型double</h2><blockquote>
+<p>调用格式：</p>
+<ul>
+<li>b&#x3D;sum(a,type); <ul>
+<li>type等于<code>double</code>时 ，<strong>输入变量不管是不是single型，输出变量类型为double型</strong></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>生成一个Int8（整数型）矩阵以及用sum函数进行操作</p>
+</li>
+<li><p><strong>观察结果</strong>：输入的a矩阵为int8型，输出的矩阵b为double型。</p>
+</li>
+</ul>
+<p><img src="https://exp-picture.cdn.bcebos.com/bab5c45872dade496af0bde326042e6816e9d557.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+<h1 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h1><ol>
+<li><p><strong>操作对象为矩阵</strong></p>
+<p><code>C=sum(sum(a))；a为一个矩阵，结果为矩阵a所有元素的求和。</code></p>
+<p>示例如下：</p>
+<p><img src="https://exp-picture.cdn.bcebos.com/5917cb3da824d8e9da2d8dd3da598540112ac857.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+</li>
+<li><p><strong>操作对象为矩阵</strong></p>
+<p><code>C=sum(diag(a)); a为一个方阵，结果为对角线元素之和，及矩阵的迹；</code> </p>
+<p><img src="https://exp-picture.cdn.bcebos.com/a13bbe10bc33ec3816442f5a295f0c14c37b3c54.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+</li>
+<li><p><strong>操作对象为矩阵</strong></p>
+<p><code>C=sum(a(:,n)); a为一个矩阵，结果为第n列的所有元素之和，即矩阵的迹；</code></p>
+<p><img src="https://exp-picture.cdn.bcebos.com/efb861bd4c7c34b313be050f5841037de0373154.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+</li>
+<li><p><strong>操作对象为矩阵</strong></p>
+<p><code>C=sum(a(n,:)); a为一个矩阵，结果为第n行的所有元素之和，即矩阵的迹；</code></p>
+<p><img src="https://exp-picture.cdn.bcebos.com/2a1ecb460596b814c82f83b643d246fe464e2254.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/format,f_jpg/quality,q_80" alt="MATLAB 函数sum的用法简介"></p>
+</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

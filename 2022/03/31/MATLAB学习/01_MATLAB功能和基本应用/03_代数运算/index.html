@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>03_代数运算 - fubaisen</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="三、代数运算1.常量表示
+2.基础运算（1）算术运算符
+
+矩阵相加减应具有相同的行和列
+
+两矩阵进行点运算是指它们的对应元素进行相关运算，且要求两矩阵的维数相同
+
+A.\B	表示矩阵B中的每个元素初,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="03_代数运算 - fubaisen"/>
+    <meta name="twitter:description" content="三、代数运算1.常量表示
+2.基础运算（1）算术运算符
+
+矩阵相加减应具有相同的行和列
+
+两矩阵进行点运算是指它们的对应元素进行相关运算，且要求两矩阵的维数相同
+
+A.\B	表示矩阵B中的每个元素初,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="fubaisen"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="03_代数运算 - fubaisen"/>
+    <meta property="og:description" content="三、代数运算1.常量表示
+2.基础运算（1）算术运算符
+
+矩阵相加减应具有相同的行和列
+
+两矩阵进行点运算是指它们的对应元素进行相关运算，且要求两矩阵的维数相同
+
+A.\B	表示矩阵B中的每个元素初,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">fubaisen</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://fubaisen.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">03_代数运算</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">03_代数运算</h1>
+        <div class="stuff">
+            <span>三月 31, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/MATLAB%E5%AD%A6%E4%B9%A0/" rel="tag">MATLAB学习</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="三、代数运算"><a href="#三、代数运算" class="headerlink" title="三、代数运算"></a>三、代数运算</h1><h2 id="1-常量表示"><a href="#1-常量表示" class="headerlink" title="1.常量表示"></a>1.常量表示</h2><p><img src="https://s2.loli.net/2022/02/26/JzpHdYMbvf26tRg.jpg" alt="8eadc37e2477643f5f08fb75ce2c84c"></p>
+<h2 id="2-基础运算"><a href="#2-基础运算" class="headerlink" title="2.基础运算"></a>2.基础运算</h2><h3 id="（1）算术运算符"><a href="#（1）算术运算符" class="headerlink" title="（1）算术运算符"></a>（1）算术运算符</h3><p><img src="https://s2.loli.net/2022/02/26/iF97ORo34DWqLru.jpg" alt="c1cfae93fd110f0228f09d6b2447ac6"></p>
+<ul>
+<li><p>矩阵相加减应具有相同的行和列</p>
+</li>
+<li><p>两矩阵进行点运算是指它们的对应元素进行相关运算，且要求两矩阵的维数相同</p>
+</li>
+<li><p>A.\B	表示矩阵B中的每个元素初一矩阵A的对应的元素</p>
+<p>A.&#x2F;B表示矩阵A中的每个元素除以矩阵B对应的元素2</p>
+</li>
+<li><p>左除、右除：</p>
+<ul>
+<li><p>A左除B(A\B)表示矩阵A的逆乘以矩阵B即inv(A)*B；</p>
+<p>inv（4）&#x3D;1&#x2F;4</p>
+</li>
+<li><p>A右除B(A&#x2F;B)表示矩阵A乘以矩阵B的逆即A*inv(B)；</p>
+</li>
+<li><p>当A为非奇异矩阵时，x&#x3D;A\B是方程A<em>x&#x3D;B的解，而x&#x3D;B&#x2F;A是方程x</em>A&#x3D;B的解</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">A=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">B=[<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>;<span class="number">5</span>,<span class="number">9</span>,<span class="number">13</span>;<span class="number">7</span>,<span class="number">12</span>,<span class="number">11</span>];</span><br><span class="line">C=A*B;</span><br><span class="line">D=A.*B;</span><br><span class="line">E=A/B;                   <span class="comment">% 右除</span></span><br><span class="line">E1=A*inv(B);             <span class="comment">% A* inv(B)等价 A/B  （inv对矩阵求逆）</span></span><br><span class="line">F=A\B;                   <span class="comment">% 左除</span></span><br><span class="line">F1=inv(A)*B;             <span class="comment">% inv(A)*B 等价 A\B</span></span><br><span class="line">G=A./B;                  <span class="comment">% 点左除</span></span><br><span class="line">H=A.\B;                  <span class="comment">% 点右除</span></span><br><span class="line">I=A^<span class="number">2</span>;                   </span><br><span class="line">I1=A.^<span class="number">2</span>;                 <span class="comment">% A的二次方  加点表示对应元素求二次方</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>复数的学习</p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="center">说明</th>
+<th align="right">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">real(z)</td>
+<td align="center">返回复数z的实部</td>
+<td align="right">imag(z)</td>
+<td align="left">返回复数z的虚部</td>
+</tr>
+<tr>
+<td align="left">abs(z)</td>
+<td align="center">返回复数z的模</td>
+<td align="right">angle(z)</td>
+<td align="left">返回复数z的幅角</td>
+</tr>
+<tr>
+<td align="left">conj(z)</td>
+<td align="center">返回复数z的共轭复数</td>
+<td align="right">complex(a,b)</td>
+<td align="left">以a为实部、b为虚部创建复数</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">z1=<span class="number">3</span>+<span class="number">4</span>*<span class="number">1</span><span class="built_in">i</span>;</span><br><span class="line">z2=<span class="number">1</span>+<span class="number">2</span>*<span class="number">1</span><span class="built_in">i</span>;</span><br><span class="line">z3=<span class="number">2</span>*<span class="built_in">exp</span>(<span class="number">1</span><span class="built_in">i</span>*<span class="built_in">pi</span>/<span class="number">6</span>);z=z1*z2/z3;</span><br><span class="line"></span><br><span class="line">A=[<span class="number">1</span>,<span class="number">2</span>;<span class="number">3</span>,<span class="number">4</span>]+<span class="number">1</span><span class="built_in">i</span>*[<span class="number">5</span>,<span class="number">6</span>;<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line">B=[<span class="number">1</span>+<span class="number">5</span><span class="built_in">i</span>,<span class="number">2</span>+<span class="number">6</span><span class="built_in">i</span>;<span class="number">3</span>+<span class="number">7</span><span class="built_in">i</span>,<span class="number">4</span>+<span class="number">8</span><span class="built_in">i</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">% 深入</span></span><br><span class="line">fushu1=<span class="number">3</span>+<span class="number">4</span><span class="built_in">i</span>;   </span><br><span class="line"></span><br><span class="line">real1=<span class="built_in">real</span>(fushu1);        <span class="comment">%求复数的实部，结果为3</span></span><br><span class="line"></span><br><span class="line">imag1=<span class="built_in">imag</span>(fushu1);   	   <span class="comment">%求复数的虚部，结果为4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">abs1=<span class="built_in">abs</span>(fushu1);          <span class="comment">%求复数的模,，结果为5</span></span><br><span class="line"> </span><br><span class="line">angle1=<span class="built_in">angle</span>(fushu1);  	   <span class="comment">%求复数的角度，结果0.9273</span></span><br><span class="line"></span><br><span class="line">gonge=<span class="built_in">conj</span>(fushu1);    	   <span class="comment">%求它的共轭复数，结果为3-4i</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">%</span></span><br><span class="line">fushuduo=<span class="built_in">complex</span>(<span class="number">1</span>:<span class="number">3</span>,<span class="number">2</span>:<span class="number">4</span>)  <span class="comment">%complex创建复数  实数1-3 虚数2-4              </span></span><br><span class="line"></span><br><span class="line">realduo=<span class="built_in">real</span>(fushuduo)     <span class="comment">%求复数fushuduo的实部，结果为 1     2     3</span></span><br><span class="line"></span><br><span class="line">imagduo=<span class="built_in">imag</span>(fushuduo)     <span class="comment">%求复数fushuduo的虚部，结果为 2     3     4 </span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="（2）关系运算符-rand函数用法"><a href="#（2）关系运算符-rand函数用法" class="headerlink" title="（2）关系运算符        rand函数用法"></a>（2）关系运算符        <a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/08_rand%E5%87%BD%E6%95%B0">rand函数用法</a></h3><p><img src="https://s2.loli.net/2022/03/30/lEjdLe8qbtxwMhD.jpg" alt="f23b667071c0d2fe1496a657de37ade"></p>
+<h3 id="（3）逻辑运算符"><a href="#（3）逻辑运算符" class="headerlink" title="（3）逻辑运算符"></a>（3）逻辑运算符</h3><p><strong>逻辑类型的数据类型</strong>是指布尔类型的数据及数据之间的逻辑关系，出现这些运算的目的是为了<strong>提供求解真&#x2F;假命题的答案</strong>。作为所有关系和逻辑表达式的输入，逻辑类型数据类型进行运算时需要用到关系操作符和<strong>逻辑运算符</strong></p>
+<p><code>MATLAB</code>把任何非零数值当作真，把零当作假。所有关系和逻辑表达式的输出：</p>
+<ul>
+<li>对于真，输出为1；对于假，输出为0</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;</code></td>
+<td><code>与运算</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td><code>或运算</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td><code>非运算</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>若元素为真，则用 <strong>1</strong>表示；若元素为假，则用 <strong>0</strong>表示。</p>
+</li>
+<li><p>“&amp;” 和 “|”运算符可比较两个标量或两个同阶矩阵</p>
+</li>
+<li><p>如果A和B都是<code>0-1</code>矩阵，则 A&amp;B或A|B也都是<code>0-1</code>矩阵，且 <code>0-1</code>矩阵是A和B对应元素的逻辑值。逻辑值运算符主要用在条件语句和所以数组索引中</p>
+</li>
+</ul>
+<h2 id="3-数学函数"><a href="#3-数学函数" class="headerlink" title="3.数学函数"></a>3.数学函数</h2><h3 id="（1）常用数学函数"><a href="#（1）常用数学函数" class="headerlink" title="（1）常用数学函数"></a>（1）常用数学函数</h3><p><img src="https://s2.loli.net/2022/03/01/gawv28ClqdJ5tDb.jpg" alt="fe3c24f96baed02ff318e759d7fa9c0"></p>
+<h4 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A=<span class="built_in">floor</span>(<span class="built_in">rand</span>(<span class="number">5</span>,<span class="number">4</span>)*<span class="number">10</span>);</span><br><span class="line"><span class="comment">% floor向下取整 向0靠近，最大的那个整数</span></span><br><span class="line"><span class="comment">% 如floor(2.1)=2，floor(2.9)=2,floor(-2.6)=-2</span></span><br><span class="line">a=<span class="built_in">ndims</span>(A);            <span class="comment">% 返回A的维数。m×n矩阵为二维</span></span><br><span class="line">[m,n]=<span class="built_in">size</span>(A);         <span class="comment">% 如果A是二维数组，返回函数和列数</span></span><br><span class="line">c=<span class="built_in">length</span>(A);           <span class="comment">% 返回行、列中的最大值</span></span><br><span class="line">e=nnz(A);              <span class="comment">% 返回A中非0元素的个数</span></span><br><span class="line">Amsx=<span class="built_in">max</span>(A);           <span class="comment">%计算最大值</span></span><br><span class="line">Amin=<span class="built_in">min</span>(A);           <span class="comment">%计算最小值</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="（2）常用三角函数"><a href="#（2）常用三角函数" class="headerlink" title="（2）常用三角函数"></a>（2）常用三角函数</h3><p><img src="https://s2.loli.net/2022/03/28/9sGEdWo7DVhtLku.png" alt="image-20220328135149401"></p>
+<h3 id="（3）取整函数"><a href="#（3）取整函数" class="headerlink" title="（3）取整函数"></a>（3）取整函数</h3><p><img src="https://s2.loli.net/2022/03/01/qNDZGAEbS4xTXad.png" alt="image-20220301200840451"></p>
+<h4 id="加深取整函数理解"><a href="#加深取整函数理解" class="headerlink" title="加深取整函数理解"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/OB4TKgoFEpo8W54W10xE0A">加深取整函数理解</a></h4><ul>
+<li><p><strong>floor, 向下取整</strong></p>
+</li>
+<li><p><strong>ceil，向上取整</strong></p>
+</li>
+<li><p><strong>round，向最近整数取整，如果是.5，则向绝对值最大的值取整</strong></p>
+</li>
+<li><p><strong>fix，向0取整</strong></p>
+</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">floor1=<span class="built_in">floor</span>(<span class="number">2.7</span>) 			    <span class="comment">%小于或者等于该数的接近整数，结果为2  </span></span><br><span class="line"></span><br><span class="line">floor2=<span class="built_in">floor</span>(<span class="number">-2.4</span>)  			<span class="comment">%结果为-3</span></span><br><span class="line"></span><br><span class="line">ceil1=<span class="built_in">ceil</span>(<span class="number">4.2</span>)                 <span class="comment">%大于或者等于该数的接近整数，结果为5</span></span><br><span class="line"></span><br><span class="line">ceil2=<span class="built_in">ceil</span>(<span class="number">-4.4</span>)                <span class="comment">%结果为-4</span></span><br><span class="line"></span><br><span class="line">round1=<span class="built_in">round</span>(<span class="number">8.5</span>)       		<span class="comment">%最接近取整，0.5为临界条件，结果为9</span></span><br><span class="line"></span><br><span class="line">round2=<span class="built_in">round</span>(<span class="number">-6.4</span>)     			<span class="comment">%结果为-6</span></span><br><span class="line">	</span><br><span class="line">round3=<span class="built_in">round</span>(<span class="number">-6.5</span>）    			<span class="comment">%结果为-7</span></span><br><span class="line"></span><br><span class="line">fix1=<span class="built_in">fix</span>(<span class="number">-1.6</span>)         			<span class="comment">%向0取整，结果为-1</span></span><br><span class="line"></span><br><span class="line">fix2=<span class="built_in">fix</span>(<span class="number">-1.5</span>)         		<span class="comment">%结果为-1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-转换函数"><a href="#4-转换函数" class="headerlink" title="4.转换函数"></a>4.转换函数</h2><h3 id="（1）常用转换函数"><a href="#（1）常用转换函数" class="headerlink" title="（1）常用转换函数"></a>（1）常用转换函数</h3><p><img src="https://s2.loli.net/2022/03/01/gGkWjMNCOxPrwnR.png" alt="image-20220301201316035"></p>
+<h3 id="（2）使用"><a href="#（2）使用" class="headerlink" title="（2）使用"></a>（2）使用</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x=bin2dec(<span class="string">&#x27;111101&#x27;</span>);</span><br><span class="line">y=dec2bin(<span class="number">61</span>);</span><br><span class="line">z=dec2hex(<span class="number">61</span>);</span><br><span class="line">w=dec2base(<span class="number">61</span>,<span class="number">8</span>);</span><br><span class="line">q=<span class="number">23</span>;sprintf(<span class="string">&#x27;%03d&#x27;</span>,q); <span class="comment">% 建数字转化为字符串，03表示3位数。不足3位的前面补0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-字符串操作函数"><a href="#5-字符串操作函数" class="headerlink" title="5.字符串操作函数"></a>5.字符串操作函数</h2><ul>
+<li><h3 id="常见字符串操作函数"><a href="#常见字符串操作函数" class="headerlink" title="常见字符串操作函数"></a>常见字符串操作函数</h3></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/01/he7CzBjNxkMgLRn.png" alt="image-20220301205258635"></p>
+<h2 id="6-判断数据类型函数"><a href="#6-判断数据类型函数" class="headerlink" title="6.判断数据类型函数"></a>6.判断数据类型函数</h2><ul>
+<li><p><img src="https://s2.loli.net/2022/03/01/s6PgVKnxujSLOEH.png" alt="image-20220301205354257"></p>
+</li>
+<li><p>&#96;&#96;&#96;matlab<br>P&#x3D;[1 2 1 5];n&#x3D;isreal(P);                % p都是实数<br>p1&#x3D;[1+5i 2+6i 3+7i 4+8i];n1&#x3D;isreal(p1); % p1有非实数<br>x&#x3D;2.34;n2&#x3D;isnumeric(x);                 % x为数值型<br>x1&#x3D;num2str(x);n3&#x3D;isnumeric(x1);         % x1为非数值型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 7.文件操作函数</span><br><span class="line"></span><br><span class="line">- ![21710425a74f371c2e305dd1109b109](https://s2.loli.net/2022/03/28/2oubVjNWiwy841U.jpg)</span><br><span class="line"></span><br><span class="line">- ```matlab</span><br><span class="line">  clear;clc;                    </span><br><span class="line">  fid=fopen(&#x27;filel.dat&#x27;,&#x27;w+&#x27;);  %创建并打开 filel.dat文件</span><br><span class="line">  A=[1:10];                     %创建数组A1~10</span><br><span class="line">  count =fwrite(fid,A);         %将数组A写入文件</span><br><span class="line">  fseek(fid,0,&#x27;bof&#x27;);           %指针指向第1个元素        </span><br><span class="line">  f1=fgets(fid)                 %读取数据到f1</span><br><span class="line">  f1 =sprintf(&#x27;%3d&#x27;,f1)         %输出f1数据 </span><br><span class="line">  fseek(fid,4,&#x27;bof&#x27;);           %指针指向第5个元素</span><br><span class="line">  f2 =fgets(fid)                %读取数据到f2</span><br><span class="line">  f2 =sprintf(&#x27;%3d&#x27; f2)         %输出 f2数据</span><br><span class="line">  Str=[97 99 100];</span><br><span class="line">  strl=sprintf(&#x27;%s&#x27;str);&gt;teaml=&#x27;中国首都&#x27;;</span><br><span class="line">  team2=&#x27;北京&#x27;;</span><br><span class="line">  str2=sprintf(&#x27;%s是%s&#x27;,team1,team2)</span><br><span class="line">  pi=sprintf(&#x27;圆周率pi=%4.2f&#x27;,pi)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/01/9mKzSLoqk8HFDba.png" alt="image-20220301210007135"></p>
+</li>
+</ul>
+<h2 id="8-常用特殊矩阵"><a href="#8-常用特殊矩阵" class="headerlink" title="8.常用特殊矩阵"></a>8.常用特殊矩阵</h2><h3 id="（1）特殊矩阵函数"><a href="#（1）特殊矩阵函数" class="headerlink" title="（1）特殊矩阵函数"></a>（1）特殊矩阵函数</h3><p><img src="https://s2.loli.net/2022/03/01/xZhYk5DdjTAK18P.png" alt="image-20220301210241569"></p>
+<h3 id="（2）matlab提取子块操作"><a href="#（2）matlab提取子块操作" class="headerlink" title="（2）matlab提取子块操作"></a>（2）matlab提取子块操作</h3><ul>
+<li>A(m,n)                      :提取第m行，第n列元素</li>
+<li>A(:,n)                        :提取第n列元素</li>
+<li>A(m,:)                       :提取第m行元素</li>
+<li>A(m1:m2,n1:n2)    :提取m1行到第m2行和第n1列到第n1列到第n2列的所有元素（提取子块）</li>
+<li>A(:)                            :元素按矩阵的1列进行排列的长列矢量</li>
+<li>矩阵拓展                   ：如果在原矩阵不存在的地址中设定一个数（赋值），则该矩阵会自动扩展行列数，并在该位置上天界这个数，而且在其他没有指定的位置补零</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">X=<span class="built_in">zeros</span>(<span class="number">4</span>);   <span class="comment">% 4×4零矩阵</span></span><br><span class="line">Y=<span class="built_in">ones</span>(<span class="number">3</span>,<span class="number">4</span>);  <span class="comment">% 3×4的全一阵</span></span><br><span class="line">Z=<span class="built_in">rand</span>(<span class="number">4</span>,<span class="number">5</span>);  <span class="comment">% 4×5均匀分布的随机矩阵</span></span><br><span class="line"><span class="built_in">true</span>(z);      <span class="comment">% 上三角阵</span></span><br><span class="line">Kmagic(<span class="number">4</span>);    <span class="comment">% 魔方阵必须是方阵</span></span><br><span class="line">L=<span class="built_in">pascal</span>(<span class="number">4</span>);  <span class="comment">% 帕斯卡矩阵必须是方阵</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">clc;clear;</span><br><span class="line">L=<span class="built_in">rand</span>(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">A=L(:,<span class="number">1</span>)    <span class="comment">% 矩阵所有行的第一列</span></span><br><span class="line"></span><br><span class="line">B=L(:,<span class="number">1</span>)&#x27;   <span class="comment">% 矩阵L右上角加一短撇（&#x27;）即L&#x27;表示L的转置矩阵——交换L的行列位置（当L为复数矩阵，是共轭转置），因此L(:,1)&#x27;表示将矩阵L的第一列转置，最终就得到了一个行向量</span></span><br><span class="line"></span><br><span class="line">C=L(:,<span class="number">1</span>:<span class="number">3</span>)  <span class="comment">% 2:3代表该维的第2个数第3个数</span></span><br><span class="line"></span><br><span class="line">D=L(:,:,<span class="number">1</span>)  <span class="comment">% 代表第一维、第二维的所有数据，第三维的第一个</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="9-句柄函数"><a href="#9-句柄函数" class="headerlink" title="9.句柄函数"></a>9.<a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/01_%E5%87%BD%E6%95%B0%E5%8F%A5%E6%9F%84">句柄函数</a></h2><h3 id="（1）MATLAB提供了一个简介访问函数的方式"><a href="#（1）MATLAB提供了一个简介访问函数的方式" class="headerlink" title="（1）MATLAB提供了一个简介访问函数的方式"></a>（1）<strong>MATLAB提供了一个简介访问函数的方式</strong></h3><ul>
+<li><p>可以使用函数名实现</p>
+</li>
+<li><p>可以使用句柄handle函数实现，在已有函数名前加符号@ ，既可创建函数句柄handle</p>
+</li>
+<li><p>可以提供匿名[nì míng]函数创建一个函数句柄</p>
+</li>
+</ul>
+<h6 id="——创建格式："><a href="#——创建格式：" class="headerlink" title="——创建格式："></a>——创建格式：</h6><p>​		<code>handle=@functionname或:fun1=@functionname</code></p>
+<h6 id="——调用格式："><a href="#——调用格式：" class="headerlink" title="——调用格式："></a>——调用格式：</h6><p>​		<code>fun(arg1,arg2,....e,argn);</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqr=@(x)x.^<span class="number">2</span>;</span><br><span class="line">a=sqr(<span class="number">5</span>);</span><br><span class="line">fun=@(x,y)x.^<span class="number">2</span>+y.^<span class="number">2</span>;</span><br><span class="line">b=fun(<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 结果</span></span><br><span class="line">a=<span class="number">25</span></span><br><span class="line">b=<span class="number">13</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="10-数组表示"><a href="#10-数组表示" class="headerlink" title="10.数组表示"></a>10.<a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/06_%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B">数组</a>表示</h2><h3 id="（1）结构数组"><a href="#（1）结构数组" class="headerlink" title="（1）结构数组"></a>（1）<a href="https://fubaisen.github.io/2022/03/31/MATLAB%E5%AD%A6%E4%B9%A0/%E8%A1%A5%E5%85%85%E6%96%87%E4%BB%B6/0%E7%BB%93%E6%9E%84%E4%BD%93%E7%B1%BB%E5%9E%8B">结构数组</a></h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">student(<span class="number">1</span>).name =<span class="string">&#x27;Li Ming&#x27;</span>; student(<span class="number">1</span>).course=[<span class="number">10135</span> <span class="number">10096</span>];</span><br><span class="line">student(<span class="number">1</span>)score=[<span class="number">87</span> <span class="number">92</span>];student(<span class="number">2</span>).name=<span class="string">&#x27;Zhang Li&#x27;</span>;</span><br><span class="line">student (<span class="number">2</span>). course =[<span class="number">10135</span> <span class="number">10096</span>]; student (<span class="number">2</span>).score =[<span class="number">82</span> <span class="number">76</span>];</span><br><span class="line">nl =student(<span class="number">1</span>);</span><br><span class="line">n2 =student(<span class="number">2</span>)&gt; student(<span class="number">2</span>).name;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 结果:</span></span><br><span class="line">nl =name: <span class="string">&#x27;Li Ming&#x27;</span></span><br><span class="line">course:[<span class="number">10135</span> <span class="number">10096</span>] score:[<span class="number">87</span> <span class="number">92</span>] </span><br><span class="line">n2 =name: <span class="string">&#x27;zhang Li&#x27;</span></span><br><span class="line">course:[<span class="number">10135</span> <span class="number">10096</span>] score:[<span class="number">82</span> <span class="number">76</span>] <span class="built_in">ans</span> =Zhang Li</span><br></pre></td></tr></table></figure>
+
+<p><strong>——可以利用struct结构函数创建结构，其调用格式为：</strong></p>
+<p>​				<code>strArray=srtuct(&#39;fielld1&#39;,&#39;vall&#39;,&#39;&#39;field2),val2,...）</code></p>
+<p><strong>——其中  “field”   和   val 为  字段  和   对应值</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stu=struct(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;wangfang&#x27;</span>,<span class="string">&#x27;course&#x27;</span>,[<span class="number">10568</span> <span class="number">10063</span>],<span class="string">&#x27;score&#x27;</span>,[<span class="number">72</span> <span class="number">82</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stu = </span><br><span class="line"></span><br><span class="line">      name: <span class="string">&#x27;wangfang&#x27;</span></span><br><span class="line">    course: [<span class="number">10568</span> <span class="number">10063</span>]</span><br><span class="line">     score: [<span class="number">72</span> <span class="number">82</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="（2）细胞数组"><a href="#（2）细胞数组" class="headerlink" title="（2）细胞数组"></a>（2）细胞数组</h3><p><strong>——</strong>细胞（单元）数组是matlab特有的一种数据类型，组成它的的元素是细胞，细胞是用来储存不同类型数据单元。</p>
+<p><strong>——</strong>细胞数组中的**<code>每一个细胞储存一种类型的MATLAB数组</code><strong>，此数组中的数据可以是</strong><code>任意 一种matlab 数据类型</code><strong>或用户自定义的类型，其</strong><code>大小</code><strong>也可以是</strong><code>任意</code>**的，相同细胞数组中第二个细胞类型与大小<code>可以</code>和第一细胞完全不同<code>2x2</code>细胞数组结构如图1.6所示。<img src="https://s2.loli.net/2022/03/06/SO4HYyTVtxKNeCj.png" alt="image-20220303204733865"></p>
+<p><strong>——</strong>细胞数组可以将不同类型或不同尺寸的数据存储到同一个数组当中。访问单元数组的方法与 矩阵索引方法基本相同，区别在于单元数组索引 时，需要用    <strong>{}</strong>     将下标置于其中。创建单元数组 与创建矩阵基本相同，区别在于矩阵用   <strong>[]</strong>  ，单元数组用    <strong>{}</strong>   </p>
+<h6 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h6><ul>
+<li>​					创建单元数组(一维):</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=&#123;[2 4 7;3 9 6;1 8 5],&#x27;Li Ming&#x27;,2+3i,1:2:10&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>​				    对单元数组向量下标赋空值相当于删除单元数组的行或列，删除单元数组的列：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a(:,2)=[];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>​					直接在命令窗输入单元数组名，可显示单元数组的构成单元</p>
+<p><img src="https://s2.loli.net/2022/03/29/LEOvUDp2afoM6kV.png" alt="image-20220329135138796"></p>
+</li>
+<li><p>使用celldisp函数可以显示单元数组</p>
+<p><img src="https://s2.loli.net/2022/03/29/R1oPLy5jSQuUVEa.png" alt="image-20220329135302525"></p>
+</li>
+<li><p>利用索引可以对单元数组进行运算操作</p>
+<p><img src="https://s2.loli.net/2022/03/29/Au4HeYLGv6ljKP1.png" alt="image-20220329140005867"></p>
+<blockquote>
+<p>ps: 书中错误       可能版本不一样</p>
+<p><img src="https://s2.loli.net/2022/03/29/EAKD5rOaGx6deXh.png" alt="image-20220329140015508"></p>
+</blockquote>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
