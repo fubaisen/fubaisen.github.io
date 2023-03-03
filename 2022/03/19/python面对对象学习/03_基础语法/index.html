@@ -23,6 +23,8 @@ dir 内置函数
     <link rel="alternative" href="atom.xml" title="fubaisen" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
     
     
     <meta name="twitter:card" content="summary"/>
@@ -355,7 +357,7 @@ dir 内置函数
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, new_name</span>):</span><br><span class="line"></span><br><span class="line">        self.name = new_name</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;%s 来了&quot;</span> % self.name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__del__</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;%s 去了&quot;</span> % self.name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;我是小猫：%s&quot;</span> % self.name</span><br><span class="line"></span><br><span class="line">tom = Cat(<span class="string">&quot;Tom&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(tom)</span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
                 <source type="audio/mpeg" src="">
             </audio>
             
@@ -375,7 +377,7 @@ dir 内置函数
         
         
     <div id="gitalk-container" class="comment link"
-		data-enable="false"
+		data-enable="true"
         data-ae="false"
         data-ci=""
         data-cs=""
@@ -394,6 +396,8 @@ dir 内置函数
     </div>
 </div>
 </body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
